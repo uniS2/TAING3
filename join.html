@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAING - 회원가입</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./src/style/index.css" />
+    <link rel="icon" href="./src/image/main/tiving.ico" type="image/x-icon" />
+    <script src="src/js/include.js" defer></script>
+  </head>
+
+  <body class="profile__body">
+    <div w3-include-html="./header.html"></div>
+    <main class="join_page">
+      <section class="join">
+        <div class="content_wrap">
+          <div class="title_wrap">
+            <h3>
+              티빙 회원가입
+              <p>아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
+            </h3>
+          </div>
+        </div>
+        <div class="info_wrap">
+          <div class="make_id">
+            <label for="userId" class="data_input_id layout_flex">
+              <input type="text" id="userId" class="new_id" required placeholder="아이디"/>
+            </label>
+            <p class="input_info">영문 또는 영문, 숫자 조합 6~12자리</p>
+           </div>
+           <div class="make_pw">
+            <label for="userPw" class="data_input_pw layout_flex">
+              <input type="password" id="userPw" class="new_pw" required placeholder="비밀번호" />
+              <button id="closePwCheck"></button>
+            </label>
+            <p class="input_info">영문,숫자,특수문자(~!@#$%^&*) 조합 8~15자리</p>
+           </div>
+           <div class="make_pw">
+            <label for="passwordCheck" class="data_input_check layout_flex">
+              <input type="password" id="passwordCheck" class="new_pw_check" required placeholder="비밀번호 확인" />
+              <button id="closePwCheck"></button>
+            </label>
+           </div>
+           <div class="make_email">
+            <label for="email" class="data_input_email layout_flex">
+              <input type="text" id="email" class="new_email" required placeholder="이메일" />
+           </label>
+          </div>
+        </div>
+        <ul class="check_wrap">
+          <li class="check_list">
+            <input type="checkbox" id="agreeAll" />
+            <label for="agreeAll">
+              <span>모두 동의합니다.</span>
+            </label>
+          </li>
+        </ul>
+        <ul class="checks_wrap">
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_1"/>
+            <label for="agree_1">
+              만 14세 이상입니다.
+            </label>
+          </li>
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_2"/>
+            <label for="agree_2">
+              [필수] 서비스 이용약관 동의
+            </label>
+          </li>
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_3"/>
+            <label for="agree_3">
+              [필수] 개인정보 수집 및 서비스 활용 동의
+            </label>
+          </li>
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_4"/>
+            <label for="agree_4">
+              [필수] 채널 홈페이지 개인정보 제 3자 제공 동의
+            </label>
+          </li>
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_5"/>
+            <label for="agree_5">
+              [선택] 개인정보 제 3자 제공동의
+            </label>
+          </li>
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_6"/>
+            <label for="agree_6">
+              [선택] 개인정보 수집 및 서비스 활용 동의
+            </label>
+          </li>
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_7"/>
+            <label for="agree_7">
+              [선택] 마케팅 정보 SMS 수신동의
+            </label>
+          </li>
+          <li class="check_box">
+            <input type="checkbox" class="agree_item" id="agree_8"/>
+            <label for="agree_8">
+              [선택] 마케팅 정보 이메일 수신동의
+            </label>
+          </li>
+        </ul>
+        <div class="btn_wrap">
+          <button id="btnRegist" class="regist_btn" disabled>
+            가입하기
+          </button>
+        </div>
+      </section>
+    </main>
+    <div w3-include-html="./footer.html"></div>
+  </body>
+</html>

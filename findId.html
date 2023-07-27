@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAING - 아이디 찾기</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./src/style/index.css" />
+    <link rel="icon" href="./src/image/main/tiving.ico" type="image/x-icon" />
+    <script src="src/js/include.js" defer></script>
+  </head>
+
+  <body class="profile__body">
+    <div w3-include-html="./header.html"></div>
+    <main class="find_id_page">
+      <section class="find_id">
+        <div class="content_wrap">
+          <div class="title">
+            <h3 class="title_name">아이디 찾기</h3>
+          </div>
+          <div class="find_to_email">
+            <form action="" name="emailForm" method="post">
+              <h4>이메일로 찾기
+                <p>가입 시 등록한 이메일을 입력해주세요.</p>
+              </h4>
+              <label for="data" class="data_input layout_flex">
+                <input type="text" id="data" class="data_part" required placeholder="이메일" />
+              </label>
+            </form>
+          </div>
+          <div class="btn_wrap">
+            <button id="submit" type="button" class="btn_check_1" disabled>확인</button>
+          </div>
+          <div class="line_border">
+            <hr>
+            <div class="line">
+              <p class="line_or">또는</p>
+            </div>
+            <hr>
+          </div>
+          <div class="certification">
+            <h4>본인인증으로 찾기
+              <p>이미 본인인증이 완료된 계정에 한하여 아이디 찾기가 가능합니다.</p>
+            </h4>
+          </div>
+          <div class="btn_wrap">
+            <button class="btn_check_2">본인인증하기</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div w3-include-html="./footer.html"></div>
+  </body>
+</html>

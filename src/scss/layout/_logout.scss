@@ -1,0 +1,52 @@
+@use './../utils' as *;
+
+.logout {
+  width: 100%;
+  @include flexbox($justify: center, $items: center);
+  @include pos($pos:fixed, $t:0, $b:0);
+  
+  &__content {
+    width: 50%;
+    max-width: 400px;
+    background-color: $dark-bg2;
+  }
+
+  &__body {
+    @include paddingY(30px);
+    text-align: center;
+  }
+  
+  // 가로선 absolute 부모 값
+  &__links {
+    position: relative;
+  }
+
+  // 확인, 취소 정렬
+  &__link {
+    width: 50%;
+    @include paddingY(20px);
+    @include flexbox($justify: center);
+    float: left;
+    color: $gray3;
+    cursor:pointer;
+  }
+  
+  // 확인 두께
+  &__yes {
+    font-weight: 700;
+  }
+  
+  // 가로선
+  &__vertical {
+    color: $gray7;
+    @include pos($t: 20px);
+  }
+
+  // 미디어 쿼리 모바일
+  @include mobile {
+    &__content {
+      width: 90%;
+      min-width: 250px;
+    }
+  }
+}

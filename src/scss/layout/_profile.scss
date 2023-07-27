@@ -1,0 +1,127 @@
+@use './../utils' as *;
+
+.profile {
+  width: 70%;
+  margin: 50px auto 100px;
+  
+  &__body {
+    .menu, .searchForm, .userInfo {
+      display: none;
+    }
+
+    header {
+      position: relative;
+    }
+
+    .footer__quick {
+      display: none;
+    }
+  }
+
+  // 프로필 제목 속성
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  // 프로필 안내 속성
+  &__word {
+    color: $gray2;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  //이미지 확대
+  &__img {
+    width: 150px;
+  }
+  
+  // 프로필 목록에 플렉스 정렬
+  &__lists {
+    @include flexbox($justify: center);
+    column-gap: 30px;
+  }
+
+  // 각 프로필에 플렉스 세로 정렬
+  &__link {
+    color: $gray3;
+    @include flexbox($direction: column, $items: center);
+    row-gap: 15px;
+  }
+  
+  // 반투명 레이어 absolute 부모값 설정
+  &__img__div {
+    position: relative;
+  }
+  
+  // 반투명 레이어 적용
+  &__dimmed {
+    @include pos(absolute, 0, 0, 0, 0);
+    background: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+  }
+  
+  // 잠금, 편집 이미지 정렬, absolute로 가운데 있게 함
+  &__dimmed__img {
+    width: 100%;
+    max-width: 50px;
+    @include pos(absolute, calc(50% - 25px), 0, 0, calc(50% - 25px));
+  }
+  
+  // 선택된 프로필은 반투명 레이어 안보이도록 처리
+  &__selected {
+    display: none;
+  }
+
+  // 완료, 편집 버튼 공통 속성
+  &__button {
+    display: block;
+    width: 180px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 35px;
+    @include paddingY(20px);
+    @include autoMargin;
+  }
+  
+  // 완료 버튼 개별 속성
+  &__button__complete {
+    color: $black;
+    background-color: $gray1;
+  }
+
+  // 편집 버튼 개별 속성
+  &__button__edit {
+    color: $gray3;
+    border: 1px solid $gray6;
+  }
+
+  // 미디어 쿼리 태블릿 - 프로필 섹션이 90%까지 나오도록 설정
+  @include tablet {
+    width: 90%;
+  }
+  
+  // 미디어 쿼리 모바일
+  @include mobile {
+    width: 45%;
+    min-width: 300px;
+
+    &__word {
+      margin-bottom: 40px;
+    }
+
+    // 플렉스 줄 나눠질 수 있도록 wrap 속성 부여
+    &__lists {
+      flex-wrap: wrap;
+      column-gap: 20px;
+    }
+
+    //각 프로필 너비 설정
+    &__list {
+      width: 45%;
+      padding-bottom: 30px;
+    }
+  }
+}

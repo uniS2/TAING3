@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAING - 로그인</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./src/style/index.css" />
+    <link rel="icon" href="./src/image/main/tiving.ico" type="image/x-icon" />
+    <script src="src/js/include.js" defer></script>
+  </head>
+
+  <body class="profile__body">
+    <div w3-include-html="./header.html"></div>
+    <main class="login_page">
+      <section class="login">
+        <div class="content_wrap">
+          <div class="title_wrap">
+            <h3 class="title">TAING ID 로그인</h3>
+          </div>
+        </div>
+        <form name="input_form">
+          <label for="data_input_1" class="data_input">
+            <input
+              type="text"
+              class="id_box"
+              placeholder="아이디"
+              required="required"
+            />
+          </label>
+          <label for="data_input_2" class="data_input">
+            <input
+              type="password"
+              class="pw_box"
+              placeholder="비밀번호"
+              required="required"
+            />
+            <button id="closePW"></button>
+          </label>
+        </form>
+        <ul class="checks_wrap">
+          <li class="checks">
+            <input type="checkbox" id="check" />
+            <label for="check"><span>자동로그인</span></label>
+          </li>
+        </ul>
+        <div class="btn-wrap">
+          <button id="doLogIn" class="btn_color">로그인하기</button>
+        </div>
+        <div class="no_border_btn">
+          <a href="findId.html" id="findId" class="no_border">아이디 찾기</a>
+          <a href="findPw.html" id="findPw" class="no_border">비밀번호 찾기</a>
+        </div>
+        <div class="join_wrap">
+          " 아직 계정이 없으신가요? "
+          <a href="join.html" id="regist" class="no_border">회원가입하기</a>
+        </div>
+      </section>
+    </main>
+    <div w3-include-html="./footer.html"></div>
+  </body>
+</html>

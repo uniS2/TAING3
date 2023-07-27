@@ -1,0 +1,17 @@
+/* Accessibility Styles */
+// 숨김 제목 및 콘텐츠 --------------------------------------------------------------- /
+@mixin a11yHidden() {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+// 숨김 콘텐츠 -------------------------------------------------------------------- /
+.a11yHidden,
+legend {
+  @include a11yHidden();
+}

@@ -1,0 +1,127 @@
+@use "sass:math";
+@use "./unit" as *;
+// 고해상도 배경이미지 처리 ---------------------------------------------------- /
+@mixin bgRetina($file, $type) {
+  background-image: url("./../assets/images/" + $file + "." + $type);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+    & {
+      background-image: url("./../assets/images/" + $file + "@2x." + $type);
+    }
+  }
+}
+
+// padding 관련 믹스인
+@mixin paddingY($paddingY: 0) {
+  padding-top: rem($paddingY);
+  padding-bottom: rem($paddingY);
+}
+
+@mixin paddingX($paddingX: 0) {
+  padding-left: rem($paddingX);
+  padding-right: rem($paddingX);
+}
+
+// margin 관련 믹스인
+@mixin marginY($marginY: 0) {
+  margin-top: rem($marginY);
+  margin-bottom: rem($marginY);
+}
+
+@mixin marginX($marginX: 0) {
+  margin-left: rem($marginX);
+  margin-right: rem($marginX);
+}
+
+@mixin autoMargin($marginX: auto) {
+  margin-left: $marginX;
+  margin-right: $marginX;
+}
+
+// Position 관련 믹스인
+@mixin pos($pos: absolute, $t: initial, $r: initial, $b: initial, $l: initial) {
+  position: $pos;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+
+@mixin posCenterX($pos: absolute) {
+  @include pos;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin posCenterY() {
+  @include pos;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin posCenter($pos: absolute) {
+  @include pos;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 박스(컨테이너) 크기를 뷰포트 영역으로 확장시키는 믹스인
+@mixin boxSizeFull {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: initial;
+}
+
+// 박스의 최소 및 최대 너비를 설정하기 위한 믹스인
+@mixin boxSizeMinMax($min: 768px, $max: 1200px) {
+  min-width: $min;
+  max-width: $max;
+  @include autoMargin;
+}
+
+// 반응형 콘텐츠
+@mixin respons($width: max-width) {
+  #{$width}: 100%;
+  height: auto;
+}
+
+// 그리드 믹스인
+@mixin gridbox($column-count: 12, $column-gap: 16px, $row-gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($column-count, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+}
+
+@mixin responsIframe($w: 16, $h: 9) {
+  position: relative;
+  padding-top: math.div($h, $w) * 100%;
+  height: 0 !important;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin textEllipis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Float 해제를 위한 clear 스타일 ---------------------------------------------------- /
+@mixin clearFix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

@@ -1,0 +1,109 @@
+@use './../utils' as *;
+
+.find_id_page {
+    width: 40%;
+    max-width: 400px;
+    margin: 30px auto 0;
+}
+
+.title_name {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.find_to_email {
+    margin-top: 40px;
+}
+
+.find_to_email h4 {
+    margin-bottom: 10px;
+}
+
+.find_to_email h4 > p {
+    color: $gray3;
+    margin-top: 9px;
+}
+
+.data_input {
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.data_part {
+    width: 100%;
+    padding: 20px 15px 20px;
+    background-color: $dark-bg2;
+    color: $gray6;
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn_check_1 {
+    color: $gray3;
+    background-color: $gray7;
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    margin: 10px 0 40px;
+    border-radius: 4px;
+}
+
+.certification {
+    margin-top: 40px;
+}
+
+.certification h4 > p {
+    margin-top: 9px;
+}
+
+.certification p {
+    color: $gray3;
+    font-size: 12px;
+}
+
+.btn_check_2 {
+    color: $black;
+    background-color: $gray1;
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    margin: 20px 0 40px;
+    border-radius: 4px;
+}
+
+.line_border {
+    display: flex;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: $gray8;
+}
+
+.line_or {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    color: $gray8;
+}
+
+/* 모바일 미디어쿼리 */
+@include mobile {
+    .find_id_page {
+        width: 95%;
+    }
+}
+
+/* 태블릿 미디어쿼리 */
+@include tablet {
+    .find_id_page {
+        width: 70%;
+    }
+}

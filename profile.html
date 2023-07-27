@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAING - 프로필 편집</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./src/style/index.css" />
+    <link rel="icon" href="./src/image/main/tiving.ico" type="image/x-icon" />
+    <script src="src/js/include.js" defer></script>
+  </head>
+  <body class="profile__body">
+    <div w3-include-html="./header.html"></div>
+    <section class="profile">
+      <h1 class="profile__title">프로필 편집</h1>
+      <p class="profile__word">편집할 프로필을 선택해주세요.</p>
+      <ul class="profile__lists">
+        <li class="profile__list">
+          <a href="./index.html" class="profile__link">
+            <div class="profile__img__div">
+              <img
+                src="src/image/profile/mobile/profile_1.png"
+                alt="슬비님 프로필"
+                class="profile__img"
+              />
+              <div class="profile__dimmed">
+                <img
+                  src="src/image/profile/DesktopPencil.png"
+                  alt=""
+                  class="profile__dimmed__img"
+                />
+              </div>
+            </div>
+            슬비님
+          </a>
+        </li>
+        <li class="profile__list">
+          <a href="./index.html" class="profile__link">
+            <div class="profile__img__div">
+              <img
+                src="src/image/profile/mobile/profile_3.png"
+                alt="범쌤 프로필"
+                class="profile__img"
+              />
+              <div class="profile__dimmed">
+                <img
+                  src="src/image/profile/DesktopPencil.png"
+                  alt=""
+                  class="profile__dimmed__img"
+                />
+              </div>
+            </div>
+            범쌤
+          </a>
+        </li>
+        <li class="profile__list">
+          <a href="./index.html" class="profile__link">
+            <div class="profile__img__div">
+              <img
+                src="src/image/profile/mobile/profile_2.png"
+                alt="야무 프로필"
+                class="profile__img"
+              />
+              <div class="profile__dimmed">
+                <img
+                  src="src/image/profile/DesktopPencil.png"
+                  alt=""
+                  class="profile__dimmed__img"
+                />
+              </div>
+            </div>
+            야무
+          </a>
+        </li>
+        <li class="profile__list">
+          <a href="./index.html" class="profile__link">
+            <div class="profile__img__div">
+              <img
+                src="src/image/profile/mobile/profile_4.png"
+                alt="이듬 프로필"
+                class="profile__img"
+              />
+              <div class="profile__dimmed">
+                <img
+                  src="src/image/profile/DesktopPencil.png"
+                  alt=""
+                  class="profile__dimmed__img"
+                />
+              </div>
+            </div>
+            이듬
+          </a>
+        </li>
+      </ul>
+      <button
+        type="button"
+        class="profile__button profile__button__complete"
+        onclick="location.href='./profile_select.html'"
+      >
+        완료
+      </button>
+    </section>
+    <div w3-include-html="./footer.html"></div>
+  </body>
+</html>

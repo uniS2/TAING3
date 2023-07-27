@@ -1,0 +1,34 @@
+@use "./color" as var;
+@use "./unit" as *;
+
+$colors: (
+  "Green": var.$green,
+  "Yellow": var.$yellow,
+  "Brown": var.$brown,
+  "Orange": var.$orange,
+  "Blue": var.$blue,
+);
+
+@each $color, $color-value in $colors {
+  .theme#{$color} {
+    color: $color-value;
+  }
+}
+
+// 스프라이트 배경이미지
+.sprite {
+  min-height: rem(60px);
+  background-image: url(./../assets/images/sprite_main.png);
+  background-repeat: no-repeat;
+  padding-left: rem(64px);
+
+  $sprites: Book, Board, News, Favorite, Twitter;
+  $x: 0;
+  $y: 0;
+  @each $sprite in $sprites {
+    &#{$sprite} {
+      background-position: $x $y;
+    }
+    $y: $y - 115px;
+  }
+}

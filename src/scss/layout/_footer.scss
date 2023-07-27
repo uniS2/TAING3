@@ -1,0 +1,131 @@
+@use './../utils' as *;
+
+.footer {
+  @include flexbox($direction: column);
+  gap: rem(24px);
+  padding: rem(140px) rem(68px) rem(170px);
+  font-size: rem(16px);
+  line-height: 1.6;
+
+  &__quick {
+    @include flexbox($justify: space-between);
+    color: $gray2;
+    border-bottom: 1px solid $gray8;
+    padding-bottom: 1rem;
+
+    .notice strong {
+      color: $gray5;
+      margin-right: rem(20px);
+    }
+    button {
+      color: $gray2;
+      padding: 0;
+    }
+    button:after {
+      content:'+';
+      margin-left: 1rem;
+    }
+
+    button:last-child:before {
+      display: inline-block;
+      content:'';
+      width: 1px;
+      height: rem(20px);
+      background-color: $gray5;
+      margin-left: rem(16px);
+      margin-right: rem(16px);
+      vertical-align: -.3rem;
+    } 
+
+    @include mobile {
+      .quickBtn__group {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    @include flexbox();
+    gap: rem(36px);
+    color: $gray2;
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__content {
+    color: $gray5;
+    a {
+      text-decoration: underline;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__sns {
+    @include flexbox();
+    gap: rem(20px);
+
+    &__item {
+      flex-shrink: 0;
+    }
+
+    &__link {
+      @include flexbox($justify: center, $items: center);
+      width: rem(52px);
+      height: rem(52px);
+      border-radius: 50%;
+      background-color: $gray8;
+      padding: rem(12px);
+    }
+  }
+
+  .copyright {
+    color: $gray5;
+   }
+
+  .sprite {
+    background-position: 0 -50px;
+  }
+
+
+  @include tablet {
+    padding: 6.75rem 2.25rem 8.625rem;
+
+    &__list {
+      gap: rem(20px);
+    }
+  }
+
+  @include mobile {
+    font-size: rem(16px);
+    padding: rem(52px) rem(16px) rem(82px);
+
+    &__list {
+      flex-direction: column;
+      gap: rem(4px);
+    }
+
+    &__quick {
+      .notice {
+        position: relative;
+        padding-left: rem(120px);
+      }
+      .notice strong {
+        @include pos;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &__sns {
+      &__link {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}

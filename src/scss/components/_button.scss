@@ -1,0 +1,57 @@
+@use "./../utils/" as *;
+
+.button {
+  border: 0;
+  background: transparent;
+  @include paddingX(16px);
+  font-size: rem(14px);
+  border-radius: rem(4px);
+
+  &--fill {
+    background: $brown;
+    color: $white;
+  }
+
+  &--outline {
+    color: $brown;
+    border: 1px solid currentColor;
+  }
+}
+
+//햄버거 버튼
+.button--burger {
+  @include mobile {
+    background: transparent;
+    width: rem(36px);
+    height: rem(36px);
+    border: 0;
+    padding: 0;
+    @include pos;
+    top: rem(65px);
+    right: rem(20px);
+
+    &BarTop, &BarMiddle, &BarBottom {
+      background: $white;
+      width: 100%;
+      height: 20%;;
+      border-radius: rem(10px);
+      left: 0
+    }
+
+    &BarTop {
+      @include posLeftTop;
+    }
+
+    &BarMiddle {
+      @include posCenterY;
+    }
+
+    &BarBottom {
+      @include posBottomY;
+    }
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
