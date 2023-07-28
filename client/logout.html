@@ -20,18 +20,30 @@
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
   </head>
   <body>
-    <section class="logout">
-      <div class="logout__content">
-        <div class="logout__body">
-          <h1 class="a11yHidden">로그아웃</h1>
-          <p class="logout__ask">로그아웃 하시겠습니까?</p>
+    <section
+      class="logout fixed bottom-0 top-0 flex w-full items-center justify-center"
+    >
+      <div class="logout__content w-1/2 max-w-[400px] bg-darkbg2">
+        <div
+          class="logout__body py-[30px] mobile:max-[767px]:w-[90%] mobile:max-[767px]:min-w-[250px]"
+        >
+          <h1 class="sr-only">로그아웃</h1>
+          <p
+            class="logout__ask mb-3 mt-5 flex items-center justify-center text-white"
+          >
+            로그아웃 하시겠습니까?
+          </p>
         </div>
-        <div class="logout__links">
-          <a href="./landing.html" class="logout__link logout__yes">확인</a>
-          <span class="logout__vertical"> | </span>
+        <div class="logout__links relative">
+          <a
+            href="./landing.html"
+            class="logout__link logout__yes float-left flex w-1/2 cursor-pointer justify-center py-5 font-bold text-gray3"
+            >확인</a
+          >
+          <span class="logout__vertical absolute top-5 text-gray7"> | </span>
           <a
             href="javascript:window.history.back();"
-            class="logout__link logout__no"
+            class="logout__link logout__no float-left flex w-1/2 cursor-pointer justify-center py-5 text-gray3"
           >
             취소
           </a>
