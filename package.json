@@ -6,6 +6,7 @@
     "start": "run-p serve:* tailwind"
   },
   "devDependencies": {
+    "eslint": "^8.45.0",
     "json-server": "^0.17.3",
     "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",
@@ -14,7 +15,7 @@
     "prettier-plugin-tailwindcss": "^0.4.1",
     "tailwindcss": "^3.3.3"
   },
-  "name": "project9",
+  "name": "project-js-3",
   "version": "1.0.0",
   "main": "index.js",
   "keywords": [],
