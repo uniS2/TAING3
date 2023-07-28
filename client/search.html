@@ -18,24 +18,26 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
-    <script src="../client/js/include.js" defer></script>
+    <script src="./js/include.js" defer></script>
   </head>
 
-  <body class="search__body">
+  <body class="search__body bg-darkbg1">
     <div w3-include-html="./header.html"></div>
-    <section class="search">
-      <h1 class="a11yHidden">검색</h1>
-      <form action="" method="POST" class="search__form">
-        <fieldset class="search__fieldset">
+    <section class="search mx-auto w-4/5">
+      <h1 class="sr-only">검색</h1>
+      <form
+        action=""
+        method="POST"
+        class="search__form mx-auto border border-y-[50px] border-solid border-white"
+      >
+        <fieldset class="search__fieldset w-full">
           <legend>검색</legend>
-          <div class="search__formGroup">
-            <div class="search__inputGroup">
-              <label for="search" class="a11yHidden search__label">
-                검색어
-              </label>
+          <div class="search__formGroup flex items-center">
+            <div class="search__inputGroup grow">
+              <label for="search" class="search__label sr-only"> 검색어 </label>
               <input
                 id="search"
-                class="search__input"
+                class="search__input w-full border-none bg-transparent py-[15px] text-[32px] text-gray7"
                 type="search"
                 required
                 placeholder="TV프로그램, 영화 제목 및 출연진으로 검색해보세요"
@@ -44,11 +46,11 @@
             </div>
             <button
               type="button"
-              class="button search__button"
+              class="button search__button h-[50px] w-[50px]"
               value="appendText"
               id="appendText"
             >
-              <span class="a11yHidden">검색</span>
+              <span class="sr-only">검색</span>
             </button>
           </div>
         </fieldset>
