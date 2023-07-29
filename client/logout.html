@@ -18,35 +18,39 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+    <script src="./js/logout.js" type="module"></script>
   </head>
-  <body class="bg-black">
+  <body class="bg-black/90">
     <section
-      class="logout fixed bottom-0 top-0 flex w-full items-center justify-center"
+      class="logout__window fixed bottom-0 top-0 flex w-full items-center justify-center"
     >
-      <div class="logout__content w-1/2 max-w-[400px] bg-darkbg2">
-        <div class="logout__body py-9 text-center">
+      <dialog class="logout__modal w-1/2 max-w-[468px] rounded bg-darkbg2 s:w-[90%] s:min-w-[250px]" open>
+        <div class="logout__body text-center">
           <h1 class="sr-only">로그아웃</h1>
           <p
-            class="logout__ask py-[2px] text-[21.328px] leading-[160%] text-white"
+            class="logout__ask pb-[23.4px] pt-[39px] text-[20.7948px] leading-[160%] text-white"
           >
             로그아웃 하시겠습니까?
           </p>
         </div>
-        <div class="logout__links relative">
-          <a
-            href="./landing.html"
-            class="logout__link logout__yes float-left flex w-1/2 cursor-pointer justify-center py-5 font-bold text-gray3"
-            >확인</a
+        <form method="dialog" class="logout__buttons relative items-center">
+          <button
+            class="logout__button logout__yes float-left flex w-[35%] cursor-pointer justify-end py-5 text-[19.5px] font-bold text-gray3 hover:text-white"
           >
-          <span class="logout__vertical absolute top-5 text-gray7"> | </span>
-          <a
-            href="javascript:window.history.back();"
-            class="logout__link logout__no float-left flex w-1/2 cursor-pointer justify-center py-5 text-gray3"
+            확인
+          </button>
+          <span
+            class="logout__vertical absolute left-[50%] top-5 float-none text-gray7"
+          >
+            |
+          </span>
+          <button
+            class="logout__button logout__no float-right flex w-[35%] cursor-pointer justify-start py-5 text-[19.5px] text-gray3 hover:text-white"
           >
             취소
-          </a>
-        </div>
-      </div>
+          </ㅍ>
+        </form>
+      </dialog>
     </section>
   </body>
 </html>
