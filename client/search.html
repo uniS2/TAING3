@@ -19,25 +19,26 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
     <!-- <script src="./js/include.js" defer></script> -->
+    <script src="./js/search.js" type="module"></script>
   </head>
 
   <body class="search__body bg-darkbg1">
     <div w3-include-html="./header.html" class="relative"></div>
-    <section class="search mx-auto w-4/5">
+    <section class="search mx-auto max-h-full w-4/5">
       <h1 class="sr-only">검색</h1>
       <form
         action=""
         method="POST"
-        class="search__form mx-auto border-b my-[50px] border-solid border-white gap-[105px] mb-[105px]"
+        class="search__form mx-auto border-b-[3px] mt-[50px] m:mt-7 m:mb-12 border-solid border-white gap-[105px] mb-[105px]"
       >
         <fieldset class="search__fieldset w-full">
           <legend class="sr-only">검색</legend>
           <div class="search__formGroup flex items-center">
-            <div class="search__inputGroup grow">
+            <div class="search__inputGroup grow m:w-3/4 s:1/2">
               <label for="search" class="search__label sr-only"> 검색어 </label>
               <input
                 id="search"
-                class="search__input w-full border-none bg-transparent py-[15px] text-[32px] text-gray7 outline-none s:text-2xl"
+                class="search__input w-full border-none bg-transparent py-[15px] text-[32px] text-white font-semibold placeholder:text-gray7 placeholder:font-normal outline-none m:text-[26px] m:leading-[150%]"
                 type="search"
                 required
                 placeholder="TV프로그램, 영화 제목 및 출연진으로 검색해보세요"
@@ -56,10 +57,10 @@
         </fieldset>
       </form>
 
-      <div class="search__list Group flex pb-[25px]">
+      <div class="search__list Group flex pb-[52px]">
         <div class="search__recent w-1/2" id="searchRecent">
           <h3
-            class="search__title mb-[30px] flex items-center text-xl text-gray2"
+            class="search__title mt-3 mb-[17px] flex items-center text-[25.9896px] font-medium text-gray2 m:text-2xl"
           >
             최근 검색어
             <span
@@ -74,7 +75,7 @@
             </span>
           </h3>
           <p
-            class="search__history search__none text-[19.2px] text-gray3 block"
+            class="search__history search__none text-[21px] m:text-[19.2px] text-gray3 block my-3"
             id="searchNone"
           >
             검색 내역이 없습니다.
@@ -86,93 +87,69 @@
         </div>
         <div class="search__realtime w-1/2">
           <h3
-            class="search__title mb-[30px] flex items-center text-xl text-gray2 text-[28.43px] font-semibold lending-[42.645px]"
+            class="search__title mb-[26px] flex items-center text-gray2 text-[26px] lending-[54.6109px] font-bold m:text-2xl"
           >
             실시간 인기 검색어
           </h3>
-          <ol class="search__lists text-gray3 text-[19.2px]">
-            <li class="search__list pb-[25px]">
-              <a href="./" class="search__link">
-                <span class="search__rank w-[30px] inline-block text-red_login">1</span>재벌집 막내아들
+          <ol class="search__lists flex flex-col gap-y-4 text-gray3 text-[20.7948px] m:text-[19.2px]">
+            <li class="search__list">
+              <a href="./" class="search__link ">
+                <span class="search__rank w-[30px] inline-block text-red_login">1</span><span class="hover:text-white">재벌집 막내아들</span>
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
-                <span class="search__rank w-[30px] inline-block text-red_login">2</span>미스터트롯2: 새로운 전설의
-                시작
+                <span class="search__rank w-[30px] inline-block text-red_login">2</span><span class="hover:text-white">미스터트롯2: 새로운 전설의
+                  시작</span>
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">3</span>유 퀴즈 온 더 블럭
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">4</span>대행사
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">5</span>SHOW ME THE MONEY 11
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">6</span>미씽: 그들이 있었다2
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">7</span>술꾼도시여자들2
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">8</span>캐나다 체크인
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">9</span>미씽: 그들이 있었다 - 그들을
                 다 만나다
               </a>
             </li>
-            <li class="search__list pb-[25px]">
+            <li class="search__list">
               <a href="./" class="search__link">
                 <span class="search__rank w-[30px] inline-block text-red_login">10</span>술꾼도시여자들
               </a>
             </li>
           </ol>
-          <time class="search__time text-gray5 " datetime="2022-12-24T03:04:00">
+          <time class="search__time text-gray5 text-[19.2px] block mt-4" datetime="2022-12-24T03:04:00">
             2022.12.24 오전 03:04 기준
           </time>
         </div>
       </div>
     </section>
-
-    <script>
-      const btnClick = document.getElementById("appendText");
-
-      btnClick.addEventListener("click", () => {
-        const ulNode = document.getElementById("searchRecent");
-        const liNode = document.createElement("p");
-        const btn = document.createElement("button");
-
-        liNode.textContent = document.getElementById("search").value;
-        ulNode.appendChild(liNode).classList.add("search__history");
-        liNode.appendChild(btn).classList.add("search__erase");
-
-        var none = document.getElementById("searchNone");
-        let eraseAll = document.getElementById("eraseAll");
-
-        if (none.style.display == "") {
-          none.style.display = "none";
-        }
-        if (eraseAll.style.display == "") {
-          eraseAll.style.display = "block";
-        }
-      });
-    </script>
   </body>
 </html>
