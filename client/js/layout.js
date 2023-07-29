@@ -14,7 +14,7 @@ const swiper = new Swiper(".swiper", {
     // bulletActiveClass: "is-active",
     renderBullet: function (index, className) {
       return /* html */ `
-      <span class="swiper-pagination-bullet bg-white mr-4" 
+      <span class="swiper-pagination-bullet bg-white mr-4" style="background-color: white;"
       tabindex="${index}" role="button" aria-label="Go to slide ${index}"></span>
       `;
     },
@@ -26,18 +26,18 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-swiper
-  .on("slideChange", function (e) {
-    //console.log(e.realIndex);
-    document
-      .querySelector(".swiper-pagination-bullet")
-      .classList.remove("is-active");
-  })
-  .on("slideChangeTransitionEnd", function (e) {
-    document
-      .querySelector(".swiper-pagination-bullet")
-      .classList.add("is-active");
-  });
+// swiper
+//   .on("slideChange", function (e) {
+//     //console.log(e.realIndex);
+//     document
+//       .querySelector(".swiper-pagination-bullet")
+//       .classList.remove("is-active");
+//   })
+//   .on("slideChangeTransitionEnd", function (e) {
+//     document
+//       .querySelector(".swiper-pagination-bullet")
+//       .classList.add("is-active");
+//   });
 
 // document.querySelector(".pause").addEventListener("click", pause);
 
