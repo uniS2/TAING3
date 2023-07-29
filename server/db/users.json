@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "id": "likelion01",
+      "password": "likelion01**",
+      "uniqueID": "42307118970030766",
+      "email": "likelion01@euid.com",
+      "agree": {
+        "toOthers": true,
+        "marketing": {
+          "sms": true,
+          "email": true
+        }
+      },
+      "profile": {
+        "슬비님": "profile_1.png",
+        "범쌤": "profile_3.png",
+        "야무": "profile_2.png",
+        "이듬": "profile_4.png"
+      }
+    },
+    {
+      "id": "likelion02",
+      "password": "likelion02**",
+      "uniqueID": "42307118970030766",
+      "email": "likelion02@naver.com",
+      "agree": {
+        "toOthers": true,
+        "marketing": {
+          "sms": false,
+          "email": true
+        }
+      },
+      "profile": {
+        "정": "",
+        "진": "",
+        "이": "",
+        "효": ""
+      }
+    },
+    {
+      "id": "",
+      "password": "",
+      "uniqueID": "",
+      "email": "",
+      "agree": {
+        "toOthers": false,
+        "marketing": {
+          "sms": false,
+          "email": false
+        }
+      },
+      "profile": {
+        "profile": ""
+      }
+    }
+  ]
+}
