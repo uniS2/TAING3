@@ -18,26 +18,26 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
-    <script src="./js/include.js" defer></script>
+    <!-- <script src="./js/include.js" defer></script> -->
   </head>
 
   <body class="search__body bg-darkbg1">
-    <div w3-include-html="./header.html"></div>
+    <div w3-include-html="./header.html" class="relative"></div>
     <section class="search mx-auto w-4/5">
       <h1 class="sr-only">검색</h1>
       <form
         action=""
         method="POST"
-        class="search__form mx-auto border border-y-[50px] border-solid border-white"
+        class="search__form mx-auto border-b my-[50px] border-solid border-white gap-[105px] mb-[105px]"
       >
         <fieldset class="search__fieldset w-full">
-          <legend>검색</legend>
+          <legend class="sr-only">검색</legend>
           <div class="search__formGroup flex items-center">
             <div class="search__inputGroup grow">
               <label for="search" class="search__label sr-only"> 검색어 </label>
               <input
                 id="search"
-                class="search__input w-full border-none bg-transparent py-[15px] text-[32px] text-gray7"
+                class="search__input w-full border-none bg-transparent py-[15px] text-[32px] text-gray7 outline-none s:text-2xl"
                 type="search"
                 required
                 placeholder="TV프로그램, 영화 제목 및 출연진으로 검색해보세요"
@@ -46,7 +46,7 @@
             </div>
             <button
               type="button"
-              class="button search__button h-[50px] w-[50px]"
+              class="button search__button h-[50px] w-[50px] bg-[url('/image/search/Search.png')]"
               value="appendText"
               id="appendText"
             >
@@ -56,16 +56,27 @@
         </fieldset>
       </form>
 
-      <div class="search__listGroup">
-        <div class="search__recent" id="searchRecent">
-          <h3 class="search__title">
+      <div class="search__list Group flex pb-[25px]">
+        <div class="search__recent w-1/2" id="searchRecent">
+          <h3
+            class="search__title mb-[30px] flex items-center text-xl text-gray2"
+          >
             최근 검색어
-            <span class="search__eraseAll" id="eraseAll">
+            <span
+              class="search__eraseAll ml-5 text-base text-gray6 hidden"
+              id="eraseAll"
+            >
               모두 지우기
-              <button class="search__erase button"></button>
+              <button
+                class="search__erase button ml-[3px] bg-center bg-no-repeat align-text-bottom"
+                "
+              ><img src="/image/search/Device=Desktop, Type=Filled.png" /></button>
             </span>
           </h3>
-          <p class="search__history search__none" id="searchNone">
+          <p
+            class="search__history search__none text-[19.2px] text-gray3 block"
+            id="searchNone"
+          >
             검색 내역이 없습니다.
           </p>
           <!-- <p class="search__history">
@@ -73,63 +84,67 @@
             <button class="search__erase button"></button>
           </p> -->
         </div>
-        <div class="search__realtime">
-          <h3 class="search__title">실시간 인기 검색어</h3>
-          <ol class="search__lists">
-            <li class="search__list">
+        <div class="search__realtime w-1/2">
+          <h3
+            class="search__title mb-[30px] flex items-center text-xl text-gray2 text-[28.43px] font-semibold lending-[42.645px]"
+          >
+            실시간 인기 검색어
+          </h3>
+          <ol class="search__lists text-gray3 text-[19.2px]">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">1</span>재벌집 막내아들
+                <span class="search__rank w-[30px] inline-block text-red_login">1</span>재벌집 막내아들
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">2</span>미스터트롯2: 새로운 전설의
+                <span class="search__rank w-[30px] inline-block text-red_login">2</span>미스터트롯2: 새로운 전설의
                 시작
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">3</span>유 퀴즈 온 더 블럭
+                <span class="search__rank w-[30px] inline-block text-red_login">3</span>유 퀴즈 온 더 블럭
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">4</span>대행사
+                <span class="search__rank w-[30px] inline-block text-red_login">4</span>대행사
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">5</span>SHOW ME THE MONEY 11
+                <span class="search__rank w-[30px] inline-block text-red_login">5</span>SHOW ME THE MONEY 11
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">6</span>미씽: 그들이 있었다2
+                <span class="search__rank w-[30px] inline-block text-red_login">6</span>미씽: 그들이 있었다2
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">7</span>술꾼도시여자들2
+                <span class="search__rank w-[30px] inline-block text-red_login">7</span>술꾼도시여자들2
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">8</span>캐나다 체크인
+                <span class="search__rank w-[30px] inline-block text-red_login">8</span>캐나다 체크인
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">9</span>미씽: 그들이 있었다 - 그들을
+                <span class="search__rank w-[30px] inline-block text-red_login">9</span>미씽: 그들이 있었다 - 그들을
                 다 만나다
               </a>
             </li>
-            <li class="search__list">
+            <li class="search__list pb-[25px]">
               <a href="./" class="search__link">
-                <span class="search__rank">10</span>술꾼도시여자들
+                <span class="search__rank w-[30px] inline-block text-red_login">10</span>술꾼도시여자들
               </a>
             </li>
           </ol>
-          <time class="search__time" datetime="2022-12-24T03:04:00">
+          <time class="search__time text-gray5 " datetime="2022-12-24T03:04:00">
             2022.12.24 오전 03:04 기준
           </time>
         </div>
