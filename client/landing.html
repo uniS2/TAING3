@@ -10,7 +10,13 @@
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
-    />
+      />
+      <!-- swiper -->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link
       rel="stylesheet"
       as="style"
@@ -19,12 +25,31 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+
+   
+    <script src="./js/landing.js" defer></script>
     <!-- <script src="./js/include.js" defer></script> -->
   </head>
+
   <body class="landing__body bg-black text-white">
-    <div w3-include-html="./header.html"></div>
+    <!-- header 따로 추가 -->
+    <header
+    id="scrollHeader"
+    class="header fixed left-0 top-0 z-[1] flex items-center w-[100vw]  justify-between s:gap-[16px] m:gap-[24px] l:gap-[40px] bg-gradient-to-b from-black2 to-transparent s:px-[16px] s:py-[11.5 px] m:px-[40px] m:py-[16px] l:px-[70px] l:py-[29px] text-white"
+  >
+    <h1 class="logo h-[36px] w-[132px] s:w-[80px]">
+      <a
+        href="./"
+        class="logo__link block h-full w-full bg-[center_100%] bg-no-repeat s:bg-[length:46px_15px] s:bg-center  m:bg-center l:bg-center m:bg-[length:77px_24px] bg-[url('/image/header/Logo_1.png')]"
+        
+        aria-label="TAING"
+      ></a>
+    </h1>
+    </header>
+    <!-- <header w3-include-html="./header.html"></header> -->
     <main>
-      <section class="section1 s:h-[379px] m:h-[550px] l:h-[1100px] w-[100%]  bg-cover bg-bottom bg-no-repeat  min-h-full flex flex-col justify-center items-center" style="background-image: url('./image/landing/backgorund-1.png')">
+      <section class="section1 s:h-[379px] m:h-[550px] l:h-[1100px] w-[100%]  bg-cover bg-bottom bg-no-repeat  min-h-full flex flex-col justify-center items-center bg-[url('/image/landing/backgorund-1.png')]" 
+      >
         <div class="section1__container text-center">
           <div class="section1__textbox  flex flex-col items-center s:mt-[60px] m:mt-[90px] l:mt-[155px] ">
             <h2 class="section1__title  s:text-[21px] m:text-[34px] l:text-[50px] font-bold leading-snug">
@@ -35,7 +60,7 @@
             <h3 class="section1__subtitle  s:text-[12px] m:text-[20px] text-[28.5px] text-gray2 font-semibold leading-normal s:mt-[10px] s:mb-[30px] mt-[20px] mb-[60px]">
               간편하게 가입하고, 원하실 때 해지할 수 있어요.
             </h3>
-            <a  href="./login.html " class="s:pl-[34px] m:pl-[35px] l:pl-[45px] s:w-[210px] s:text-[13px] s:h-[34px]  m:w-[430px]  m:h-[65px] m:text-[23px]  p-[19px] flex items-center justify-center leading-8 join__button text-[28.5px] rounded font-semibold h-[80px] w-[506px]  bg-no-repeat s:bg-[length:30px_30px] m:bg-[length:57px_57px] l:bg-[length:70px_70px]  bg-left-top bg-[#E93945] text-white   " style="background-image: url('./image/landing/Simbol.svg')"
+            <a  href="./login.html " class="s:pl-[34px] m:pl-[35px] l:pl-[45px] s:w-[210px] s:text-[13px] s:h-[34px]  m:w-[430px]  m:h-[65px] m:text-[23px]  p-[19px] flex items-center justify-center leading-8 join__button text-[28.5px] rounded font-semibold h-[80px] w-[506px]  bg-no-repeat s:bg-[length:30px_30px] m:bg-[length:57px_57px] l:bg-[length:70px_70px]  bg-left-top bg-[#E93945] text-white bg-[url('/image/landing/Simbol.svg')]  " 
               >새로워진 타잉을 만나보세요!</a>
             
           </div>
@@ -48,76 +73,76 @@
             <h3 class="section2__subtitle s:text-[16px] m:text-[20px]  text-[28.5px] text-gray2 font-semibold leading-normal mt-[20px]">오리지널 콘텐츠를 만나보세요!</h3>
             <p class="section2__summary s:text-[16px] m:text-[20px]  text-gray2 text-[21.3px] leading-relaxed font-normal">차별화된 웰메이드 오리지널 콘텐츠</p>
           </div >
-          <div class="section2__imgbox flex justify-center gap-[21px] s:mt-[26px] m:mt-[32px] l:mt-[70px]">
-            <div class='shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="./image/landing/desktop/image47.png"
-                />
-                <source
-                  media="(max-width: 1279px)"
-                  srcset="./image/landing/mobile/image47.png"
-                />
-                <!-- img tag for browsers that do not support picture element -->
-                <img src="./image/landing/desktop/image47.png" alt="러브캐쳐" />
-              </picture>
+          <div class="swiper1 s:w-[277px] s:h-[400px] m:w-[320px] m:h-[480px] l:w-[907px] l:h-[510px]">
+            <div class="swiper-wrapper translate-x-1000px s:gap-3 m:gap-4 l:gap-6 section2__imgbox s:mt-[26px] m:mt-[32px] l:mt-[70px]">
+              <div class='swiper-slide  shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image47.png"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image47.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img src="./image/landing/desktop/image47.png" alt="러브캐쳐" />
+                </picture>
+              </div>
+              <div class='swiper-slide   shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image42.png"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image42.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img src="./image/landing/desktop/image42.png" alt="보물찾기" />
+                </picture>
+              </div>
+              <div class='swiper-slide  shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image49.png"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image39.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img
+                    src="./image/landing/desktop/image49_big.png"
+                    alt="푸드 크로니클"
+                  />
+                </picture>
+              </div>
+              <div class='swiper-slide shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image48.png"
+                    class="w-[] h-[]"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image41.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img
+                    src="./image/landing/desktop/image48.png"
+                    alt="몸값"
+                  />
+                </picture>
+              </div>
+              
             </div>
-            <div class='shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="./image/landing/desktop/image42.png"
-                />
-                <source
-                  media="(max-width: 1279px)"
-                  srcset="./image/landing/mobile/image42.png"
-                />
-                <!-- img tag for browsers that do not support picture element -->
-                <img src="./image/landing/desktop/image42.png" alt="보물찾기" />
-              </picture>
-            </div>
-            <div class='shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="./image/landing/desktop/image49.png"
-                />
-                <source
-                  media="(max-width: 1279px)"
-                  srcset="./image/landing/mobile/image39.png"
-                />
-                <!-- img tag for browsers that do not support picture element -->
-                <img
-                  src="./image/landing/desktop/image49_big.png"
-                  alt="푸드 크로니클"
-                />
-              </picture>
-            </div>
-            <div class='shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
-              <picture>
-                <source
-                  media="(min-width: 1280px)"
-                  srcset="./image/landing/desktop/image48.png"
-                />
-                <source
-                  media="(max-width: 1279px)"
-                  srcset="./image/landing/mobile/image41.png"
-                />
-                <!-- img tag for browsers that do not support picture element -->
-                <img
-                  src="./image/landing/desktop/image48.png"
-                  alt="몸값"
-                />
-              </picture>
-            </div>
-            <!-- <div>
-              <picture>
-                <source media="(min-width: 1281px)" srcset="src/image/landing/desktop/image49_big.png">
-                <source media="(max-width: 1280px)" srcset="src/image/landing/mobile/image40.png">
-                <img src="src/image/landing/desktop/image49_big.png" alt="">
-              </picture>
-            </div> -->
+            <!-- 네비게이션 -->
+            <div class="swiper-button-next l:top-[1730px] l:right-[40px] s:top-[770px] s:right-[25px] m:top-[980px] m:right-[40px] l:h-[50px] text-white"></div>
+            <div class="swiper-button-prev l:top-[1730px] l:left-[40px] s:top-[770px] s:left-[25px] m:top-[980px] m:left-[40px] l:h-[50px] text-white"></div>
           </div>
         </div>
       </section>
@@ -284,7 +309,7 @@
           </figure>
           <div class="section4__textbox flex flex-col items-center text-center">
             <h2 class="section4__title s:my-[18px] m:my-[16px] l:my-[34px] s:text-[21px] m:text-[34px] text-[50px] font-bold leading-snug ">지금 시작해보세요</h2>
-            <a href="./login.html" class="s:pl-[34px] m:pl-[35px] l:pl-[45px] s:w-[210px] s:text-[13px] s:h-[34px]  m:w-[430px]  m:h-[65px] m:text-[23px]  p-[19px] flex items-center justify-center leading-8 join__button text-[28.5px] rounded font-semibold h-[80px] w-[506px]  bg-no-repeat s:bg-[length:30px_30px] m:bg-[length:57px_57px] l:bg-[length:70px_70px]  bg-left-top bg-[#E93945] text-white   " style="background-image: url('./image/landing/Simbol.svg')"
+            <a href="./login.html" class="s:pl-[34px] m:pl-[35px] l:pl-[45px] s:w-[210px] s:text-[13px] s:h-[34px]  m:w-[430px]  m:h-[65px] m:text-[23px]  p-[19px] flex items-center justify-center leading-8 join__button text-[28.5px] rounded font-semibold h-[80px] w-[506px]  bg-no-repeat s:bg-[length:30px_30px] m:bg-[length:57px_57px] l:bg-[length:70px_70px]  bg-left-top bg-[#E93945] text-white bg-[url('/image/landing/Simbol.svg')]  "
               >새로워진 타잉을 만나보세요!</a
             >
           </div>
@@ -292,5 +317,6 @@
       </section>
     </main>
     <div w3-include-html="./footer.html"></div>
+    
   </body>
 </html>
