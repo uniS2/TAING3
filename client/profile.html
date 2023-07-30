@@ -18,27 +18,28 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+    <script src="./js/profile.js" type="module"></script>
     <!-- <script src="./js/include.js" defer></script> -->
   </head>
   <body class="profile__body h-auto w-full max-w-full bg-black">
     <div w3-include-html="./header.html"></div>
     <section
-      class="profile mx-auto my-[50px] mb-[100px] w-[70%] s:w-[45%] s:min-w-[300px] s:max-w-[623px] m:max-h-[357px] m:w-[90%]"
+      class="profile mx-auto my-[3.125rem] mb-[6.25rem] w-[70%] s:w-[45%] s:min-w-[18.75rem] m:w-[90%]"
     >
       <h1
-        class="profile__title mb-[30px] text-center text-[39px] font-bold leading-[140%] text-white s:text-[28px]"
+        class="profile__title mb-[1.875rem] text-center text-[2.4375rem] font-bold leading-[140%] text-white s:text-[1.75rem]"
       >
         프로필 편집
       </h1>
       <p
-        class="profile__word mb-5 text-center text-[26px] font-semibold leading-[150%] text-gray2 s:mb-10 s:text-[21px]"
+        class="profile__word mb-5 text-center text-[1.625rem] font-semibold leading-[150%] text-gray2 s:mb-10 s:text-[1.3125rem]"
       >
         편집할 프로필을 선택해주세요.
       </p>
       <ul
-        class="profile__lists flex items-center justify-center gap-x-[78px] pt-11 s:flex-wrap s:gap-0 s:pt-0"
+        class="profile__lists flex items-center justify-center gap-x-[4.875rem] pt-11 s:flex-wrap s:gap-0 s:pt-0"
       >
-        <li class="profile__list text-gray3 s:w-[45%] s:pb-6">
+        <!-- <li class="profile__list text-gray3 s:w-[45%] s:pb-6">
           <a
             href="./index.html"
             class="profile__link flex-col items-center gap-y-[15px] text-gray3 s:w-full"
@@ -157,11 +158,11 @@
               효
             </p>
           </a>
-        </li>
+        </li> -->
       </ul>
       <button
         type="button"
-        class="profile__button profile__button__complete m-auto mt-[35px] block w-[240px] cursor-pointer rounded bg-gray1 py-5 text-[21.84px] font-semibold leading-[150%] hover:bg-white s:my-0 s:w-[56%] s:py-3 s:text-[21px]"
+        class="profile__button profile__button__complete m-auto mt-[2.1875rem] block w-[15rem] cursor-pointer rounded border border-solid border-gray6 py-5 text-[1.365rem] font-semibold leading-[150%] text-gray2 hover:border-white hover:text-white"
         onclick="location.href='./profile_select.html'"
       >
         완료
