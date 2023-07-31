@@ -63,15 +63,14 @@
             class="search__title mb-[1.0625rem] mt-3 flex items-center text-[1.6243rem] font-medium text-gray2 m:text-2xl"
           >
             최근 검색어
-            <span
-              class="search__eraseAll ml-5 w-[8.125rem] text-[1.175rem] text-gray6 m:text-base"
-              id="eraseAll"
-            >
+            <button class="search__erase button ml-5 text-gray6 m:text-base">
               모두 지우기
-              <button
-                class="search__erase button bg-[url('./image/search/Device=Desktop, Type=Filled.png')] ml-[1.875rem] bg-center bg-no-repeat align-text-bottom"
-              ></button>
-            </span>
+              <span
+                class="search__eraseAll ml-1 inline-block h-[1.0625rem] w-[1.0625rem] bg-xMark bg-no-repeat align-text-bottom"
+                id="eraseAll"
+              >
+              </span>
+            </button>
           </h3>
           <p
             class="search__history search__none my-3 block text-[1.3125rem] text-gray3 m:text-[1.2rem]"

@@ -43,6 +43,9 @@ module.exports = {
         blue: "#6aaee6",
         silver: "#999",
       },
+      backgroundImage: {
+        xMark: "url('/image/search/Device=Desktop, Type=Filled.png')",
+      },
     },
   },
   plugins: [],
