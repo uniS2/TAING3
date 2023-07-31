@@ -14,7 +14,7 @@ const swiper = new Swiper(".swiper", {
     // bulletActiveClass: "is-active",
     renderBullet: function (index, className) {
       return /* html */ `
-      <span class="swiper-pagination-bullet bg-white mr-4" style="background-color: white;"
+      <span class="swiper-pagination-bullet bg-white mr-0"
       tabindex="${index}" role="button" aria-label="Go to slide ${index}"></span>
       `;
     },
@@ -23,6 +23,35 @@ const swiper = new Swiper(".swiper", {
     // 네비게이션 설정
     nextEl: ".swiper-button-next", // 다음 버튼 클래스명
     prevEl: ".swiper-button-prev", // 이번 버튼 클래스명
+  },
+  a11y: {
+    prevSlideMessage: "이전 슬라이드",
+    nextSlideMessage: "다음 슬라이드",
+    slideLabelMessage:
+      "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+  },
+  on: {
+    init: function () {
+      thisSlide = this;
+      autoPlayBtn = document.querySelector(".wrap-autoplay-control > button");
+      autoPlayBtnIcon = document.querySelector(
+        ".wrap-autoplay-control > button > i",
+      );
+      autoPlayBtn.addEventListener("click", (e) => {
+        autoPlayState = autoPlayBtn.getAttribute("aria-pressed");
+        if (autoPlayState === "false") {
+          autoPlayBtn.setAttribute("aria-pressed", "true");
+          autoPlayBtnIcon.classList.toggle("fa-pause");
+          autoPlayBtnIcon.classList.toggle("fa-play");
+          thisSlide.autoplay.stop();
+        } else if (autoPlayState === "true") {
+          autoPlayBtn.setAttribute("aria-pressed", "false");
+          autoPlayBtnIcon.classList.toggle("fa-pause");
+          autoPlayBtnIcon.classList.toggle("fa-play");
+          thisSlide.autoplay.start();
+        }
+      });
+    },
   },
 });
 
