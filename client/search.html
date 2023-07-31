@@ -18,18 +18,20 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
-    <!-- <script src="./js/include.js" defer></script> -->
+    <script src="./js/include.js" defer></script>
     <script src="./js/search.js" type="module"></script>
   </head>
 
   <body class="search__body bg-darkbg1">
     <div w3-include-html="./header.html" class="relative"></div>
-    <section class="search mx-auto h-auto max-h-full w-4/5 m:min-w-[32.625rem]">
+    <section
+      class="search mx-auto mt-14 h-auto max-h-full w-4/5 m:min-w-[32.625rem]"
+    >
       <h1 class="sr-only">검색</h1>
       <form
         action=""
         method="POST"
-        class="search__form mx-auto mb-[6.5625rem] mt-[3.125rem] gap-[6.5625rem] border-b-[0.1875rem] border-solid border-white m:mb-12 m:mt-7"
+        class="search__form mx-auto mb-[75px] mt-[7.5rem] gap-[6.5625rem] border-b-[0.1875rem] border-solid border-white m:mb-12 m:mt-[68px]"
       >
         <fieldset class="search__fieldset w-full">
           <legend class="sr-only">검색</legend>
@@ -63,10 +65,12 @@
             class="search__title mb-[1.0625rem] mt-3 flex items-center text-[1.6243rem] font-medium text-gray2 m:text-2xl"
           >
             최근 검색어
-            <button class="search__erase button ml-5 text-gray6 m:text-base">
+            <button
+              class="search__eraseAll button ml-5 text-[1.333rem] text-gray6 m:text-base"
+            >
               모두 지우기
               <span
-                class="search__eraseAll ml-1 inline-block h-[1.0625rem] w-[1.0625rem] bg-xMark bg-no-repeat align-text-bottom"
+                class="search__eraseAll ml-1 inline-block h-[1.0625rem] w-[1.0625rem] bg-xFilledMark bg-no-repeat align-text-bottom"
                 id="eraseAll"
               >
               </span>
@@ -78,10 +82,6 @@
           >
             검색 내역이 없습니다.
           </p>
-          <!-- <p class="search__history">
-            Text
-            <button class="search__erase button"></button>
-          </p> -->
         </div>
         <div class="search__realtime w-1/2">
           <h3
@@ -91,117 +91,11 @@
           </h3>
           <ol
             class="search__lists flex flex-col gap-y-4 text-[1.2997rem] text-gray3 m:text-[1.2rem]"
-          >
-            <!--  <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >1</span
-                ><span class="hover:text-white">재벌집 막내아들</span>
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >2</span
-                ><span class="hover:text-white"
-                  >미스터트롯2: 새로운 전설의 시작</span
-                >
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >3</span
-                >유 퀴즈 온 더 블럭
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >4</span
-                >대행사
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >5</span
-                >SHOW ME THE MONEY 11
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >6</span
-                >미씽: 그들이 있었다2
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >7</span
-                >술꾼도시여자들2
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >8</span
-                >캐나다 체크인
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >9</span
-                >미씽: 그들이 있었다 - 그들을 다 만나다
-              </a>
-            </li>
-            <li class="search__list">
-              <a href="./" class="search__link">
-                <span
-                  class="search__rank inline-block w-[1.875rem] text-red_login"
-                  >10</span
-                >술꾼도시여자들
-              </a>
-            </li> -->
-          </ol>
+          ></ol>
           <time class="search__time mt-4 block text-[1.2rem] text-gray5">
           </time>
         </div>
       </div>
     </section>
-    <!--     <script>
-      const btnClick = document.getElementById("appendText");
-
-      btnClick.addEventListener("click", () => {
-        const ulNode = document.getElementById("searchRecent");
-        const liNode = document.createElement("p");
-        const btn = document.createElement("button");
-
-        liNode.textContent = document.getElementById("search").value;
-        ulNode.appendChild(liNode).classList.add("search__history");
-        liNode.appendChild(btn).classList.add("search__erase");
-
-        var none = document.getElementById("searchNone");
-        let eraseAll = document.getElementById("eraseAll");
-
-        if (none.style.display == "") {
-          none.style.display = "none";
-        }
-        if (eraseAll.style.display == "") {
-          eraseAll.style.display = "block";
-        }
-      });
-    </script> -->
   </body>
 </html>
