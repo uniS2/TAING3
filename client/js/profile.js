@@ -9,9 +9,9 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfile(url = "http://localhost:3000/main") {
+async function renderProfile(url = "http://localhost:3000/users") {
   try {
-    const users = (await tiger.get(url)).data.users;
+    const users = (await tiger.get(url)).data;
 
     if (!users.length) return;
     if (!isString(url))
