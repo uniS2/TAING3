@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./client/**/*.html"],
+  content: ["./client/**/*.html", "./client/**/*.js"],
   theme: {
     screens: {
       s: { min: "320px", max: "767px" },
@@ -42,6 +42,9 @@ module.exports = {
         orange: "#eea60a",
         blue: "#6aaee6",
         silver: "#999",
+      },
+      backgroundImage: {
+        xMark: "url('/image/search/Device=Desktop, Type=Filled.png')",
       },
     },
   },

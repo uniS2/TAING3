@@ -3,3 +3,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .current__profile {
+    border: 0.1875rem solid #ffffff;
+    border-radius: 0.25rem;
+  }
+}
