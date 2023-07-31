@@ -52,6 +52,7 @@ function getNow() {
   let minutes = now.getMinutes();
 
   if (hours >= 12) {
+    hours -= 12;
     noon = "오후";
   } else {
     noon = "오전";
