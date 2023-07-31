@@ -19,8 +19,132 @@
     <link rel="stylesheet" href="./css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/include.js" defer></script>
-    <!-- <script src="./js/slider.js" defer></script> -->
+    <script src="./js/slider.js" defer></script>
     <script src="./lib/main.js" type="module"></script>
+    <style>
+      /*
+*
+* Boiler Plate stuff 
+*
+*********************************/
+      :root {
+        --movie-width: 13.5vw;
+        --movie-height: 200px;
+        --arrow-width: 50px;
+        --slider-py: 200px;
+      }
+      /* @media only screen and (max-width: 1000px) {
+        :root {
+          --movie-width: 25vw;
+        }
+      }
+
+      .container {
+        position: relative;
+      } */
+      /*
+*
+* THE SLIDER CONTAINER
+*
+*********************************/
+      .slider {
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: visible;
+        white-space: nowrap;
+        position: relative;
+        /* padding-top: var(--slider-py);
+        padding-bottom: var(--slider-py); */
+      }
+
+      /*
+*
+* SLIDER INDICATORS
+*
+*********************************/
+/*
+*
+* MOVIE ELEMENTS!
+*
+*********************************/
+      .movie {
+        width: var(--movie-width);
+        height: var(--movie-height);
+        display: inline-block;
+        position: relative;
+        color: white;
+        padding: 0 2px;
+        font-size: 0.8rem;
+        transition: all 0.8s ease-in-out;
+      }
+
+      .movie:nth-of-type(1) {
+        /* margin-left: var(--arrow-width); */
+      }
+
+      .movie img {
+        /* object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px; */
+      }
+
+      /* @media only screen and (min-width: 900px) {
+        .movie:hover {
+          transform: scale(1.3);
+          z-index: 2;
+        } */
+        /* Make description visible when movie is hovered */
+        /* .movie:hover > .description {
+          display: block;
+        }
+        .movie:hover > img {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      } */
+
+      /*
+*
+* BUTTONS
+*
+*********************************/
+      .btn-nav {
+        width: var(--arrow-width);
+        height: var(--movie-height);
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        outline: none;
+        border: none;
+        color: white;
+        top: 30%;
+        z-index: 5;
+        /* visibility: hidden; */
+      }
+
+      #moveLeft {
+        left: 0;
+      }
+
+      #moveRight {
+        right: 0;
+      }
+
+      @media only screen and (max-width: 900px) {
+        .btn-nav {
+          /* display: none; */
+        }
+      }
+
+      /* @media only screen and (min-width: 901px) {
+        .container:hover .btn-nav,
+        .container:hover .container-indicators {
+          visibility: visible;
+        }
+      } */
+    </style>
   </head>
 
 <body class="bg-black text-white w-full overflow-x-hidden s:overflow-x-hidden m:overflow-x-hidden">
@@ -52,12 +176,15 @@
           <div class="swiper-slide">
             <img
             src="./image/main/desktop/1920-1.jpg" alt="camp zero base one" />
+            <div class="absolute top-[68%] left-[4%]">camp zero base one</div>
           </div>
           <div class="swiper-slide">
             <img src="./image/main/desktop/1920-2.jpg" alt="댄스가스 유랑단" />
+            <div class="absolute top-[68%] left-[4%]">댄스가스 유랑단</div>
           </div>
           <div class="swiper-slide">
             <img src="./image/main/desktop/1920-3.jpg" alt="텐트 밖은 유럽 - 노르웨이편" />
+            <div class="absolute top-[68%] left-[4%]">텐트 밖은 유럽 - 노르웨이편</div>
           </div>
         </div>
       </aritcle>
@@ -98,19 +225,19 @@
         </div>
       </div>
     </section> -->
-    
+    <!-- flex flex-row flex-nowrap -->
     <section class="ml-[30px] w-full overflow-hidden">
       <h1 class="sr-only">추천 영상</h1>
-      <article class="w-full my-[3rem]">
+      <article class="slide-container relative w-[97%] my-[3rem]">
         <h3 class="mb-5 text-xl font-bold">티빙에서 꼭 봐야하는 콘텐츠</h3>
-        <!-- <button type="button" id="moveLeft" class="btn-nav">ᐊ</button> -->
-        <div id="mySlider" class="slider recommend w-[110%] m:w-[140%] s:w-[245%] flex flex-row flex-nowrap">
-          <!-- <figure class="recommend__imgbox__flexbox__contentbox">
+        <button type="button" id="moveLeft" class="btn-nav">ᐊ</button>
+        <div id="mySlider" class="slider recommend w-[115%] m:w-[140%] s:w-[245%]">
+          <!-- <figure class="movie pr-3 transition-transform duration-500 ease-in-out hover:-translate-y-4">
             <img src="./image/main/desktop/img_frame.png" alt="보물찾기" />
             <figcaption>보물찾기</figcaption>
-          </figure>
+          </figure> -->
         </div>
-        <button type="button" id="moveRight" class="btn-nav">ᐅ</button> -->
+        <button type="button" id="moveRight" class="btn-nav">ᐅ</button>
       </article>
       
       <article class="w-full my-[3rem]">
