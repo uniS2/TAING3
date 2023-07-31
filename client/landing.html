@@ -10,7 +10,13 @@
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
-    />
+      />
+      <!-- swiper -->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link
       rel="stylesheet"
       as="style"
@@ -19,256 +25,227 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+
+   
+    <script src="./js/landing.js" defer></script>
     <!-- <script src="./js/include.js" defer></script> -->
   </head>
-  <body class="landing__body">
-    <div w3-include-html="./header.html"></div>
+
+  <body class="landing__body bg-black text-white">
+    <!-- header 따로 추가 -->
+    <header
+    id="scrollHeader"
+    class="header fixed left-0 top-0 z-[1] flex items-center w-[100vw]  justify-between s:gap-[16px] m:gap-[24px] l:gap-[40px] bg-gradient-to-b from-black2 to-transparent s:px-[16px] s:py-[11.5 px] m:px-[40px] m:py-[16px] l:px-[70px] l:py-[29px] text-white"
+  >
+    <h1 class="logo h-[36px] w-[132px] s:w-[80px]">
+      <a
+        href="./"
+        class="logo__link block h-full w-full bg-[center_100%] bg-no-repeat s:bg-[length:46px_15px] s:bg-center  m:bg-center l:bg-center m:bg-[length:77px_24px] bg-[url('/image/header/Logo_1.png')]"
+        
+        aria-label="TAING"
+      ></a>
+    </h1>
+    </header>
+    <!-- <header w3-include-html="./header.html"></header> -->
     <main>
-      <section class="section1">
-        <div class="section1__container">
-          <div class="section1__textbox  flex flex-col items-center pt-[160px] ">
-            <h2 class="section1__title text-[52px] font-bold text-center">
+      <section class="section1 s:h-[379px] m:h-[550px] l:h-[1100px] w-[100%]  bg-cover bg-bottom bg-no-repeat  min-h-full flex flex-col justify-center items-center bg-[url('/image/landing/backgorund-1.png')]" 
+      >
+        <div class="section1__container text-center">
+          <div class="section1__textbox  flex flex-col items-center s:mt-[60px] m:mt-[90px] l:mt-[130px] ">
+            <h2 class="section1__title  s:text-[21px] m:text-[34px] l:text-[50px] font-bold leading-snug">
               <span class="block ">타잉 오리지널 콘텐츠,</spanclass=text->
               <span class="block">방송, 영화, 해외시리즈까지!</span>
               <span class="block">재미를 플레이해보세요.</span>
             </h2>
-            <h3 class="section1__subtitle text-[28.5px] font-semibold block mx-auto pt-[20px] pb-[60px]">
+            <h3 class="section1__subtitle  s:text-[12px] m:text-[20px] text-[28.5px] text-gray2 font-semibold leading-normal s:mt-[10px] s:mb-[30px] mt-[20px] mb-[60px]">
               간편하게 가입하고, 원하실 때 해지할 수 있어요.
             </h3>
-            <a  href="./login.html " class="join__button text-[28.5px] font-medium h-[80px] w-[506px] text-center bg-[url(./landing/Simbol.svg)] bg-cover bg-[center_top_35%] bg-[#E93945] text-white py-4 "
-              >새로워진 타잉을 만나보세요!</a
-            >
-          </div>
-          <img src="./image/landing/backgorund-1.png" alt="" />
-        </div>
-      </section>
-      <section class="section2">
-        <div class="section2__container">
-          <div class="section2__textbox">
-            <h2 class="section2__title">타잉에만 있는 재미</h2>
-            <h3 class="section2__subtitle">오리지널 콘텐츠를 만나보세요!</h3>
-            <p class="section2__summary">차별화된 웰메이드 오리지널 콘텐츠</p>
-          </div>
-          <div class="section2__imgbox">
-            <div>
-              <picture>
-                <source
-                  media="(min-width: 1281px)"
-                  srcset="./image/landing/desktop/image47.png"
-                />
-                <source
-                  media="(max-width: 1280px)"
-                  srcset="./image/landing/mobile/image47.png"
-                />
-                <!-- img tag for browsers that do not support picture element -->
-                <img src="./image/landing/desktop/image47.png" alt="러브캐쳐" />
-              </picture>
-            </div>
-            <div>
-              <picture>
-                <source
-                  media="(min-width: 1281px)"
-                  srcset="./image/landing/desktop/image42.png"
-                />
-                <source
-                  media="(max-width: 1280px)"
-                  srcset="./image/landing/mobile/image47.png"
-                />
-                <!-- img tag for browsers that do not support picture element -->
-                <img src="./image/landing/desktop/image42.png" alt="보물찾기" />
-              </picture>
-            </div>
-            <div>
-              <picture>
-                <source
-                  media="(min-width: 1281px)"
-                  srcset="./image/landing/desktop/image49.png"
-                />
-                <source
-                  media="(max-width: 1280px)"
-                  srcset="./image/landing/mobile/image47.png"
-                />
-                <!-- img tag for browsers that do not support picture element -->
-                <img
-                  src="./image/landing/desktop/image49_big.png"
-                  alt="푸드 크로니클"
-                />
-              </picture>
-            </div>
-            <!-- <div>
-              <picture>
-                <source media="(min-width: 1281px)" srcset="src/image/landing/desktop/image49_big.png">
-                <source media="(max-width: 1280px)" srcset="src/image/landing/mobile/image40.png">
-                <img src="src/image/landing/desktop/image49_big.png" alt="">
-              </picture>
-            </div> -->
+            <a  href="./login.html " class="s:pl-[34px] m:pl-[35px] l:pl-[45px] s:w-[210px] s:text-[13px] s:h-[34px]  m:w-[430px]  m:h-[65px] m:text-[23px]  p-[19px] flex items-center justify-center leading-8 join__button text-[28.5px] rounded font-semibold h-[80px] w-[506px]  bg-no-repeat s:bg-[length:30px_30px] m:bg-[length:57px_57px] l:bg-[length:70px_70px]  bg-left-top bg-[#E93945] text-white bg-[url('/image/landing/Simbol.svg')]  " 
+              >새로워진 타잉을 만나보세요!</a>
+            
           </div>
         </div>
       </section>
-      <section class="section3">
-        <div class="section3__container">
-          <div class="section3__textbox">
-            <h2 class="section3__title">내가 찾던 재미</h2>
-            <h3 class="section3__subtitle">보고 싶은 콘텐츠를 발견하세요!</h3>
-            <p class="section3__summary">
+      <section class="section2 truncate w-full min-h-full flex flex-col justify-center items-center">
+        <div class="section2__container text-center">
+          <div class="section2__textbox s:mt-[60px] m:mt-[60px] l:mt-[150px]">
+            <h2 class="section2__title s:text-[21px] m:text-[34px] text-[50px] font-bold leading-snug">타잉에만 있는 재미</h2>
+            <h3 class="section2__subtitle s:text-[16px] m:text-[20px]  text-[28.5px] text-gray2 font-semibold leading-normal mt-[20px]">오리지널 콘텐츠를 만나보세요!</h3>
+            <p class="section2__summary s:text-[16px] m:text-[20px]  text-gray2 text-[21.3px] leading-relaxed font-normal">차별화된 웰메이드 오리지널 콘텐츠</p>
+          </div >
+          <div class="swiper1 s:w-[277px] s:h-[400px] m:w-[320px] m:h-[480px] l:w-[907px] l:h-[510px]">
+            <div class="swiper-wrapper translate-x-1000px s:gap-3 m:gap-4 l:gap-6 section2__imgbox s:mt-[26px] m:mt-[32px] l:mt-[70px]">
+              <div class='swiper-slide  shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image47.png"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image47.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img src="./image/landing/desktop/image47.png" alt="러브캐쳐" />
+                </picture>
+              </div>
+              <div class='swiper-slide   shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image42.png"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image42.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img src="./image/landing/desktop/image42.png" alt="보물찾기" />
+                </picture>
+              </div>
+              <div class='swiper-slide  shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image49.png"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image39.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img
+                    src="./image/landing/desktop/image49_big.png"
+                    alt="푸드 크로니클"
+                  />
+                </picture>
+              </div>
+              <div class='swiper-slide shrink-0 l:w-[906px] m:w-[320px] s:w-[277px]'>
+                <picture>
+                  <source
+                    media="(min-width: 1280px)"
+                    srcset="./image/landing/desktop/image48.png"
+                    class="w-[] h-[]"
+                  />
+                  <source
+                    media="(max-width: 1279px)"
+                    srcset="./image/landing/mobile/image41.png"
+                  />
+                  <!-- img tag for browsers that do not support picture element -->
+                  <img
+                    src="./image/landing/desktop/image48.png"
+                    alt="몸값"
+                  />
+                </picture>
+              </div>
+              
+            </div>
+            <!-- 네비게이션 화살표 버튼-->
+            <div class="swiper-button-next l:top-[1735px] l:right-[40px] s:top-[770px] s:right-[25px] m:top-[985px] m:right-[40px] l:h-[50px] text-white"></div>
+            <div class="swiper-button-prev l:top-[1735px] l:left-[40px] s:top-[770px] s:left-[25px] m:top-[985px] m:left-[40px] l:h-[50px] text-white"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section3 truncate w-full min-h-full  justify-center items-center">
+        <div class="section3__container text-center">
+          <div class="section3__textbox s:mt-[80px] m:mt-[110px] l:mt-[160px]">
+            <h2 class="section3__title  s:text-[21px] m:text-[34px] text-[50px] font-bold leading-snug">내가 찾던 재미</h2>
+            <h3 class="section3__subtitle s:text-[20px] m:text-[22px] text-[28.5px] text-gray2 font-semibold leading-normal mt-[20px]">보고 싶은 콘텐츠를 발견하세요!</h3>
+            <p class="section3__summary s:text-[15px] m:text-[18px]  text-gray2 text-[21.3px] leading-relaxed font-normal">
               최신, 인기 TV프로그램, 영화, 해외시리즈, 파라마운트+ 오리지널 및
               독점
             </p>
           </div>
-          <div class="section3__slidebox">
-            <div class="slide__row__wrap">
-              <div class="slide__row">
-                <figure>
-                  <img src="image/landing/desktop/shuroop.png" alt="슈룹" />
-                </figure>
-                <figure>
-                  <img
-                    src="image/landing/desktop/manager.png"
-                    alt="연예인 매니저로 살아남기"
-                  />
-                </figure>
-                <figure>
-                  <img src="image/landing/desktop/letmein.png" alt="렛미인" />
-                </figure>
-                <figure>
-                  <img src="image/landing/desktop/youquiz.png" alt="유퀴즈" />
-                </figure>
-                <figure>
-                  <img
-                    src="image/landing/desktop/foodcronicle.png"
-                    alt="푸드 크로니클"
-                  />
-                </figure>
+          <div class="section3__slidebox truncate s:mt-[26px] m:mt-[32px] l:mt-[70px]">
+            
+              <!-- 첫번째 줄  -->
+                <div class="swiper2 l:w-[470px] l:h-[270px] m:w-[263px] m:h-[148px] s:w-[220px] s:h-[124px]  slide__row__wrap   ">
+                  <div class="swiper-wrapper ease-linear slide__row ">
+                    <div class="swiper-slide w-auto">
+                      <figure class=" l:w-[470px] l:h-[264px] m:w-[264px] s:w-[220px] shrink-0 ">
+                        <img class="l:rounded-lg m:rounded-md s:rounded-sm" src="image/landing/desktop/shuroop.png" alt="슈룹" />
+                      </figure>
+                    </div>
+                    <div class="swiper-slide ">
+                      <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                        <img
+                          class="l:rounded-lg m:rounded-md s:rounded-sm"
+                          src="image/landing/desktop/manager.png"
+                          alt="연예인 매니저로 살아남기"
+                        />
+                      </figure>
+                    </div>
+                    <div class="swiper-slide ">
+                      <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                        <img class="l:rounded-lg m:rounded-md s:rounded-sm" src="image/landing/desktop/letmein.png" alt="렛미인" />
+                      </figure>
+                    </div>
+                    <div class="swiper-slide ">
+                      <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                        <img class="l:rounded-lg m:rounded-md s:rounded-sm" src="image/landing/desktop/youquiz.png" alt="유퀴즈" />
+                      </figure>
+                    </div>
+                    <div class="swiper-slide ">
+                      <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                        <img
+                          class="l:rounded-lg m:rounded-md s:rounded-sm"
+                          src="image/landing/desktop/foodcronicle.png"
+                          alt="푸드 크로니클"
+                        />
+                      </figure>
+                    </div>
+                  </div>
+
+                </div>
+              <!-- 두번째 줄 -->
+              <div class="swiper3 l:w-[470px] l:h-[270px] m:w-[263px] m:h-[148px] s:w-[220px] s:h-[124px] slide__row__wrap  translate-x-[90px] mt-[10px] s:mt-[11px] ">
+                <div class="swiper-wrapper ease-linear slide__row ">
+                  <div class="swiper-slide w-auto">
+                    <figure class=" l:w-[470px] l:h-[264px] m:w-[264px] s:w-[220px] shrink-0 ">
+                      <img class="l:rounded-lg m:rounded-md s:rounded-sm" src="image/landing/desktop/letmein.png" alt="렛미인" />
+                    </figure>
+                  </div>
+                  <div class="swiper-slide ">
+                    <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                      <img class="l:rounded-lg m:rounded-md s:rounded-sm"
+                        src="image/landing/desktop/youquiz.png"
+                        alt="유퀴즈"
+                      />
+                    </figure>
+                  </div>
+                  <div class="swiper-slide ">
+                    <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                      <img class="l:rounded-lg m:rounded-md s:rounded-sm" src="image/landing/desktop/foodcronicle.png" alt="푸드 크로니클" />
+                    </figure>
+                  </div>
+                  <div class="swiper-slide ">
+                    <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                      <img class="l:rounded-lg m:rounded-md s:rounded-sm" src="image/landing/desktop/shuroop.png" alt="슈룹" />
+                    </figure>
+                  </div>
+                  <div class="swiper-slide ">
+                    <figure class=" l:w-[470px]  m:w-[264px] s:w-[220px] shrink-0">
+                      <img class="l:rounded-lg m:rounded-md s:rounded-sm"
+                        src="image/landing/desktop/manager.png"
+                        alt="연예인 매니저로 살아남기"
+                      />
+                    </figure>
+                  </div>
+                </div>
+
               </div>
-              <div class="slide__row">
-                <figure>
-                  <img src="image/landing/desktop/shuroop.png" alt="슈룹" />
-                </figure>
-                <figure>
-                  <img
-                    src="image/landing/desktop/manager.png"
-                    alt="연예인 매니저로 살아남기"
-                  />
-                </figure>
-                <figure>
-                  <img src="image/landing/desktop/letmein.png" alt="렛미인" />
-                </figure>
-                <figure>
-                  <img src="image/landing/desktop/youquiz.png" alt="유퀴즈" />
-                </figure>
-                <figure>
-                  <img
-                    src="image/landing/desktop/foodcronicle.png"
-                    alt="푸드 크로니클"
-                  />
-                </figure>
-              </div>
-              <div class="slide__row">
-                <figure>
-                  <img src="image/landing/desktop/shuroop.png" alt="슈룹" />
-                </figure>
-                <figure>
-                  <img
-                    src="image/landing/desktop/manager.png"
-                    alt="연예인 매니저로 살아남기"
-                  />
-                </figure>
-                <figure>
-                  <img src="image/landing/desktop/letmein.png" alt="렛미인" />
-                </figure>
-                <figure>
-                  <img src="image/landing/desktop/youquiz.png" alt="유퀴즈" />
-                </figure>
-                <figure>
-                  <img
-                    src="image/landing/desktop/foodcronicle.png"
-                    alt="푸드 크로니클"
-                  />
-                </figure>
-              </div>
-            </div>
-            <div class="slide__row__wrap">
-              <div class="slide__row">
-                <figure>
-                  <img
-                    src="image/landing/desktop/foodcronicle.png"
-                    alt="푸드 크로니클"
-                  />
-                </figure>
-                <figure>
-                  <img src="image/landing/desktop/youquiz.png" alt="유퀴즈" />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/letmein.png" alt="렛미인" />
-                </figure>
-                <figure>
-                  <img
-                    src="./image/landing/desktop/manager.png"
-                    alt="연예인 매니저로 살아남기"
-                  />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/shuroop.png" alt="슈룹" />
-                </figure>
-              </div>
-              <div class="slide__row">
-                <figure>
-                  <img
-                    src="./image/landing/desktop/foodcronicle.png"
-                    alt="푸드 크로니클"
-                  />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/youquiz.png" alt="유퀴즈" />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/letmein.png" alt="렛미인" />
-                </figure>
-                <figure>
-                  <img
-                    src="./image/landing/desktop/manager.png"
-                    alt="연예인 매니저로 살아남기"
-                  />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/shuroop.png" alt="슈룹" />
-                </figure>
-              </div>
-              <div class="slide__row">
-                <figure>
-                  <img
-                    src="./image/landing/desktop/foodcronicle.png"
-                    alt="푸드 크로니클"
-                  />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/youquiz.png" alt="유퀴즈" />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/letmein.png" alt="렛미인" />
-                </figure>
-                <figure>
-                  <img
-                    src="image/landing/desktop/manager.png"
-                    alt="연예인 매니저로 살아남기"
-                  />
-                </figure>
-                <figure>
-                  <img src="./image/landing/desktop/shuroop.png" alt="슈룹" />
-                </figure>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
-      <section class="section4">
-        <div class="section4__container">
-          <figure class="section4__logo">
+      <section class="section4 w-full min-h-full flex flex-col justify-center items-center  ">
+        <div class="section4__container text-center  s:my-[90px] m:my-[150px] l:my-[250px]">
+          <figure class="section4__logo block mx-auto s:w-[82px] m:w-[160px] l:w-[279px] ">
             <img src="./image/landing/Logo_2.png" alt="" />
           </figure>
-          <div class="section4__textbox">
-            <h2 class="section4__title">지금 시작해보세요</h2>
-            <a href="./login.html" class="join__button"
+          <div class="section4__textbox flex flex-col items-center text-center">
+            <h2 class="section4__title s:my-[18px] m:my-[16px] l:my-[34px] s:text-[21px] m:text-[34px] text-[50px] font-bold leading-snug ">지금 시작해보세요</h2>
+            <a href="./login.html" class="s:pl-[34px] m:pl-[35px] l:pl-[45px] s:w-[210px] s:text-[13px] s:h-[34px]  m:w-[430px]  m:h-[65px] m:text-[23px]  p-[19px] flex items-center justify-center leading-8 join__button text-[28.5px] rounded font-semibold h-[80px] w-[506px]  bg-no-repeat s:bg-[length:30px_30px] m:bg-[length:57px_57px] l:bg-[length:70px_70px]  bg-left-top bg-[#E93945] text-white bg-[url('/image/landing/Simbol.svg')]  "
               >새로워진 타잉을 만나보세요!</a
             >
           </div>
@@ -276,5 +253,6 @@
       </section>
     </main>
     <div w3-include-html="./footer.html"></div>
+    
   </body>
 </html>

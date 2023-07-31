@@ -1,79 +1,136 @@
-<header id="scrollHeader" class="header">
-  <h1 class="logo">
-    <a href="./" class="logo__link" aria-label="TAING"></a>
-  </h1>
-  <!-- //logo -->
-  <nav class="menu">
-    <h2 class="a11yHidden">메인 메뉴</h2>
-    <ul class="menu__list">
-      <li class="menu__item">
-        <a href="./" class="menu__link" tabindex="-1"
-          ><span class="icon"><img src="./image/header/Live.svg" /></span
-          >실시간</a
-        >
-      </li>
-      <li class="menu__item">
-        <a href="./" class="menu__link" tabindex="-1">TV프로그램</a>
-      </li>
-      <li class="menu__item">
-        <a href="./" class="menu__link" tabindex="-1">영화</a>
-      </li>
-      <li class="menu__item">
-        <a href="./" class="menu__link" tabindex="-1"
-          ><span class="icon"
-            ><img class="icon" src="./image/header/Paramount.svg" /></span
-          ><span class="a11yHidden">paramount+</span></a
-        >
-      </li>
-    </ul>
-  </nav>
-  <!-- //navigation -->
-  <form action="" method="POST" class="searchForm">
-    <fieldset>
-      <legend>검색</legend>
-      <div class="searchForm__group">
-        <a href="./search.html" class="searchForm__button"
-          ><span class="a11yHidden">검색</span></a
-        >
-        <!-- <button type="submit" class="searchForm__button" onclick="window.open('/search.html')" target="_blank"><span class="a11yHidden">검색</span></button> -->
-      </div>
-    </fieldset>
-  </form>
-  <!-- //searchForm : 누르면 검색창 페이지로 이동 -->
-  <div class="userInfo">
-    <button type="button" class="userInfo__button"></button>
-    <div class="userInfo__content">
-      <div class="userInfo__profile">
-        <figure class="userInfo__profile__img">
-          <img src="./image/header/Profile.svg" alt="프로필 이미지" />
-        </figure>
-        <div class="userInfo__profile__info">
-          <p class="profile__name">김멋사</p>
-          <a href="./profile_select.html" class="profileChange__button"
-            >프로필 전환 ></a
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAING - 랜딩 페이지</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+    <!-- <script src="./js/include.js" defer></script> -->
+  </head>
+
+  <header
+    id="scrollHeader"
+    class="header fixed left-0 top-0 z-[1] flex items-center w-[100vw]  justify-between s:gap-[16px] m:gap-[24px] l:gap-[40px] bg-gradient-to-b from-black2 to-transparent s:px-[16px] s:py-[11.5 px] m:px-[40px] m:py-[16px] l:px-[70px] l:py-[29px] text-white"
+  >
+    <h1 class="logo h-[36px] w-[132px] s:w-[80px]">
+      <a
+        href="./"
+        class="logo__link block h-full w-full bg-[center_100%] bg-no-repeat s:bg-[length:46px_15px] s:bg-center  m:bg-center l:bg-center m:bg-[length:77px_24px] bg-[url('/image/header/Logo_1.png')]"
+        
+        aria-label="TAING"
+      ></a>
+    </h1>
+    <!-- //logo -->
+    <nav class="s:hidden">
+      <h2 class="sr-only">메인 메뉴</h2>
+      <ul class="menu__list flex items-center justify-between l:gap-[52px] m:gap-[29px]">
+        <li class="menu__item shrink-0 flex-grow">
+          <a
+            href="./"
+            class="menu__link flex items-center gap-2 l:text-[16px] m:text-[13px] text-gray2"
+            tabindex="-1"
+            ><span class="icon translate-y-[-3px]  "
+              ><img class="m:h-[27px] m:translate-y-[0.3px] block" src="./image/header/Live.svg" /></span
+            >실시간</a
           >
+        </li>
+        <li class="menu__item shrink-0 flex-grow">
+          <a
+            href="./"
+            class="menu__link block l:text-[16px] m:text-[13px] text-gray2"
+            tabindex="-1"
+            >TV프로그램</a
+          >
+        </li>
+        <li class="menu__item shrink-0 flex-grow">
+          <a
+            href="./"
+            class="menu__link block l:text-[16px] m:text-[13px] text-gray2"
+            tabindex="-1"
+            >영화</a
+          >
+        </li>
+        <li class="menu__item shrink-0 flex-grow">
+          <a
+            href="./"
+            class="menu__link block h-[34px] w-[122px] text-[16px] text-gray2"
+            tabindex="-1"
+            ><span class="icon"
+              ><img class="icon m:h-[27px] m:translate-y-[0.3px] block" src="./image/header/Paramount.svg" /></span
+            ><span class="sr-only">paramount+</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- //navigation -->
+    <form action="" method="POST" class="searchForm ml-auto">
+      <fieldset>
+        <legend class="sr-only">검색</legend> 
+          <a
+            href="./search.html"
+            class="searchForm__button cursor-pointer border-none p-0 block l:h-[2.4rem] l:w-[2.4rem] bg-[center_100%] bg-no-repeat opacity-70 s:bg-center m:bg-center l:bg-center bg-cover s:w-[20px] s:h-[20px] m:w-[28px] m:h-[28px] bg-[url('/image/header/Search.svg')] "
+            
+            ><span class="sr-only">검색</span></a
+          >
+          <!-- <button type="submit" class="searchForm__button cursor-pointer border-none p-0" onclick="window.open('/search.html')" target="_blank"><span class="a11yHidden">검색</span></button> -->
+        </div>
+      </fieldset>
+    </form>
+    <!-- //searchForm : 누르면 검색창 페이지로 이동 -->
+    <div class="userInfo relative">
+      <button
+        type="button"
+        class="userInfo__button block cursor-pointer border-none p-0 l:w-[2.4rem] l:h-[2.4rem] bg-center bg-no-repeat s:w-[18px] s:h-[18px] m:w-[24px] m:h-[24px]  bg-cover bg-[url('/image/header/Profile.svg')]"
+        
+      ></button>
+      <!-- invisible 추가-->
+      <div class=" userInfo__content box-border l:py-5 l:px-7 m:py-3 m:px-4 s:py-3 s:px-4 absolute right-0 l:top-10 m:top-[27px] s:top-5 l:w-[275px] m:w-[200px] s:w-[150px] bg-darkbg2 border-gray2 border border-solid rounded-[3px] ">
+        <div class="userInfo__profile flex s:gap-2 m:gap-3 l:gap-4  relative after:absolute after:left-0 after:bottom-0 after:content-[''] after:block after:w-full after:h-[1px] after:bg-gray8  ">
+          <figure class="userInfo__profile__img shrink-0">
+            <img class="l:w-[3.5rem] l:h-[3.5rem] s:w-[35px] s:h-[35px] m:w-[44px] m:h-[44px] " src="./image/header/Profile.svg" alt="프로필 이미지" />
+          </figure>
+          <div class="userInfo__profile__info ">
+            <p class="profile__name l:text-[20px] m:text-[15px] s:text-[13px] font-bold ">김멋사</p>
+            <a href="./profile_select.html" class="profileChange__button cursor-pointer border-none p-0 block text-gray3 l:text-[18px] m:text-[14px] s:text-[12px] l:mt-[7px] l:mb-[10px] m:mt-[5px] m:mb-[8px] s:mt-[3px] s:mb-[6px]"
+              >프로필 전환 ></a
+            >
+          </div>
+        </div>
+        <div class="userInfo__menu s:py-2 m:py-4 l:py-5">
+          <ul class="userInfo__menu__list">
+            <li class="userInfo__menu__item">
+              <a href="" class="userInfo__menu__link block text-gray3 l:text-[20px] m:text-[15px] s:text-[12px] l:py-[8px] m:py-[7px] s:py-[6px]  hover:text-gray7 ">MY</a>
+            </li>
+            <li class="userInfo__menu__item">
+              <a href="" class="userInfo__menu__link block text-gray3 l:text-[20px] m:text-[15px] s:text-[12px] l:py-[8px] m:py-[7px] s:py-[6px] hover:text-gray7">이용권</a>
+            </li>
+            <li class="userInfo__menu__item">
+              <a href="" class="userInfo__menu__link block text-gray3 l:text-[20px] m:text-[15px] s:text-[12px] l:py-[8px] m:py-[7px] s:py-[6px] hover:text-gray7">쿠폰등록</a>
+            </li>
+            <li class="userInfo__menu__item">
+              <a href="" class="userInfo__menu__link block text-gray3 l:text-[20px] m:text-[15px] s:text-[12px] l:py-[8px] m:py-[7px] s:py-[6px] hover:text-gray7">고객센터</a>
+            </li>
+            <li class="userInfo__menu__item">
+              <a href="./logout.html" class="userInfo__menu__link block text-gray3 l:text-[20px] m:text-[15px] s:text-[12px] l:py-[8px] m:py-[7px] s:py-[6px] hover:text-gray7">로그아웃</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="userInfo__menu">
-        <ul class="userInfo__menu__list">
-          <li class="userInfo__menu__item">
-            <a href="" class="userInfo__menu__link">MY</a>
-          </li>
-          <li class="userInfo__menu__item">
-            <a href="" class="userInfo__menu__link">이용권</a>
-          </li>
-          <li class="userInfo__menu__item">
-            <a href="" class="userInfo__menu__link">쿠폰등록</a>
-          </li>
-          <li class="userInfo__menu__item">
-            <a href="" class="userInfo__menu__link">고객센터</a>
-          </li>
-          <li class="userInfo__menu__item">
-            <a href="./logout.html" class="userInfo__menu__link">로그아웃</a>
-          </li>
-        </ul>
-      </div>
     </div>
-  </div>
-  <!-- //userInfo -->
-</header>
+    <!-- //userInfo -->
+  </header>
+</html>
