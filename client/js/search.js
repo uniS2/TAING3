@@ -1,7 +1,9 @@
 import {
+  clearContents,
   getNode,
   insertLast,
   isString,
+  refError,
   tiger,
   typeError,
 } from "../lib/index.js";
@@ -10,7 +12,7 @@ const popularLists = getNode(".search__lists");
 
 // 실시간 인기 검색어 rendering
 //^ [효윤님] header의 검색 버튼 부분을 클릭시 작동하기
-async function renderPopularList(url = "http://localhost:3000/main") {
+async function renderPopularList(url = "http://localhost:3000/program") {
   try {
     const realtime = (await tiger.get(url)).data.realtime;
 
@@ -57,6 +59,9 @@ function getNow() {
   } else {
     noon = "오전";
   }
+
+  if (month < 10) month = "0" + month;
+  if (date < 10) date = "0" + date;
   if (hours < 10) hours = "0" + hours;
   if (minutes < 10) minutes = "0" + minutes;
 
@@ -67,28 +72,69 @@ function getNow() {
 
 insertLast(time, getNow());
 
-//# 검색어 처리
-const btnClick = getNode("#appendText");
+// 검색어 처리
+const searchBtn = getNode(".search__button");
+const history = getNode(".search__history");
+const search = getNode("#search");
 
-btnClick.addEventListener("click", () => {
-  // e.defaultPrevent();
+function handleSearch(e) {
+  //% input enter 에러 해결
+  /* 이 코드는 "keydown" 이벤트 리스너에서 handleSearch() 함수를 호출하는 경우에는 e 인자가 존재하지만, "click" 이벤트 리스너에서 호출하는 경우에는 e 인자가 없을 수 있습니다. 그래서 e가 존재하고 e.preventDefault()를 호출하면 "keydown" 이벤트 리스너에서 검색어를 입력한 후 엔터 키를 눌렀을 때 폼 제출이 발생하는 것을 막을 수 있습니다. 반면 "click" 이벤트에서는 폼 제출을 막을 필요가 없으므로 e가 없을 때 e && e.preventDefault가 거짓이 되어 해당 조건문이 실행되지 않습니다.
 
-  const ulNode = getNode("#searchRecent");
-  const liNode = getNode("p");
-  const btn = document.createElement("button");
+  즉, 이 조건문은 엔터 키를 눌렀을 때만 폼 제출을 막아주는 보호적인 코드입니다. 다른 요소를 클릭해서 검색 버튼이 아닌 이벤트에서 handleSearch() 함수를 호출한다면, 폼 제출이 발생하지 않아도 되기 때문에 폼 제출 막기를 할 필요가 없기 때문입니다. 이런 방식으로 코드를 작성하면 불필요한 폼 제출을 방지할 수 있습니다. */
 
-  clearContents(liNode);
-  liNode.textContent = getNode("#search").value;
-  ulNode.appendChild(liNode).classList.add("search__history");
-  liNode.appendChild(btn).classList.add("search__erase");
-
-  var none = getNode("#searchNone");
-  let eraseAll = getNode("#eraseAll");
-
-  if (none.style.display == "") {
-    none.style.display = "none";
+  if (e && e.preventDefault) {
+    e.preventDefault(); // 폼 제출 막기 (click 이벤트에서 호출된 경우에만 적용)
   }
-  if (eraseAll.style.display == "") {
-    eraseAll.style.display = "block";
+
+  let text = search.value;
+  const templateHistory = /*html*/ `
+  <p class="search__earse">
+  ${text}
+  <button class="search__eraseOne h-[0.9375rem] ml-3 inline-block w-[0.9375rem] bg-xNofilledMark bg-no-repeat" id="history"></button>
+  </p>
+  `;
+
+  if (!text) return;
+
+  if (history.innerText === "검색 내역이 없습니다.") clearContents(history);
+  insertLast(history, templateHistory);
+  // clearContents(search);
+  search.value = "";
+}
+
+// 검색 버튼과 검색 input 모두에서 이벤트 처리
+searchBtn.addEventListener("click", handleSearch);
+search.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    handleSearch();
   }
 });
+
+// 모두 지우기 및 지우기 버튼 처리
+const searchRecent = getNode(".search__recent");
+
+function isClassName(node, className) {
+  if (!className)
+    refError("함수 isClassName의 두 번째 매개변수는 필수 값입니다.");
+
+  return node.className.split(" ").includes(className);
+}
+
+function handleErase(e) {
+  e.preventDefault();
+  const eraseBtn = e.target.closest("button");
+  const historyOne = e.target.closest(".search__earse");
+
+  if (!eraseBtn) return;
+
+  if (isClassName(eraseBtn, "search__eraseAll")) {
+    clearContents(history);
+  }
+
+  if (isClassName(eraseBtn, "search__eraseOne")) {
+    clearContents(historyOne);
+  }
+}
+
+searchRecent.addEventListener("click", handleErase);
