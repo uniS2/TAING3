@@ -18,53 +18,81 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
-    <script src="../client/js/include.js" defer></script>
+    <!-- <script src="../client/js/include.js" defer></script> -->
   </head>
 
-  <body class="profile__body">
+  <body class="profile__body bg-black text-white">
     <div w3-include-html="./header.html"></div>
     <main class="login_page">
-      <section class="login">
+      <section
+        class="login mx-[auto] mb-0 mt-[30px] w-2/5 max-w-[400px] s:w-[95%] m:w-[70%]"
+      >
         <div class="content_wrap">
           <div class="title_wrap">
-            <h3 class="title">TAING ID 로그인</h3>
+            <h3 class="title mb-[25px] text-center text-xl font-bold">
+              TAING ID 로그인
+            </h3>
           </div>
         </div>
         <form name="input_form">
-          <label for="data_input_1" class="data_input">
-            <input
-              type="text"
-              class="id_box"
-              placeholder="아이디"
-              required="required"
-            />
-          </label>
-          <label for="data_input_2" class="data_input">
+          <label for="id_input" class="data_input sr-only">아이디 </label>
+          <input
+            type="text"
+            class="id_box mb-2.5 block w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-[0]"
+            id="id_input"
+            placeholder="아이디"
+            required="required"
+          />
+          <div class="relative mb-2.5">
+            <label for="password_input" class="data_input sr-only"
+              >비밀번호
+            </label>
             <input
               type="password"
-              class="pw_box"
+              class="pw_box w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-[0]"
+              id="password_input"
               placeholder="비밀번호"
               required="required"
             />
-            <button id="closePW"></button>
-          </label>
+            <button
+              id="closePW"
+              class="absolute bottom-[20px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px]"
+            ></button>
+          </div>
         </form>
         <ul class="checks_wrap">
           <li class="checks">
-            <input type="checkbox" id="check" />
-            <label for="check"><span>자동로그인</span></label>
+            <input
+              class="appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopAFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="check"
+              type="checkbox"
+            />
+            <label for="check"
+              ><span class="pl-[5px] align-middle">자동로그인</span></label
+            >
           </li>
         </ul>
         <div class="btn-wrap">
-          <button id="doLogIn" class="btn_color">로그인하기</button>
+          <button
+            id="doLogIn"
+            class="btn_color bg- mx-0 mb-10 mt-5 inline-block w-full rounded bg-red_login px-0 py-[15px] text-white"
+          >
+            로그인하기
+          </button>
         </div>
-        <div class="no_border_btn">
-          <a href="findId.html" id="findId" class="no_border">아이디 찾기</a>
-          <a href="findPw.html" id="findPw" class="no_border">비밀번호 찾기</a>
+        <div class="no_border_btn flex justify-center gap-[50px] text-gray3">
+          <a href="findId.html" id="findId" class="no_border text-gray3"
+            >아이디 찾기</a
+          >
+          <a href="findPw.html" id="findPw" class="no_border text-gray3"
+            >비밀번호 찾기</a
+          >
         </div>
-        <div class="join_wrap">
+        <div class="join_wrap mt-10 flex justify-center gap-2.5 text-gray5">
           " 아직 계정이 없으신가요? "
-          <a href="join.html" id="regist" class="no_border">회원가입하기</a>
+          <a href="join.html" id="regist" class="no_border text-gray3"
+            >회원가입하기</a
+          >
         </div>
       </section>
     </main>
