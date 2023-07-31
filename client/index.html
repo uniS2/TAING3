@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="ko-KR" class="overflow-x-hidden">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TAING - 메인</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAING - 메인</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-  <link rel="stylesheet"  crossorigin
+    <link rel="stylesheet"  crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
+    <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-  />
-  <link rel="stylesheet" href="./css/main.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script src="./lib/main.js" type="module"></script>
-  <script src="./js/include.js" defer></script>
-</head>
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./js/include.js" defer></script>
+    <!-- <script src="./js/slider.js" defer></script> -->
+    <script src="./lib/main.js" type="module"></script>
+  </head>
+
 <body class="bg-black text-white w-full overflow-x-hidden s:overflow-x-hidden m:overflow-x-hidden">
   <!-- <div w3-include-html="./header.html"></div> -->
   <!-- 모달 -->
@@ -61,11 +63,13 @@
       </aritcle>
       <div class="after:text-2xl after:content-['next'] swiper-button-next text-gray4 "></div>
       <div class="after:text-2xl after:content-['prev'] swiper-button-prev text-gray4 "></div>
-      <button class="banner__slider__dot__toggle pause absolute top-[72%] left-[4%] z-10">
-        <i id="toggle-start" class="fa-solid fa-pause pause" style="color: #ffffff;"></i>
-      </button>
+      <div class="wrap-autoplay-control">
+        <button class="pause absolute top-[72%] left-[4%] z-10" aria-pressed="false" aria-label="자동 재생 일시 정지">
+          <i id="toggle-start" class="fa-solid fa-pause" style="color: #ffffff;"></i>
+        </button>
+      </div>
       <a href="#" class="banner__slider__details absolute right-[5%] bottom-[10%] z-10 border-solid border-gray3 border-[1px] rounded px-9 py-2.5">자세히보기</a>
-      <div class="absolute top-[72%] left-[5%] z-10 -mt-[2px]">
+      <div class="absolute top-[72%] left-[5.5%] z-10 -mt-[2px]">
         <div class="pagination after:bg-white after:text-white after:-ml-3"></div>
       </div>
     </section>
@@ -94,289 +98,52 @@
         </div>
       </div>
     </section> -->
-
-    <section id="ca" class="recommend ml-[30px] w-full overflow-hidden">
-      <h1 class="a11yHidden sr-only">추천 영상</h1>
-
+    
+    <section class="ml-[30px] w-full overflow-hidden">
+      <h1 class="sr-only">추천 영상</h1>
       <article class="w-full my-[3rem]">
-        <h3 class="recommend__imgbox__title main__title mb-5 text-xl font-bold">티빙에서 꼭 봐야하는 콘텐츠</h3>
-        <div class="recommend__imgbox__flexbox content--box--width w-[110%] m:w-[140%] s:w-[245%] flex flex-row flex-nowrap">
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+        <h3 class="mb-5 text-xl font-bold">티빙에서 꼭 봐야하는 콘텐츠</h3>
+        <!-- <button type="button" id="moveLeft" class="btn-nav">ᐊ</button> -->
+        <div id="mySlider" class="slider recommend w-[110%] m:w-[140%] s:w-[245%] flex flex-row flex-nowrap">
+          <!-- <figure class="recommend__imgbox__flexbox__contentbox">
             <img src="./image/main/desktop/img_frame.png" alt="보물찾기" />
-            <figcaption class="pt-2.5 text-gray2">보물찾기</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-1.png" alt="러브캐처 인 발리" />
-            <figcaption class="pt-2.5 text-gray2">러브캐처 인 발리</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-2.png" alt="술꾼도시여자들2" />
-            <figcaption class="pt-2.5 text-gray2">술꾼도시여자들2</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-3.png" alt="털사 킹" />
-            <figcaption class="pt-2.5 text-gray2">털사 킹</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-4.png" alt="아무것도 하고 싶지 않아" />
-            <figcaption class="pt-2.5 text-gray2">아무것도 하고 싶지 않아</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-5.png" alt="블랙독" />
-            <figcaption class="pt-2.5 text-gray2">블랙독</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-6.png" alt="우리들의 블루스" />
-            <figcaption class="pt-2.5 text-gray2">우리들의 블루스</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__contentbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-7.png" alt="킬리만자로" />
-            <figcaption class="pt-2.5 text-gray2">킬리만자로</figcaption>
+            <figcaption>보물찾기</figcaption>
           </figure>
         </div>
+        <button type="button" id="moveRight" class="btn-nav">ᐅ</button> -->
       </article>
-
-      <article class="recommend__imgbox w-full my-[3rem]">
-        <h3 class="recommend__imgbox__title main__title mb-5 text-xl font-bold">Quick VOD</h3>
-        <div class="recommend__imgbox__flexbox vod--box--width w-[125%] m:w-[140%] s:w-[245%] flex flex-row flex-nowrap transition ease-in-out delay-500">
-          <figure class="recommend__imgbox__flexbox__vodbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-8.png" alt="JTBC 뉴스" />
-            <figcaption class="mt-2.5">
-              <h4>JTBC 뉴스룸</h4><span class="recommend__imgbox__flexbox__vodbox__text text-gray3">0화</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__vodbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-9.png" alt="휴먼다큐 &lt;나는 살기로 했다&gt;" />
-            <figcaption class="mt-2.5">
-              <h4>휴먼다큐 &lt;나는 살기로 했다&gt;</h4><span class="recommend__imgbox__flexbox__vodbox__text text-gray3">10화</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__vodbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-10.png" alt="건강 면세점" />
-            <figcaption class="mt-2.5">
-              <h4>건강 면세점</h4><span class="recommend__imgbox__flexbox__vodbox__text text-gray3">130화</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__vodbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-11.png" alt="차이나는 클라스" />
-            <figcaption class="mt-2.5">
-              <h4>차이나는 클라스</h4><span class="recommend__imgbox__flexbox__vodbox__text text-gray3">254화</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__vodbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-12.png" alt="알맹이" />
-            <figcaption class="mt-2.5">
-              <h4>알맹이</h4><span class="recommend__imgbox__flexbox__vodbox__text text-gray3">208화</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__vodbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-13.png" alt="엄마의 봄날" />
-            <figcaption class="mt-2.5">
-              <h4>엄마의 봄날</h4><span class="recommend__imgbox__flexbox__vodbox__text text-gray3">380화</span>
-            </figcaption>
-          </figure>
+      
+      <article class="w-full my-[3rem]">
+        <h3 class="mb-5 text-xl font-bold">Quick VOD</h3>
+        <div id="quickVOD" class="w-[125%] m:w-[140%] s:w-[245%] flex flex-row flex-nowrap">
         </div>
       </article>
-
-      <article class="recommend__imgbox w-full mt-[3rem] mb-[4rem]">
-        <h3 class="recommend__imgbox__title main__title mb-5 text-xl font-bold">실시간 인기 프로그램</h3>
-        <div class="recommend__imgbox__flexbox favorite--box--width w-[110%] m:w-[145%] s:w-[250%] flex flex-row flex-nowrap">
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-14.png" alt="재벌집 막내아들" />
-            <figcaption class="-mt-6">
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[90%] italic text-7xl m:text-6xl font-bold">1</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">재벌집 막내아들</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-15.png" alt="술꾼도시여자들2" />
-            <figcaption>
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[90%] italic text-7xl m:text-6xl font-bold">2</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">술꾼도시여자들2</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-16.png" alt="환혼" />
-            <figcaption>
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[90%] italic text-7xl m:text-6xl font-bold">3</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">환혼</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-17.png" alt="캐나다 체크인" />
-            <figcaption>
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[90%] italic text-7xl m:text-6xl font-bold">4</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">캐나다 체크인</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-18.png" alt="놀라운 토요일" />
-            <figcaption>
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[90%] italic text-7xl m:text-6xl font-bold">5</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">놀라운 토요일</span>
-              </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-19.png" alt="쇼미더머니 11" />
-            <figcaption>
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[90%] italic text-7xl m:text-6xl font-bold">6</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">쇼미더머니11</span>
-              </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-20.png" alt="러브캐처" />
-            <figcaption>
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[90%] italic text-7xl m:text-6xl font-bold">7</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">러브캐처</span>
-            </figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__favoritebox relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-21.png" alt="알쓸인잡" />
-            <figcaption>
-              <span class="recommend__imgbox__flexbox__favoritebox__number absolute top-[80%] italic text-7xl m:text-6xl font-bold">8</span>
-              <span class="recommend__imgbox__flexbox__favoritebox__text text-gray2 absolute top-[102%] left-[30%] m:left-[29%]">알쓸인잡</span>
-              </figcaption>
-          </figure>
+      
+      <article class="w-full mt-[3rem] mb-[4rem]">
+        <h3 class="mb-5 text-xl font-bold">실시간 인기 프로그램</h3>
+        <div id="realtime" class="w-[110%] m:w-[145%] s:w-[250%] flex flex-row flex-nowrap">
         </div>
       </article>
-
-      <article class="recommend__imgbox w-full my-[3rem]">
-        <h3 class="recommend__imgbox__title main__title mb-5 text-xl font-bold">인기 LIVE 채널</h3>
-        <div class="recommend__imgbox__flexbox live--box--width w-[110%] m:w-[180%] s:w-[280%] flex flex-row flex-nowrap">
-          <div class="recommend__imgbox__flexbox__livebox mb-[50px] pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-22.png" alt="jtbc 뉴스룸" />
-            <div class="recommend__imgbox__flexbox__livebox__mainbox absolute flex">
-              <h4 class="italic text-7xl font-bold">1</h4>
-              <div class="recommend__imgbox__flexbox__livebox__mainbox__textbox mt-2.5 pl-5">
-                <h5 class="text-gray2">JTBC</h5>
-                <h6 class="text-gray3 text-sm">JTBC 뉴스룸</h6>
-                <span class="text-gray4 text-sm">27.9%</span>
-              </div>
-            </div>
-          </div>
-          <div class="recommend__imgbox__flexbox__livebox pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-23.png" alt="줄서는 식당" />
-            <div class="recommend__imgbox__flexbox__livebox__mainbox absolute flex">
-              <h4 class="italic text-7xl font-bold">2</h4>
-              <div class="recommend__imgbox__flexbox__livebox__mainbox__textbox mt-2.5 pl-5">
-                <h5 class="text-gray2">tvN</h5>
-                <h6 class="text-gray3 text-sm">줄 서는 식당 43회</h6>
-                <span class="text-gray4 text-sm">26.3%</span>
-              </div>
-            </div>
-          </div> 
-          <div class="recommend__imgbox__flexbox__livebox pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-24.png" alt="ytn 뉴스" />
-            <div class="recommend__imgbox__flexbox__livebox__mainbox absolute flex">
-              <h4 class="italic text-7xl font-bold">3</h4>
-              <div class="recommend__imgbox__flexbox__livebox__mainbox__textbox mt-2.5 pl-5">
-                <h5 class="text-gray2">YTN</h5>
-                <h6 class="text-gray3 text-sm">뉴스가 있는 저녁</h6>
-                <span class="text-gray4 text-sm">9%</span>
-              </div>
-            </div>
-          </div>
-          <div class="recommend__imgbox__flexbox__livebox pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-25.png" alt="jtbc2 드라마" />
-            <div class="recommend__imgbox__flexbox__livebox__mainbox absolute flex">
-              <h4 class="italic text-7xl font-bold">4</h4>
-              <div class="recommend__imgbox__flexbox__livebox__mainbox__textbox mt-2.5 pl-5">
-                <h5 class="text-gray2">JTBC2</h5>
-                <h6 class="text-gray3 text-sm">재벌집 막내아들 5화</h6>
-                <span class="text-gray4 text-sm">6.2%</span>
-              </div>
-            </div>
-          </div>
-          <div class="recommend__imgbox__flexbox__livebox pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-26.png" alt="연합뉴스" />
-            <div class="recommend__imgbox__flexbox__livebox__mainbox absolute flex">
-              <h4 class="italic text-7xl font-bold">5</h4>
-              <div class="recommend__imgbox__flexbox__livebox__mainbox__textbox mt-2.5 pl-5">
-                <h5 class="text-gray2">연합뉴스TV</h5>
-                <h6 class="text-gray3 text-sm">뉴스프라임</h6>
-                <span class="text-gray4 text-sm">4.6%</span>
-              </div>
-            </div>
-          </div>
-          <div class="recommend__imgbox__flexbox__livebox pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-27.png" alt="명탐정 코난" />
-            <div class="recommend__imgbox__flexbox__livebox__mainbox absolute flex">
-              <h4 class="italic text-7xl font-bold">6</h4>
-              <div class="recommend__imgbox__flexbox__livebox__mainbox__textbox mt-2.5 pl-5">
-                <h5 class="text-gray2">aniMax</h5>
-                <h6 class="text-gray3 text-sm">코난</h6>
-                <span class="text-gray4 text-sm">3%</span>
-              </div>
-            </div>
-          </div>
+      
+      <article class="w-full my-[3rem]">
+        <h3 class="mb-5 text-xl font-bold">인기 LIVE 채널</h3>
+        <div id="live" class="w-[110%] m:w-[180%] s:w-[280%] flex flex-row flex-nowrap">
         </div>
       </article>
-
-      <article class="recommend__imgbox w-full my-[3rem]">
-        <h3 class="recommend__imgbox__title main__title mb-5 text-xl font-bold">오직 티빙에만 있어요</h3>
-        <div class="recommend__imgbox__flexbox only--img--width w-[110%] m:w-[160%] s:w-[320%] flex flex-row flex-nowrap"> <!-- figure 감싸고 캡션 a11y주기-->
-          <figure class="recommend__imgbox__flexbox__onlyimgbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/poster5.png" alt="전체관람가" />
-            <figcaption class="a11yHidden sr-only">전체관람가</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__onlyimgbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/poster2.png" alt="러브캐처" />
-            <figcaption class="a11yHidden sr-only">러브캐처</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__onlyimgbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/poster7.png" alt="환승연애2" />
-            <figcaption class="a11yHidden sr-only">환승연애2</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__onlyimgbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/poster3.png" alt="몸값" />
-            <figcaption class="a11yHidden sr-only">몸값</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__onlyimgbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/poster4.png" alt="술꾼도시여자들" />
-            <figcaption class="a11yHidden sr-only">술꾼도시여자들</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__onlyimgbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/poster1.png" alt="괴이" />
-            <figcaption class="a11yHidden sr-only">괴이</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__onlyimgbox pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/poster6.png" alt="푸드 크로니클" />
-            <figcaption class="a11yHidden sr-only">푸드 크로니클</figcaption>
-          </figure>
+      
+      <article class="w-full my-[3rem]">
+        <h3 class="mb-5 text-xl font-bold">오직 티빙에만 있어요</h3>
+        <div id="onlyTaing" class="w-[110%] m:w-[160%] s:w-[320%] flex flex-row flex-nowrap"> <!-- figure 감싸고 캡션 a11y주기-->
         </div>
       </article>
-
-      <article class="recommend__bottombox w-[95%] my-[3rem]">
-        <img class="recommend__bottombox__sportsbanner" src="./image/main/desktop/img_frame-28.png" alt="스포츠 배너" />
+      
+      <article class="w-[95%] my-[3rem]">
+        <img src="./image/main/desktop/img_frame-28.png" alt="스포츠 배너" />
       </article>
-
-      <article class="recommend__imgbox w-full">
-        <h3 class="recommend__imgbox__title main__title mb-5 text-xl font-bold">이벤트</h3>
-        <div class="recommend__imgbox__flexbox event--box--width mb-[50px] w-[170%] s:w-[280%] flex flex-row flex-nowrap">
-          <figure class="recommend__imgbox__flexbox__eventimg pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-29.png" alt="신비 아파트 이벤트" />
-            <figcaption class="a11yHidden sr-only">신비아파트 개봉 이벤트</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__eventimg pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-30.png" alt="재벌집 막내아들 이벤트" />
-            <figcaption class="a11yHidden sr-only">재벌집 막내아들 시청 이벤트</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__eventimg pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-31.png" alt="환승연애2 이벤트" />
-            <figcaption class="a11yHidden sr-only">환승연애2 시청 이벤트</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__eventimg pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-32.png" alt="슈룹 이벤트" />
-            <figcaption class="a11yHidden sr-only">슈룹 시청 이벤트</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__eventimg pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-33.png" alt="디저트 메이커 이벤트" />
-            <figcaption class="a11yHidden sr-only">디저트 메이커 이벤트</figcaption>
-          </figure>
-          <figure class="recommend__imgbox__flexbox__eventimg pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
-            <img src="./image/main/desktop/img_frame-34.png" alt="렛미인 이벤트" />
-            <figcaption class="a11yHidden sr-only">렛미인 시청 이벤트</figcaption>
-          </figure>
+      
+      <article class="w-full">
+        <h3 class="mb-5 text-xl font-bold">이벤트</h3>
+        <div id="event" class="mb-[50px] w-[170%] s:w-[280%] flex flex-row flex-nowrap">
         </div>
       </article>
     </section>
@@ -384,4 +151,4 @@
   <!-- <div w3-include-html="./footer.html"></div> -->
   <script src="https://kit.fontawesome.com/4675147455.js" crossorigin="anonymous"></script>
   <script src="./js/layout.js"></script>
-</html>
+  </html>
