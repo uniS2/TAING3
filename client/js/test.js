@@ -117,7 +117,7 @@ btnRight.addEventListener("click", (e) => {
   let movieWidth = document
     .querySelector(".movie")
     .getBoundingClientRect().width;
-  let scrollDistance = movieWidth * 7; // Scroll the length of 6 movies. TODO: make work for mobile because (4 movies/page instead of 6)
+  let scrollDistance = movieWidth * 6; // Scroll the length of 6 movies. TODO: make work for mobile because (4 movies/page instead of 6)
 
   console.log(`movieWidth = ${movieWidth}`);
   console.log(`scrolling right ${scrollDistance}`);

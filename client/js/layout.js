@@ -4,6 +4,7 @@ const swiper = new Swiper(".swiper", {
     disableOnInteraction: false,
   },
   loop: true,
+  effect: "fade",
   // parallax: true,
   speed: 2000,
   pagination: {

@@ -74,6 +74,222 @@
       },
       "index": 8,
       "id": 8
+    },
+    {
+      "name": "보물찾기",
+      "img": {
+        "src": "./image/main/desktop/img_frame.png",
+        "alt": "보물찾기"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "러브캐처 인 발리",
+      "img": {
+        "src": "./image/main/desktop/img_frame-1.png",
+        "alt": "러브캐처 인 발리"
+      },
+      "index": 2,
+      "id": 2
+    },
+    {
+      "name": "술꾼도시여자들2",
+      "img": {
+        "src": "./image/main/desktop/img_frame-2.png",
+        "alt": "술꾼도시여자들2"
+      },
+      "index": 3,
+      "id": 3
+    },
+    {
+      "name": "털사 킹",
+      "img": {
+        "src": "./image/main/desktop/img_frame-3.png",
+        "alt": "털사 킹"
+      },
+      "index": 4,
+      "id": 4
+    },
+    {
+      "name": "아무것도 하고 싶지 않아",
+      "img": {
+        "src": "./image/main/desktop/img_frame-4.png",
+        "alt": "아무것도 하고 싶지 않아"
+      },
+      "index": 5,
+      "id": 5
+    },
+    {
+      "name": "블랙독",
+      "img": {
+        "src": "./image/main/desktop/img_frame-5.png",
+        "alt": "블랙독"
+      },
+      "index": 6,
+      "id": 6
+    },
+    {
+      "name": "우리들의 블루스",
+      "img": {
+        "src": "./image/main/desktop/img_frame-6.png",
+        "alt": "우리들의 블루스"
+      },
+      "index": 7,
+      "id": 7
+    },
+    {
+      "name": "킬리만자로",
+      "img": {
+        "src": "./image/main/desktop/img_frame-7.png",
+        "alt": "킬리만자로"
+      },
+      "index": 8,
+      "id": 8
+    },
+    {
+      "name": "보물찾기",
+      "img": {
+        "src": "./image/main/desktop/img_frame.png",
+        "alt": "보물찾기"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "러브캐처 인 발리",
+      "img": {
+        "src": "./image/main/desktop/img_frame-1.png",
+        "alt": "러브캐처 인 발리"
+      },
+      "index": 2,
+      "id": 2
+    },
+    {
+      "name": "술꾼도시여자들2",
+      "img": {
+        "src": "./image/main/desktop/img_frame-2.png",
+        "alt": "술꾼도시여자들2"
+      },
+      "index": 3,
+      "id": 3
+    },
+    {
+      "name": "털사 킹",
+      "img": {
+        "src": "./image/main/desktop/img_frame-3.png",
+        "alt": "털사 킹"
+      },
+      "index": 4,
+      "id": 4
+    },
+    {
+      "name": "아무것도 하고 싶지 않아",
+      "img": {
+        "src": "./image/main/desktop/img_frame-4.png",
+        "alt": "아무것도 하고 싶지 않아"
+      },
+      "index": 5,
+      "id": 5
+    },
+    {
+      "name": "블랙독",
+      "img": {
+        "src": "./image/main/desktop/img_frame-5.png",
+        "alt": "블랙독"
+      },
+      "index": 6,
+      "id": 6
+    },
+    {
+      "name": "우리들의 블루스",
+      "img": {
+        "src": "./image/main/desktop/img_frame-6.png",
+        "alt": "우리들의 블루스"
+      },
+      "index": 7,
+      "id": 7
+    },
+    {
+      "name": "킬리만자로",
+      "img": {
+        "src": "./image/main/desktop/img_frame-7.png",
+        "alt": "킬리만자로"
+      },
+      "index": 8,
+      "id": 8
+    },
+    {
+      "name": "보물찾기",
+      "img": {
+        "src": "./image/main/desktop/img_frame.png",
+        "alt": "보물찾기"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "러브캐처 인 발리",
+      "img": {
+        "src": "./image/main/desktop/img_frame-1.png",
+        "alt": "러브캐처 인 발리"
+      },
+      "index": 2,
+      "id": 2
+    },
+    {
+      "name": "술꾼도시여자들2",
+      "img": {
+        "src": "./image/main/desktop/img_frame-2.png",
+        "alt": "술꾼도시여자들2"
+      },
+      "index": 3,
+      "id": 3
+    },
+    {
+      "name": "털사 킹",
+      "img": {
+        "src": "./image/main/desktop/img_frame-3.png",
+        "alt": "털사 킹"
+      },
+      "index": 4,
+      "id": 4
+    },
+    {
+      "name": "아무것도 하고 싶지 않아",
+      "img": {
+        "src": "./image/main/desktop/img_frame-4.png",
+        "alt": "아무것도 하고 싶지 않아"
+      },
+      "index": 5,
+      "id": 5
+    },
+    {
+      "name": "블랙독",
+      "img": {
+        "src": "./image/main/desktop/img_frame-5.png",
+        "alt": "블랙독"
+      },
+      "index": 6,
+      "id": 6
+    },
+    {
+      "name": "우리들의 블루스",
+      "img": {
+        "src": "./image/main/desktop/img_frame-6.png",
+        "alt": "우리들의 블루스"
+      },
+      "index": 7,
+      "id": 7
+    },
+    {
+      "name": "킬리만자로",
+      "img": {
+        "src": "./image/main/desktop/img_frame-7.png",
+        "alt": "킬리만자로"
+      },
+      "index": 8,
+      "id": 8
     }
   ],
   "quickVOD": [
