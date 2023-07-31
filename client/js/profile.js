@@ -71,18 +71,18 @@ for (const [key, value] of Object.entries(profile)) {
   //$ key, value 중 null 값 있으면 표시 X -> 프로필은 순차적
 
   const templateProfile = /* html */ `
-  <li class="profile__list text-gray3 s:w-[45%] s:pb-6">
+  <li class="profile__list text-gray3 s:w-[45%]">
     <a
       href="./index.html"
-      class="profile__link flex-col gap-y-[0.9375rem] text-gray3"
+      class="profile__link text-gray3"
     >
       <div
-        class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%] s:w-[76%]"
+        class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%] s:w-[100%]"
       >
         <img
           src="image/profile/mobile/${value}"
           alt="${key} 프로필"
-          class="profile__img w-[9.375rem] flex-col gap-y-4 rounded"
+          class="profile__img w-[10.625rem] flex-col gap-y-4 rounded"
         />
         <div
           class="profile__dimmed absolute bottom-0 left-0 right-0 top-0 rounded bg-black/[.5]"
@@ -95,7 +95,7 @@ for (const [key, value] of Object.entries(profile)) {
         </div>
       </div>
       <p
-        class="py-4 text-center text-[1.3125rem] leading-[160%] text-gray3 s:text-[1.3125rem] s:w-[76%]"
+        class="py-4 text-center text-[1.3125rem] leading-[160%] text-gray3 s:text-[1.3125rem] s:w-[100%]"
       >
         ${key}
       </p>
