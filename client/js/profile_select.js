@@ -18,6 +18,10 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
   try {
     const users = (await tiger.get(url)).data;
 
+    //! header 처리
+    // include 땡겨오면 none 해줄게!!
+    getNode("nav").style.display = "none";
+
     if (!users.length) return;
     if (!isString(url))
       typeError("함수 renderProfile의 매개변수는 문자이어야 합니다.");
