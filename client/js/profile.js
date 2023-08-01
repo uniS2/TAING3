@@ -6,12 +6,18 @@ import {
   typeError,
 } from "../lib/index.js";
 
+//# 헤더 처리
+
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfile(url = "http://localhost:3000/main") {
+async function renderProfile(url = "http://localhost:3000/users") {
   try {
-    const users = (await tiger.get(url)).data.users;
+    const users = (await tiger.get(url)).data;
+
+    //! header 처리
+    // include 땡겨오면 none 해줄게!!
+    getNode("nav").style.display = "none";
 
     if (!users.length) return;
     if (!isString(url))

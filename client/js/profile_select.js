@@ -14,9 +14,13 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfileSelect(url = "http://localhost:3000/main") {
+async function renderProfileSelect(url = "http://localhost:3000/users") {
   try {
-    const users = (await tiger.get(url)).data.users;
+    const users = (await tiger.get(url)).data;
+
+    //! header 처리
+    // include 땡겨오면 none 해줄게!!
+    getNode("nav").style.display = "none";
 
     if (!users.length) return;
     if (!isString(url))
@@ -76,7 +80,8 @@ renderProfileSelect();
 //# 현재 프로필 처리
 //$ 로그인 회원 정보 및 선택 통한 프로필 정보 받아오기
 //$ currentProfile === 로그인.id + profile
-const profileImg = [...getNodes(".profile__img")];
+const profileImg = getNodes(".profile__img");
+console.log(profileImg);
 
 profileImg.forEach((node) => {
   if (node.alt === `이듬 프로필`) {
@@ -90,6 +95,7 @@ profileImg.forEach((node) => {
 const handleProfileSelect = (e) => {
   e.preventDefault();
   const target = e.target.closest(".profile__img__div");
+  console.log(target);
   if (isNull(target)) return;
 
   const profile = [...getNodes(".profile__img__div")];
@@ -98,8 +104,8 @@ const handleProfileSelect = (e) => {
     node.style.border = "none";
   });
 
-  // addClass(target, ".current__profile");
   if (target) {
+    // addClass(target, ".current__profile");
     target.style.border = "0.1875rem solid #FFFFFF";
     target.style.borderRadius = "0.25rem";
     window.location.href = "./index.html";
