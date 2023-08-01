@@ -7,14 +7,14 @@ module.exports = {
 
       m: { min: "768px", max: "1279px" },
 
-      l: { min: "1280px", max: "1920px" },
+      l: { min: "1280px" },
     },
     extend: {
       keyframes: {
         "fade-in-down": {
           "0%": {
             opacity: "0",
-            transform: "translateY(-10px)",
+            transform: "translateY(35px)",
           },
           "100%": {
             opacity: "1",
@@ -23,7 +23,7 @@ module.exports = {
         },
       },
       animation: {
-        "fade-in-down": "fade-in-down 0.5s ease-out",
+        "fade-in-down": "fade-in-down 1.2s ease-out",
       },
       fontFamily: {
         sans: ["Pretendard", "Arial", "sans-serif"],

@@ -1,9 +1,32 @@
-import { getNode as $, addClass, getNodes, removeClass } from "../lib/index.js";
+import {
+  getNode as $,
+  addClass,
+  attr,
+  getNodes,
+  removeClass,
+  tiger,
+} from "../lib/index.js";
 
 // const user = {
 //   id: "asd@naver.com",
 //   pw: "spdlqj123!@",
 // };
+
+//* <header>에 메뉴, 프로필 지우기----------------------------------------------------------
+async function ready() {
+  // const header = await $(".header");
+  const nav = await $("nav");
+  const form = await $("form");
+  const userInfo = await $(".userInfo");
+
+  // header.style.position = "relative";
+  nav.style.display = "none";
+  form.style.display = "none";
+  userInfo.style.display = "none";
+}
+ready();
+
+//*아이디, 비번, 이메일 정규식-------------------------------------------------------------------------
 
 //사용자가 아이디를 잘 입력했는지 확인하는 정규식?
 function idReg(text) {
@@ -23,6 +46,8 @@ function emailReg(text) {
   return re.test(String(text).toLowerCase());
 }
 
+//*아이디, 비번, 체크박스 일치하는지-------------------------------------------------------------------------
+
 //! 선택자 불러오기
 const userId = $("#userId");
 const userPw = $("#userPw");
@@ -31,7 +56,6 @@ const userEmail = $("#email");
 const btnRegist = $("#btnRegist");
 const btnWrap = $(".btn_wrap");
 
-//? 상태변수
 let idPass = false;
 //! 아이디 인풋 이벤트
 function handlerIdInput() {
@@ -42,15 +66,8 @@ function handlerIdInput() {
     removeClass(".input_info", "text-red");
     idPass = true;
   }
-
-  // else if (!userId.value) {
-  //   removeClass(".input_info", "text-red");
-  //   addClass(".input_info", "text-green");
-  //   $(".input_info").innerText = "입력된 값이 없습니다.";
-  // }
 }
 
-//? 상태변수
 let pwPass = false;
 //! 비밀번호 인풋 이벤트
 function handlerPasswordInput() {
@@ -68,34 +85,40 @@ let pwPassCheck = false;
 function handlerPasswordCheckInput() {
   if (userPwCheck.value !== userPw.value) {
     pwPassCheck = false;
+    removeClass(".input_checkpw_N", "hidden");
+    addClass(".input_checkpw", "hidden");
   } else {
     pwPassCheck = true;
+    addClass(".input_checkpw_N", "hidden");
+    removeClass(".input_checkpw", "hidden");
   }
 }
 
-//? 상태변수
 let emailPass = false;
 //! 이메일 인풋 이벤트
 function handlerEmailInput() {
   if (!emailReg(userEmail.value)) {
     emailPass = false;
+    removeClass(".input_email_N", "hidden");
+    addClass(".input_email", "hidden");
   } else {
     emailPass = true;
+    addClass(".input_email_N", "hidden");
+    removeClass(".input_email", "hidden");
   }
 }
 
-console.log(
-  idPass &&
-    pwPass &&
-    pwPassCheck &&
-    emailPass &&
-    agreements.privacy &&
-    agreements.service &&
-    agreements.channel,
-);
+// console.log(
+//   idPass &&
+//     pwPass &&
+//     pwPassCheck &&
+//     emailPass &&
+//     agreements.privacy &&
+//     agreements.service &&
+//     agreements.channel,
+// );
 //! 클릭 이벤트 함수
 function handlerClick1(e) {
-  console.log("adad");
   console.log(idPass);
   console.log(pwPass);
   console.log(pwPassCheck);
@@ -104,33 +127,65 @@ function handlerClick1(e) {
   console.log(agreements.service);
   console.log(agreements.channel);
 
-  e.preventDefault(); //찾아보기
-  //! 부정을 사용해서 해결해보자
-  //! 하나라도 false 나오면 못넘어가!!
-  if (
-    idPass &&
-    pwPass &&
-    pwPassCheck &&
-    emailPass &&
-    agreements.privacy &&
-    agreements.service &&
-    agreements.channel
+  e.preventDefault();
+  if (!idPass || !pwPass || !pwPassCheck || !emailPass) {
+    alert("아이디, 비밀번호, 이메일의 형식이 올바른지 확인해주세요.");
+  } else if (
+    !agreements.privacy ||
+    !agreements.service ||
+    !agreements.channel
   ) {
-    //! 아이디 비밀번호가 일치하면 welcome 페이지로 이동
-    // if (userId.value === user.id && userPw.value === user.pw) {
+    alert("[필수] 동의를 체크해주세요.");
+  }
+  //   else if (
+  //   !idPass ||
+  //   !pwPass ||
+  //   !pwPassCheck ||
+  //   !emailPass ||
+  //   !agreements.privacy ||
+  //   !agreements.service ||
+  //   !agreements.channel
+  // ) {
+  //   //! 아이디 비밀번호가 일치하면 welcome 페이지로 이동
+  //   // if (userId.value === user.id && userPw.value === user.pw) {
+
+  //   // window.location.href = "http://localhost:5500/";
+  //   //   } else if (!(userId.value === user.id) && !(userPw.value === user.pw)) {
+  //   //     alert("아이디와 비밀번호가 올바르지 않습니다.");
+  //   //   } else if (!(userId.value === user.id)) {
+  //   //     alert("아이디가 올바르지 않습니다.");
+  //   //   } else if (!(userPw.value === user.pwuser)) {
+  //   //     alert("비밀번호가 올바르지 않습니다.");
+  //   //   }
+  //   // } else {
+  //   alert("아이디와 비밀번호가 올바른지 확인해주세요.");
+  //   // }
+  else {
     window.location.href = "http://localhost:5500/";
-    //   } else if (!(userId.value === user.id) && !(userPw.value === user.pw)) {
-    //     alert("아이디와 비밀번호가 올바르지 않습니다.");
-    //   } else if (!(userId.value === user.id)) {
-    //     alert("아이디가 올바르지 않습니다.");
-    //   } else if (!(userPw.value === user.pwuser)) {
-    //     alert("비밀번호가 올바르지 않습니다.");
-    //   }
-    // } else {
-    //   alert("아이디와 비밀번호가 올바른지 확인해주세요.");
-    // }
   }
 }
+//****서버로 자료보내기---------------------------------------------------------
+async function isregister(emailCheck, pwCheck) {
+  const response = (await tiger.post("http://localhost:3000/users"), users, ``)
+    .data;
+  // const user = {
+  //   id: "asd@naver.com",
+  //   pw: "spdlqj123!@",
+  // };
+  if (emailCheck && pwCheck) {
+    response.some((element) => {
+      if (emailInput === element.id && passwordInput === element.password) {
+        window.location.href = "./index.html";
+      } else if (emailCheck || pwCheck) {
+        event.preventDefault();
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+        return true;
+      }
+    });
+  }
+}
+
+//------------------------------
 
 //! addEventListener input, click
 userId.addEventListener("input", handlerIdInput);
@@ -146,8 +201,39 @@ userEmail.addEventListener("input", handlerEmailInput);
 4. 로그인 버튼을 클릭시 조건처리
 
 */
+//비밀번호 문자 보이게하기 -----------------------------------------------------------
+const closePw = $("#closePw");
+const closePwCheck = $("#closePwCheck");
 
-//-------------------------------------------
+closePw.addEventListener("click", function (event) {
+  event.preventDefault();
+  const pwInput = $("#userPw");
+  if (pwInput.type === "password") {
+    attr(pwInput, "type", "text");
+    attr(pwInput, "autocomplete", "off");
+    closePw.style.backgroundImage = `url('/image/login/eye.png')`;
+  } else {
+    attr(pwInput, "type", "password");
+    attr(pwInput, "autocomplete", "current-password");
+    closePw.style.backgroundImage = `url('/image/login/DesktopPw.png')`;
+  }
+});
+
+closePwCheck.addEventListener("click", function (event) {
+  event.preventDefault();
+  const pwInput = $("#passwordCheck");
+  if (pwInput.type === "password") {
+    attr(pwInput, "type", "text");
+    attr(pwInput, "autocomplete", "off");
+    closePwCheck.style.backgroundImage = `url('/image/login/eye.png')`;
+  } else {
+    attr(pwInput, "type", "password");
+    attr(pwInput, "autocomplete", "current-password");
+    closePwCheck.style.backgroundImage = `url('/image/login/DesktopPw.png')`;
+  }
+});
+
+//체크박스-------------------------------------------
 const form = $(".check_wrap"); // 데이터를 전송하는 Form
 const checkAll = $("#agreeAll"); // 모두 동의 체크박스
 const checkBoxes = getNodes(".check_box input"); // 모두 동의를 제외한 3개의 체크박스
@@ -213,12 +299,18 @@ function checkAllStatus() {
 checkAll.addEventListener("click", (e) => {
   const { checked } = e.target;
   if (checked) {
+    agreements.service = true;
+    agreements.privacy = true;
+    agreements.channel = true;
     checkBoxes.forEach((item) => {
       item.checked = true;
       agreements[item.id] = true;
-      // item.parentNode.classList.add("active");
+      item.parentNode.classList.add("active");
     });
   } else {
+    agreements.service = false;
+    agreements.privacy = false;
+    agreements.channel = false;
     checkBoxes.forEach((item) => {
       item.checked = false;
       agreements[item.id] = false;
@@ -254,15 +346,15 @@ $("#agree_5").addEventListener("click", (e) => {
   // toggleSubmitButton();
 });
 
-$("#agree_2").addEventListener("click", (e) => {
+$("#agree_2").addEventListener("click", () => {
   agreements.service = true;
 });
 
-$("#agree_3").addEventListener("click", (e) => {
+$("#agree_3").addEventListener("click", () => {
   agreements.privacy = true;
 });
 
-$("#agree_4").addEventListener("click", (e) => {
+$("#agree_4").addEventListener("click", () => {
   agreements.channel = true;
 });
 
