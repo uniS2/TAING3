@@ -1,9 +1,12 @@
 import {
   clearContents,
+  deleteStorage,
   getNode,
+  getStorage,
   insertLast,
   isString,
   refError,
+  setStorage,
   tiger,
   typeError,
 } from "../lib/index.js";
@@ -15,6 +18,9 @@ const popularLists = getNode(".search__lists");
 async function renderPopularList(url = "http://localhost:3000/program") {
   try {
     const realtime = (await tiger.get(url)).data.realtime;
+
+    //# 헤더 처리
+    getNode("header").style.position = "relative";
 
     if (!realtime.length) return;
     if (!isString(url))
@@ -99,6 +105,51 @@ function handleSearch(e) {
 
   if (history.innerText === "검색 내역이 없습니다.") clearContents(history);
   insertLast(history, templateHistory);
+
+  //# 검색어 저장
+  async function saveSearch(url = "http://localhost:3000/users") {
+    try {
+      const users = (await tiger.get(url)).data;
+      const url_history = "http://localhost:3000/history";
+      const history = (await tiger.get("http://localhost:3000/history")).data;
+
+      if (!users.length) return;
+      if (!isString(url))
+        typeError("함수 renderProfile의 매개변수는 문자이어야 합니다.");
+
+      users.forEach(({ id, profile, ...restOptions } = {}) => {
+        //$ if 현재 로그인 === key 값 -> 현재 선택한 프로필 === key 값
+        if (id === "likelion01") {
+          if (Object.keys(profile).includes("이듬")) {
+            //! server 정보
+            // let serverItems = history["likelion01"]["이듬"];
+
+            // 이전에 저장된 "items"가 없다면 빈 배열로 초기화
+            let items = JSON.parse(localStorage.getItem("이듬")) || [];
+
+            // 새로운 값을 배열에 추가
+            items.push(`${text}`);
+
+            // 변경된 배열을 다시 "items" 키로 localStorage에 저장
+            setStorage("이듬", items);
+            // tiger.put(
+            //   url_history,
+            //   `
+            //     "이듬": [
+            //       "${getStorage("이듬")}"
+            //     ]
+            //   `,
+            // );
+          }
+        }
+        count += 1;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  saveSearch();
   // clearContents(search);
   search.value = "";
 }
@@ -130,11 +181,27 @@ function handleErase(e) {
 
   if (isClassName(eraseBtn, "search__eraseAll")) {
     clearContents(history);
+    deleteStorage("이듬");
   }
 
   if (isClassName(eraseBtn, "search__eraseOne")) {
     clearContents(historyOne);
+    // deleteStorage("이듬");
   }
 }
 
 searchRecent.addEventListener("click", handleErase);
+
+if (localStorage.getItem("이듬")) {
+  clearContents(history);
+  const data = JSON.parse(localStorage.getItem("이듬"));
+  for (let value of data) {
+    const templateHistoryLog = /*html*/ `
+    <p class="search__earse">
+    ${value}
+    <button class="search__eraseOne h-[0.9375rem] ml-3 inline-block w-[0.9375rem] bg-xNofilledMark bg-no-repeat" id="history"></button>
+    </p>
+    `;
+    insertLast(history, templateHistoryLog);
+  }
+}
