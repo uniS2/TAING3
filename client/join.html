@@ -22,7 +22,6 @@
     <script src="./js/include.js" defer></script>
     <script src="./js/header.js" type="module"></script>
     <script src="./js/join.js" type="module"></script>
-
   </head>
 
   <body class="profile__body bg-black text-white">
@@ -50,7 +49,7 @@
             <input
               type="text"
               id="userId"
-              class="new_id mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
+              class="new_id mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="아이디"
             />
@@ -66,20 +65,20 @@
             <input
               type="password"
               id="userPw"
-              class="new_pw mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
+              class="new_pw mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="비밀번호"
             />
             <button
-              id="closePwCheck"
-              class="absolute bottom-[39px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px]"
+              id="closePw"
+              class="brightness-3 absolute bottom-[39px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px] invert-[50%]"
             ></button>
             <p class="input_pw mt-[5px] text-[10px] font-medium text-gray6">
               영문,숫자,특수문자(~!@#$%^&*) 조합 8~15자리
             </p>
           </div>
           <!-- 비밀번호 확인 -->
-          <div class="make_pw relative">
+          <div class="make_pw make_check_pw relative">
             <label
               for="passwordCheck"
               class="data_input_check layout_flex sr-only"
@@ -88,14 +87,24 @@
             <input
               type="password"
               id="passwordCheck"
-              class="new_pw_check mb-2.5 mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
+              class="new_pw_check mb-2.5 mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="비밀번호 확인"
             />
             <button
               id="closePwCheck"
-              class="absolute bottom-[29px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px]"
+              class="brightness-3 absolute right-6 top-[29px] h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px] invert-[50%]"
             ></button>
+            <p
+              class="input_checkpw mt-[3px] hidden text-[10px] font-medium text-white"
+            >
+              비밀번호가 일치합니다.
+            </p>
+            <p
+              class="input_checkpw_N mt-[3px] hidden text-[10px] font-medium text-red"
+            >
+              비밀번호가 일치하지 않습니다.
+            </p>
           </div>
           <!-- email -->
           <div class="make_email">
@@ -105,11 +114,21 @@
             <input
               type="text"
               id="email"
-              class="new_email mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
+              class="new_email mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="이메일"
             />
           </div>
+          <p
+            class="input_email mt-[4px] hidden text-[10px] font-medium text-white"
+          >
+            이메일 형식이 일치합니다.
+          </p>
+          <p
+            class="input_email_N mt-[4px] hidden text-[10px] font-medium text-red"
+          >
+            이메일 형식이 일치하지 않습니다.
+          </p>
         </div>
         <ul class="check_wrap mb-[13px] mt-3 text-[13px] font-light text-gray2">
           <li class="check_list">
