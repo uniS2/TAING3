@@ -1,36 +1,128 @@
-    <footer class="footer">
-      <div class="footer__quick">
-        <p class="notice">
-          <strong>공지사항</strong><a href="/">[안내]  합병보고 주주총회에 갈음하는 공고</a>
-        </p>
-        <div class="quickBtn__group">
-          <button>브랜드 바로가기</button>
-          <button>그룹 계열사 바로가기</button>
-        </div>
-      </div>
-      <ul class="footer__list">
-        <li class="footer__item"><a href="./" class="footer__link">고객센터</a></li>
-        <li class="footer__item"><a href="./" class="footer__link">이용약관</a></li>
-        <li class="footer__item"><a href="./" class="footer__link">개인정보처리방침</a></li>
-        <li class="footer__item"><a href="./" class="footer__link">청소년 보호정책</a></li>
-        <li class="footer__item"><a href="./" class="footer__link">법적고지</a></li>
-        <li class="footer__item"><a href="./" class="footer__link">이벤트</a></li>
-        <li class="footer__item"><a href="./" class="footer__link">인재채용</a></li>
-      </ul>
-      
-      <div class="footer__content">
-        <p><span>대표이사 : YANG JIEUL</span> <a href="">사업자정보확인</a> <span>사업자등록번호 : 188-88-01893</span> <span>통신판매신고번호 : 2020-서울마포-3641호</span></p>
-        <address>사업장 : 서울특별시 마포구 상암산로 34, DMC디지털큐브 15층(상암동) 호스팅사업자 : 씨제이올리브네트웍스(주)</address>
-        <p><a href="">고객문의 바로가기</a> <a href="">대표메일 : tving@cj.net</a> <a href="">고객센터 : 1670-1525 (평일/주말 09시~18시, 공휴일 휴무)</a></p>
-        <p><span>ENM 시청자 상담실 (편성 문의 및 시청자 의견) : 080-080-0780</span> <span>Mnet 고객센터(반송편성문의) : 1855-1631</span></p>
-      </div>
+<footer
+  class="footer flex flex-col gap-[24px] bg-black leading-[1.6] text-white s:px-[16px] s:pb-[82px] s:pt-[52px] s:text-[12px] m:px-[40px] m:pb-[100px] m:pt-[70px] m:text-[12.5px] l:px-[68px] l:pb-[170px] l:pt-[140px] l:text-[16px]"
+>
+  <div
+    class="footer__quick border-bottom flex justify-between border-b-[1px] border-solid border-gray8 pb-[1rem] text-gray2"
+  >
+    <p class="notice">
+      <strong class="mr-5 text-gray5">공지사항</strong
+      ><a href="/">[안내] 합병보고 주주총회에 갈음하는 공고</a>
+    </p>
+    <div class="quickBtn__group s:hidden">
+      <button
+        class="cursor-pointer p-0 text-gray2 hover:text-white m:after:ml-[0.7rem] m:after:content-['+'] l:after:ml-[0.7rem] l:after:content-['+']"
+      >
+        브랜드 바로가기
+      </button>
+      <button
+        class="cursor-pointer border-l-[1px] p-0 text-gray2 hover:text-white m:ml-[18px] m:pl-[18px] m:after:ml-[0.7rem] m:after:content-['+'] l:ml-[28px] l:pl-[28px] l:after:ml-[0.7rem] l:after:content-['+']"
+      >
+        그룹 계열사 바로가기
+      </button>
+    </div>
+  </div>
+  <ul
+    class="footer__list flex text-gray2 s:flex-col s:gap-3 m:gap-[20px] l:gap-[36px]"
+  >
+    <li class="footer__item">
+      <a href="./" class="footer__link block hover:text-white">고객센터</a>
+    </li>
+    <li class="footer__item">
+      <a href="./" class="footer__link block hover:text-white">이용약관</a>
+    </li>
+    <li class="footer__item">
+      <a href="./" class="footer__link block hover:text-white"
+        >개인정보처리방침</a
+      >
+    </li>
+    <li class="footer__item">
+      <a href="./" class="footer__link block hover:text-white"
+        >청소년 보호정책</a
+      >
+    </li>
+    <li class="footer__item">
+      <a href="./" class="footer__link block hover:text-white">법적고지</a>
+    </li>
+    <li class="footer__item">
+      <a href="./" class="footer__link block hover:text-white">이벤트</a>
+    </li>
+    <li class="footer__item">
+      <a href="./" class="footer__link block hover:text-white">인재채용</a>
+    </li>
+  </ul>
 
-      <ul class="footer__sns">
-        <li class="footer__sns__item"><a href="./" class="footer__sns__link youtube"><img src="./src/image/footer/youtube.svg" alt="유튜브"></a></li>
-        <li class="footer__sns__item"><a href="./" class="footer__sns__link instagram"><img src="./src/image/footer/instagram.svg" alt="인스타그램"></a></li>
-        <li class="footer__sns__item"><a href="./" class="footer__sns__link Twitter"><img src="./src/image/footer/twitter.svg" alt="트위터"></a></li>
-        <li class="footer__sns__item"><a href="./" class="footer__sns__link facebook"><img src="./src/image/footer/facebook.svg" alt="페이스북"></a></li>
-      </ul>
+  <div class="footer__content text-gray5 s:hidden">
+    <p>
+      <span>대표이사 : YANG JIEUL</span>
+      <a
+        href=""
+        class="border-l-[1px] border-gray7 underline m:ml-[6px] m:pl-[7px] l:ml-[12px] l:pl-[14px]"
+        >사업자정보확인</a
+      >
+      <span
+        class="border-l-[1px] border-gray7 m:ml-[6px] m:pl-[7px] l:ml-[12px] l:pl-[14px]"
+        >사업자등록번호 : 188-88-01893</span
+      >
+      <span
+        class="border-l-[1px] border-gray7 m:ml-[6px] m:pl-[7px] l:ml-[12px] l:pl-[14px]"
+        >통신판매신고번호 : 2020-서울마포-3641호</span
+      >
+    </p>
+    <address>
+      사업장 : 서울특별시 마포구 상암산로 34, DMC디지털큐브 15층(상암동)
+      호스팅사업자 : 씨제이올리브네트웍스(주)
+    </address>
+    <p>
+      <a href="" class="underline">고객문의 바로가기</a>
+      <a
+        href=""
+        class="border-l-[1px] border-gray7 underline m:ml-[6px] m:pl-[7px] l:ml-[12px] l:pl-[14px]"
+        >대표메일 : tving@cj.net</a
+      >
+      <a
+        href=""
+        class="border-l-[1px] border-gray7 underline m:ml-[6px] m:pl-[7px] l:ml-[12px] l:pl-[14px]"
+        >고객센터 : 1670-1525 (평일/주말 09시~18시, 공휴일 휴무)</a
+      >
+    </p>
+    <p>
+      <span>ENM 시청자 상담실 (편성 문의 및 시청자 의견) : 080-080-0780</span>
+      <span>Mnet 고객센터(반송편성문의) : 1855-1631</span>
+    </p>
+  </div>
 
-      <small class="copyright">Copyright © 주식회사 티빙 All right reserved.</small>
-    </footer>
+  <ul class="footer__sns flex items-center s:gap-2 m:gap-4 l:gap-6">
+    <li class="footer__sns__item flex-shrink-0">
+      <a
+        href="./"
+        class="footer__sns__link youtube flex items-center justify-center rounded-[50%] bg-gray8 s:h-[24px] s:w-[24px] s:p-[5px] m:h-[30px] m:w-[30px] m:p-[6px] l:h-[52px] l:w-[52px]"
+        ><img src="./image/footer/youtube.svg" alt="유튜브"
+      /></a>
+    </li>
+    <li class="footer__sns__item flex-shrink-0">
+      <a
+        href="./"
+        class="footer__sns__link instagram flex items-center justify-center rounded-[50%] bg-gray8 s:h-[24px] s:w-[24px] s:p-[5px] m:h-[30px] m:w-[30px] m:p-[6px] l:h-[52px] l:w-[52px]"
+        ><img src="./image/footer/instagram.svg" alt="인스타그램"
+      /></a>
+    </li>
+    <li class="footer__sns__item flex-shrink-0">
+      <a
+        href="./"
+        class="footer__sns__link Twitter flex items-center justify-center rounded-[50%] bg-gray8 s:h-[24px] s:w-[24px] s:p-[5px] m:h-[30px] m:w-[30px] m:p-[6px] l:h-[52px] l:w-[52px]"
+        ><img src="./image/footer/twitter.svg" alt="트위터"
+      /></a>
+    </li>
+    <li class="footer__sns__item flex-shrink-0">
+      <a
+        href="./"
+        class="footer__sns__link Twitter flex items-center justify-center rounded-[50%] bg-gray8 s:h-[24px] s:w-[24px] s:p-[7px] m:h-[30px] m:w-[30px] m:p-[8px] l:h-[52px] l:w-[52px]"
+        ><img src="./image/footer/facebook.svg" alt="페이스북"
+      /></a>
+    </li>
+  </ul>
+
+  <small class="copyright text-gray5"
+    >Copyright © 주식회사 티빙 All right reserved.</small
+  >
+</footer>

@@ -3,3 +3,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .current__profile {
+    @apply border-[0.1875rem] border-r-4 border-solid border-white;
+    /* border: 0.1875rem solid #ffffff;
+    border-radius: 0.25rem; */
+  }
+
+  .is--invalid {
+    @apply mt-4 block text-[1.2rem] text-red;
+  }
+}

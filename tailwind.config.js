@@ -1,8 +1,33 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./client/**/*.html"],
+  content: ["./client/**/*.html", "./client/**/*.js"],
   theme: {
+    screens: {
+      s: { min: "320px", max: "767px" },
+
+      m: { min: "768px", max: "1279px" },
+
+      l: { min: "1280px" },
+    },
     extend: {
+      keyframes: {
+        "fade-in-down": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(35px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        "fade-in-down": "fade-in-down 1.2s ease-out",
+      },
+      fontFamily: {
+        sans: ["Pretendard", "Arial", "sans-serif"],
+      },
       colors: {
         white: "#fff",
         black: "#000",
@@ -32,6 +57,11 @@ module.exports = {
         orange: "#eea60a",
         blue: "#6aaee6",
         silver: "#999",
+      },
+      backgroundImage: {
+        xFilledMark: "url('/image/search/Device=Desktop, Type=Filled.png')",
+        xNofilledMark:
+          "url('/image/search/Device=Desktop, Type=No_Filled.png')",
       },
     },
   },

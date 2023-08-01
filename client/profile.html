@@ -1,111 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TAING - 프로필 편집</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
-    />
+    /> -->
     <link
       rel="stylesheet"
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
     />
-    <link rel="stylesheet" href="./src/style/index.css" />
-    <link rel="icon" href="./src/image/main/tiving.ico" type="image/x-icon" />
-    <script src="src/js/include.js" defer></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+    <script src="./js/profile.js" type="module"></script>
+    <script src="./js/include.js" defer></script>
   </head>
-  <body class="profile__body">
+  <body class="profile__body h-auto w-full max-w-full bg-black">
     <div w3-include-html="./header.html"></div>
-    <section class="profile">
-      <h1 class="profile__title">프로필 편집</h1>
-      <p class="profile__word">편집할 프로필을 선택해주세요.</p>
-      <ul class="profile__lists">
-        <li class="profile__list">
-          <a href="./index.html" class="profile__link">
-            <div class="profile__img__div">
+    <section
+      class="profile mx-auto mb-[6.25rem] mt-[3.125rem] w-[70%] s:mt-[5.75rem] s:w-[45%] s:min-w-[18.75rem] m:mt-[8.125rem] m:w-[90%]"
+    >
+      <h1
+        class="profile__title mb-[1.875rem] text-center text-[2.4375rem] font-bold leading-[140%] text-white s:text-[1.75rem]"
+      >
+        프로필 편집
+      </h1>
+      <p
+        class="profile__word mb-5 text-center text-[1.625rem] font-semibold leading-[150%] text-gray2 s:mb-10 s:text-[1.3125rem]"
+      >
+        편집할 프로필을 선택해주세요.
+      </p>
+      <ul
+        class="profile__lists flex items-center justify-center gap-x-[2.8125rem] pt-11 s:flex-wrap s:gap-6 s:pt-0"
+      >
+        <!-- <li class="profile__list text-gray3 s:w-[45%] s:pb-6">
+          <a
+            href="./index.html"
+            class="profile__link flex-col items-center gap-y-[15px] text-gray3 s:w-full"
+          >
+            <div
+              class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%]"
+            >
               <img
-                src="src/image/profile/mobile/profile_1.png"
-                alt="슬비님 프로필"
-                class="profile__img"
+                src="image/profile/mobile/profile_1.png"
+                alt="정 프로필"
+                class="profile__img w-[150px] max-w-[234px] flex-col items-center gap-y-4 rounded bg-gray3 s:w-[114px]"
               />
-              <div class="profile__dimmed">
+              <div
+                class="profile__dimmed absolute bottom-0 left-0 right-0 top-0 min-w-[150px] rounded bg-black/[.5]"
+              >
                 <img
-                  src="src/image/profile/DesktopPencil.png"
+                  src="image/profile/DesktopPencil.png"
                   alt=""
-                  class="profile__dimmed__img"
+                  class="profile__dimmed__img absolute left-[calc(50%-25px)] top-[calc(50%-25px)] w-full max-w-[50px]"
                 />
               </div>
             </div>
-            슬비님
+            <p
+              class="py-4 text-center text-[21px] leading-[160%] text-gray3 s:text-[21px]"
+            >
+              정
+            </p>
           </a>
         </li>
-        <li class="profile__list">
-          <a href="./index.html" class="profile__link">
-            <div class="profile__img__div">
+        <li class="profile__list text-gray3 s:w-[45%] s:pb-6">
+          <a
+            href="./index.html"
+            class="profile__link flex-col items-center gap-y-[15px] text-gray3 s:w-full"
+          >
+            <div
+              class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%]"
+            >
               <img
-                src="src/image/profile/mobile/profile_3.png"
-                alt="범쌤 프로필"
-                class="profile__img"
+                src="image/profile/mobile/profile_3.png"
+                alt="진 프로필"
+                class="profile__img w-[150px] max-w-[234px] flex-col items-center gap-y-4 rounded bg-gray3 s:w-[114px]"
               />
-              <div class="profile__dimmed">
+              <div
+                class="profile__dimmed absolute bottom-0 left-0 right-0 top-0 min-w-[150px] rounded bg-black/[.5]"
+              >
                 <img
-                  src="src/image/profile/DesktopPencil.png"
+                  src="image/profile/DesktopPencil.png"
                   alt=""
-                  class="profile__dimmed__img"
+                  class="profile__dimmed__img absolute left-[calc(50%-25px)] top-[calc(50%-25px)] w-full max-w-[50px]"
                 />
               </div>
             </div>
-            범쌤
+            <p
+              class="py-4 text-center text-[21px] leading-[160%] text-gray3 s:text-[21px]"
+            >
+              진
+            </p>
           </a>
         </li>
-        <li class="profile__list">
-          <a href="./index.html" class="profile__link">
-            <div class="profile__img__div">
+        <li class="profile__list text-gray3 s:w-[45%] s:pb-6">
+          <a
+            href="./index.html"
+            class="profile__link flex-col items-center gap-y-[15px] text-gray3 s:w-full"
+          >
+            <div
+              class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%]"
+            >
               <img
-                src="src/image/profile/mobile/profile_2.png"
-                alt="야무 프로필"
-                class="profile__img"
+                src="image/profile/mobile/profile_2.png"
+                alt="이 프로필"
+                class="profile__img w-[150px] max-w-[234px] flex-col items-center gap-y-4 rounded bg-gray3 s:w-[114px]"
               />
-              <div class="profile__dimmed">
+              <div
+                class="profile__dimmed absolute bottom-0 left-0 right-0 top-0 min-w-[150px] rounded bg-black/[.5]"
+              >
                 <img
-                  src="src/image/profile/DesktopPencil.png"
+                  src="image/profile/DesktopPencil.png"
                   alt=""
-                  class="profile__dimmed__img"
+                  class="profile__dimmed__img absolute left-[calc(50%-25px)] top-[calc(50%-25px)] w-full max-w-[50px]"
                 />
               </div>
             </div>
-            야무
+            <p
+              class="py-4 text-center text-[21px] leading-[160%] text-gray3 s:text-[21px]"
+            >
+              이
+            </p>
           </a>
         </li>
-        <li class="profile__list">
-          <a href="./index.html" class="profile__link">
-            <div class="profile__img__div">
+        <li class="profile__list text-gray3 s:w-[45%] s:pb-6">
+          <a
+            href="./index.html"
+            class="profile__link flex-col items-center gap-y-[15px] text-gray3 s:w-full"
+          >
+            <div
+              class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%]"
+            >
               <img
-                src="src/image/profile/mobile/profile_4.png"
-                alt="이듬 프로필"
-                class="profile__img"
+                src="image/profile/mobile/profile_4.png"
+                alt="효 프로필"
+                class="profile__img w-[150px] max-w-[234px] flex-col items-center gap-y-4 rounded bg-gray3 s:w-[114px]"
               />
-              <div class="profile__dimmed">
+              <div
+                class="profile__dimmed absolute bottom-0 left-0 right-0 top-0 min-w-[150px] rounded bg-black/[.5]"
+              >
                 <img
-                  src="src/image/profile/DesktopPencil.png"
+                  src="image/profile/DesktopPencil.png"
                   alt=""
-                  class="profile__dimmed__img"
+                  class="profile__dimmed__img absolute left-[calc(50%-25px)] top-[calc(50%-25px)] w-full max-w-[50px]"
                 />
               </div>
             </div>
-            이듬
+            <p
+              class="py-4 text-center text-[21px] leading-[160%] text-gray3 s:text-[21px]"
+            >
+              효
+            </p>
           </a>
-        </li>
+        </li> -->
       </ul>
       <button
         type="button"
-        class="profile__button profile__button__complete"
+        class="profile__button profile__button__complete m-auto mt-[2.1875rem] block w-[15rem] cursor-pointer rounded border border-solid border-gray6 py-5 text-[1.365rem] font-semibold leading-[150%] text-gray2 hover:border-white hover:text-white"
         onclick="location.href='./profile_select.html'"
       >
         완료
