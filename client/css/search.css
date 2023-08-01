@@ -1,0 +1,10 @@
+input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url(./../image/search/Device=Desktop\,\ Type=No_Filled.png)
+    no-repeat right;
+}

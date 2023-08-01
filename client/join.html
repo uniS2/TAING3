@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
@@ -16,109 +16,221 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
     />
-    <link rel="stylesheet" href="./src/style/index.css" />
-    <link rel="icon" href="./src/image/main/tiving.ico" type="image/x-icon" />
-    <script src="src/js/include.js" defer></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+
+    <script src="./js/include.js" defer></script>
+    <script src="./js/header.js" type="module"></script>
+    <script src="./js/join.js" type="module"></script>
   </head>
 
-  <body class="profile__body">
-    <div w3-include-html="./header.html"></div>
-    <main class="join_page">
-      <section class="join">
+  <body class="profile__body bg-black text-white">
+    <header w3-include-html="./header.html"></header>
+    <main class="join_page pt-[5%]">
+      <section
+        class="join mx-[auto] mb-0 mt-[30px] w-2/5 max-w-[400px] s:w-[95%] m:w-[70%]"
+      >
         <div class="content_wrap">
-          <div class="title_wrap">
+          <div class="title_wrap mb-[25px] text-center text-xl font-bold">
             <h3>
               티빙 회원가입
-              <p>아이디와 이메일로 간편하게 티빙을 시작하세요!</p>
+              <p class="mt-2.5 text-sm font-normal text-gray3">
+                아이디와 이메일로 간편하게 티빙을 시작하세요!
+              </p>
             </h3>
           </div>
         </div>
         <div class="info_wrap">
+          <!-- 아이디 -->
           <div class="make_id">
-            <label for="userId" class="data_input_id layout_flex">
-              <input type="text" id="userId" class="new_id" required placeholder="아이디"/>
+            <label for="userId" class="data_input_id layout_flex sr-only"
+              >아이디
             </label>
-            <p class="input_info">영문 또는 영문, 숫자 조합 6~12자리</p>
-           </div>
-           <div class="make_pw">
-            <label for="userPw" class="data_input_pw layout_flex">
-              <input type="password" id="userPw" class="new_pw" required placeholder="비밀번호" />
-              <button id="closePwCheck"></button>
-            </label>
-            <p class="input_info">영문,숫자,특수문자(~!@#$%^&*) 조합 8~15자리</p>
-           </div>
-           <div class="make_pw">
-            <label for="passwordCheck" class="data_input_check layout_flex">
-              <input type="password" id="passwordCheck" class="new_pw_check" required placeholder="비밀번호 확인" />
-              <button id="closePwCheck"></button>
-            </label>
-           </div>
-           <div class="make_email">
-            <label for="email" class="data_input_email layout_flex">
-              <input type="text" id="email" class="new_email" required placeholder="이메일" />
-           </label>
+            <input
+              type="text"
+              id="userId"
+              class="new_id mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
+              required
+              placeholder="아이디"
+            />
+            <p class="input_info mt-[5px] text-[10px] font-medium text-gray6">
+              영문 또는 영문, 숫자 조합 6~12자리
+            </p>
           </div>
+          <!-- 비밀번호 -->
+          <div class="make_pw relative">
+            <label for="userPw" class="data_input_pw layout_flex sr-only"
+              >비밀번호</label
+            >
+            <input
+              type="password"
+              id="userPw"
+              class="new_pw mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
+              required
+              placeholder="비밀번호"
+            />
+            <button
+              id="closePw"
+              class="brightness-3 absolute bottom-[39px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px] invert-[50%]"
+            ></button>
+            <p class="input_pw mt-[5px] text-[10px] font-medium text-gray6">
+              영문,숫자,특수문자(~!@#$%^&*) 조합 8~15자리
+            </p>
+          </div>
+          <!-- 비밀번호 확인 -->
+          <div class="make_pw make_check_pw relative">
+            <label
+              for="passwordCheck"
+              class="data_input_check layout_flex sr-only"
+              >비밀번호 확인
+            </label>
+            <input
+              type="password"
+              id="passwordCheck"
+              class="new_pw_check mb-2.5 mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
+              required
+              placeholder="비밀번호 확인"
+            />
+            <button
+              id="closePwCheck"
+              class="brightness-3 absolute right-6 top-[29px] h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px] invert-[50%]"
+            ></button>
+            <p
+              class="input_checkpw mt-[3px] hidden text-[10px] font-medium text-white"
+            >
+              비밀번호가 일치합니다.
+            </p>
+            <p
+              class="input_checkpw_N mt-[3px] hidden text-[10px] font-medium text-red"
+            >
+              비밀번호가 일치하지 않습니다.
+            </p>
+          </div>
+          <!-- email -->
+          <div class="make_email">
+            <label for="email" class="data_input_email layout_flex sr-only"
+              >이메일</label
+            >
+            <input
+              type="text"
+              id="email"
+              class="new_email mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-none focus:border-[1px] focus:border-gray3"
+              required
+              placeholder="이메일"
+            />
+          </div>
+          <p
+            class="input_email mt-[4px] hidden text-[10px] font-medium text-white"
+          >
+            이메일 형식이 일치합니다.
+          </p>
+          <p
+            class="input_email_N mt-[4px] hidden text-[10px] font-medium text-red"
+          >
+            이메일 형식이 일치하지 않습니다.
+          </p>
         </div>
-        <ul class="check_wrap">
+        <ul class="check_wrap mb-[13px] mt-3 text-[13px] font-light text-gray2">
           <li class="check_list">
-            <input type="checkbox" id="agreeAll" />
-            <label for="agreeAll">
-              <span>모두 동의합니다.</span>
+            <input
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopAFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              type="checkbox"
+              id="agreeAll"
+            />
+            <label for="agreeAll" class="cursor-pointer">
+              <span class="pl-[5px] align-middle">모두 동의합니다.</span>
             </label>
           </li>
         </ul>
         <ul class="checks_wrap">
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_1"/>
-            <label for="agree_1">
+          <li class="check_box mb-[15px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_1"
+            />
+            <label for="agree_1" class="cursor-pointer text-gray5">
               만 14세 이상입니다.
             </label>
           </li>
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_2"/>
-            <label for="agree_2">
+          <li class="check_box mb-[15px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_2"
+            />
+            <label for="agree_2" class="cursor-pointer text-gray5">
               [필수] 서비스 이용약관 동의
             </label>
           </li>
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_3"/>
-            <label for="agree_3">
+          <li class="check_box mb-[15px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_3"
+            />
+            <label for="agree_3" class="cursor-pointer text-gray5">
               [필수] 개인정보 수집 및 서비스 활용 동의
             </label>
           </li>
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_4"/>
-            <label for="agree_4">
+          <li class="check_box mb-[15px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_4"
+            />
+            <label for="agree_4" class="cursor-pointer text-gray5">
               [필수] 채널 홈페이지 개인정보 제 3자 제공 동의
             </label>
           </li>
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_5"/>
-            <label for="agree_5">
+          <li class="check_box mb-[15px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_5"
+            />
+            <label for="agree_5" class="cursor-pointer text-gray5">
               [선택] 개인정보 제 3자 제공동의
             </label>
           </li>
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_6"/>
-            <label for="agree_6">
+          <li class="check_box mb-[15px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_6"
+            />
+            <label for="agree_6" class="cursor-pointer text-gray5">
               [선택] 개인정보 수집 및 서비스 활용 동의
             </label>
           </li>
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_7"/>
-            <label for="agree_7">
+          <li class="check_box mb-[15px] pl-[35px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_7"
+            />
+            <label for="agree_7" class="cursor-pointer text-gray5">
               [선택] 마케팅 정보 SMS 수신동의
             </label>
           </li>
-          <li class="check_box">
-            <input type="checkbox" class="agree_item" id="agree_8"/>
-            <label for="agree_8">
+          <li class="check_box mb-[15px] pl-[35px]">
+            <input
+              type="checkbox"
+              class="cursor-pointer appearance-none before:inline-block before:h-[17px] before:w-[17px] before:bg-[url('/image/login/DesktopDNoFilled.png')] before:bg-[length:17px_17px] before:align-middle before:content-[''] checked:before:inline-block checked:before:h-[17px] checked:before:w-[17px] checked:before:bg-[url('/image/login/DesktopANoFilled.png')] checked:before:bg-[length:17px_17px] checked:before:bg-no-repeat"
+              id="agree_8"
+            />
+            <label for="agree_8" class="cursor-pointer text-gray5">
               [선택] 마케팅 정보 이메일 수신동의
             </label>
           </li>
         </ul>
+        <!-- 로그인 버튼 -->
         <div class="btn_wrap">
-          <button id="btnRegist" class="regist_btn" disabled>
+          <!-- disalbel 삭제 -->
+          <button
+            id="btnRegist"
+            class="regist_btn mx-0 mb-10 mt-2.5 inline-block w-full rounded bg-gray7 px-0 py-[15px] text-gray3"
+          >
             가입하기
           </button>
         </div>
