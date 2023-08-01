@@ -40,26 +40,37 @@
           <label for="id_input" class="data_input sr-only">아이디 </label>
           <input
             type="text"
-            class="id_box mb-2.5 block w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-[0]"
+            class="id_box mb-2.5 block w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-[0]"
             id="id_input"
             placeholder="아이디"
             required="required"
           />
+          <span
+            class="error-message m-2 hidden text-xs text-red_login"
+            id="userEmailError"
+            >아이디는 6자리 이상 10자리 이하로 입력해 주세요.</span
+          >
           <div class="relative mb-2.5">
             <label for="password_input" class="data_input sr-only"
               >비밀번호
             </label>
             <input
               type="password"
-              class="pw_box w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-[0]"
+              class="pw_box w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-white outline-[0]"
               id="password_input"
               placeholder="비밀번호"
               required="required"
+              autocomplete="current-password"
             />
             <button
               id="closePW"
-              class="absolute bottom-[20px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px]"
+              class="brightness-3 absolute right-6 top-[20px] h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px] invert-[50%]"
             ></button>
+            <span
+              class="error-message m-2 hidden text-xs text-red_login"
+              id="userPasswordError"
+              >비밀번호는 특수문자 포함 10자리 이상으로 입력해 주세요.</span
+            >
           </div>
         </form>
         <ul class="checks_wrap">
