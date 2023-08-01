@@ -4,6 +4,18 @@ const btnRight = document.getElementById("moveRight");
 const slider2 = document.querySelector(".slider2");
 const btnLeft2 = document.getElementById("moveLeft2");
 const btnRight2 = document.getElementById("moveRight2");
+const slider3 = document.querySelector(".slider3");
+const btnLeft3 = document.getElementById("moveLeft3");
+const btnRight3 = document.getElementById("moveRight3");
+const slider4 = document.querySelector(".slider4");
+const btnLeft4 = document.getElementById("moveLeft4");
+const btnRight4 = document.getElementById("moveRight4");
+const slider5 = document.querySelector(".slider5");
+const btnLeft5 = document.getElementById("moveLeft5");
+const btnRight5 = document.getElementById("moveRight5");
+const slider6 = document.querySelector(".slider6");
+const btnLeft6 = document.getElementById("moveLeft6");
+const btnRight6 = document.getElementById("moveRight6");
 
 function left(slideMain, slideEach) {
   let activeIndex = 0; // the current page on the slider
@@ -24,14 +36,7 @@ function left(slideMain, slideEach) {
   console.log(activeIndex);
 }
 
-// Scroll Left button
-btnLeft.addEventListener("click", () => left(slider, ".recommendEach"));
-btnRight.addEventListener("click", () => right(slider, ".recommendEach"));
-btnLeft2.addEventListener("click", () => left(slider2, ".realtimeEach"));
-btnRight2.addEventListener("click", () => right(slider2, ".realtimeEach"));
-
 function right(slideMain, slideEach) {
-  console.log("check");
   let activeIndex = 0; // the current page on the slider
   // Scroll Right button
   let movieWidth = document
@@ -64,3 +69,17 @@ function right(slideMain, slideEach) {
   // btnRight2.addEventListener("click", (e) => {
   // });
 }
+
+// Scroll button
+btnLeft.addEventListener("click", () => left(slider, ".recommendEach"));
+btnRight.addEventListener("click", () => right(slider, ".recommendEach"));
+btnLeft2.addEventListener("click", () => left(slider2, ".realtimeEach"));
+btnRight2.addEventListener("click", () => right(slider2, ".realtimeEach"));
+btnLeft3.addEventListener("click", () => left(slider3, ".quickEach"));
+btnRight3.addEventListener("click", () => right(slider3, ".quickEach"));
+btnLeft4.addEventListener("click", () => left(slider4, ".liveEach"));
+btnRight4.addEventListener("click", () => right(slider4, ".liveEach"));
+btnLeft5.addEventListener("click", () => left(slider5, ".onlyEach"));
+btnRight5.addEventListener("click", () => right(slider5, ".onlyEach"));
+btnLeft6.addEventListener("click", () => left(slider6, ".eventEach"));
+btnRight6.addEventListener("click", () => right(slider6, ".eventEach"));

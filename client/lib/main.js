@@ -1,4 +1,4 @@
-import { delayP, tiger, getNode as $, insertLast } from "./index.js";
+import { tiger, getNode as $, insertLast } from "./index.js";
 
 const recommend = $(".recommend");
 const quickVOD = $("#quickVOD");
@@ -33,7 +33,7 @@ async function renderProgram() {
 
     quickVODData.forEach((item) => {
       const template = /* html */ `
-      <figure class="pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="quickEach pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="mt-2.5">
         <h4>${item.name}</h4><span class="text-gray3">${item.episode}</span>
@@ -58,7 +58,7 @@ async function renderProgram() {
 
     liveData.forEach((item) => {
       const template = /* html */ `
-      <div class="mb-[50px] pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <div class="liveEach mb-[50px] pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
       <img src=${item.img.src} alt=${item.img.alt} />
       <div class="absolute flex">
         <h4 class="italic text-7xl font-bold">${item.index}</h4>
@@ -75,7 +75,7 @@ async function renderProgram() {
 
     onlyTaingData.forEach((item) => {
       const template = /* html */ `
-      <figure class="pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="onlyEach pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
       <img src=${item.posterImg.src} alt=${item.posterImg.alt} />
       <figcaption class="sr-only">${item.name}</figcaption>
     </figure>
@@ -85,7 +85,7 @@ async function renderProgram() {
 
     eventData.forEach((item) => {
       const template = /* html */ `
-      <figure class="pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="eventEach pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="sr-only">${item.name}</figcaption>
     </figure>

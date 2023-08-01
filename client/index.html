@@ -20,8 +20,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/include.js" defer></script>
     <script src="./js/slider.js" defer></script>
-    <!-- <script src="./js/header.js" type="module"></script> -->
     <script src="./lib/main.js" type="module"></script>
+    <script src="./js/header.js" type="module"></script>
     <style>
       /*
 *
@@ -48,11 +48,11 @@
 * THE SLIDER CONTAINER
 *
 *********************************/
-      .slider, .slider2 {
+      .slider, .slider2, .slider3, .slider4, .slider5, .slider6 {
         width: 100%;
         height: 110%;
         overflow-x: hidden;
-        overflow-y: visible;
+        overflow-y: hidden;
         white-space: nowrap;
         position: relative;
         /* padding-top: var(--slider-py);
@@ -69,7 +69,7 @@
 * MOVIE ELEMENTS!
 *
 *********************************/
-      .recommendEach, .realtimeEach {
+      .recommendEach, .realtimeEach, .quickEach, .liveEach, .onlyEach, .eventEach {
         /* width: var(--movie-width);
         height: var(--movie-height); */
         display: inline-block;
@@ -126,11 +126,11 @@
         /* visibility: hidden; */
       }
 
-      #moveLeft, #moveLeft2 {
+      #moveLeft, #moveLeft2, #moveLeft3, .btn-left {
         left: 0;
       }
 
-      #moveRight, #moveRight2 {
+      #moveRight, #moveRight2, #moveRight3, .btn-right {
         right: 0;
       }
 
@@ -232,50 +232,58 @@
       <h1 class="sr-only">추천 영상</h1>
       <article class="slide-container relative w-[97%] my-[3rem]">
         <h3 class="mb-5 text-xl font-bold">티빙에서 꼭 봐야하는 콘텐츠</h3>
-        <button type="button" id="moveLeft" class="btn-nav">ᐊ</button>
+        <button type="button" id="moveLeft" class="btn-nav btn-left">ᐊ</button>
         <div id="mySlider" class="slider recommend w-[115%] m:w-[140%] s:w-[245%]">
           <!-- <figure class="movie pr-3 transition-transform duration-500 ease-in-out hover:-translate-y-4">
             <img src="./image/main/desktop/img_frame.png" alt="보물찾기" />
             <figcaption>보물찾기</figcaption>
           </figure> -->
         </div>
-        <button type="button" id="moveRight" class="btn-nav">ᐅ</button>
+        <button type="button" id="moveRight" class="btn-nav btn-right">ᐅ</button>
       </article>
       
-      <article class="w-full my-[3rem]">
+      <article class="relative w-[97%] my-[3rem]">
         <h3 class="mb-5 text-xl font-bold">Quick VOD</h3>
-        <div id="quickVOD" class="w-[125%] m:w-[140%] s:w-[245%] flex flex-row flex-nowrap">
+        <button type="button" id="moveLeft3" class="btn-nav btn-left">ᐊ</button>
+        <div id="quickVOD" class="slider3 w-[125%] m:w-[140%] s:w-[245%]">
         </div>
+        <button type="button" id="moveRight3" class="btn-nav btn-right">ᐅ</button>
       </article>
       
-      <article class="relative w-full mt-[3rem] mb-[4rem]">
+      <article class="relative w-[97%] mt-[3rem] mb-[4rem]">
         <h3 class="mb-5 text-xl font-bold">실시간 인기 프로그램</h3>
-        <button type="button" id="moveLeft2" class="btn-nav">ᐊ</button>
+        <button type="button" id="moveLeft2" class="btn-nav btn-left">ᐊ</button>
         <div id="realtime" class="slider2 w-[110%] m:w-[145%] s:w-[250%] mb-[50px]">
         </div>
-        <button type="button" id="moveRight2" class="btn-nav">ᐅ</button>
+        <button type="button" id="moveRight2" class="btn-nav btn-right">ᐅ</button>
       </article>
       
-      <article class="w-full my-[3rem]">
+      <article class="relative w-[97%] my-[3rem]">
         <h3 class="mb-5 text-xl font-bold">인기 LIVE 채널</h3>
-        <div id="live" class="w-[110%] m:w-[180%] s:w-[280%] flex flex-row flex-nowrap">
+        <button type="button" id="moveLeft4" class="btn-nav btn-left">ᐊ</button>
+        <div id="live" class="slider4 w-[110%] m:w-[180%] s:w-[280%]">
         </div>
+        <button type="button" id="moveRight4" class="btn-nav btn-right">ᐅ</button>
       </article>
       
-      <article class="w-full my-[3rem]">
+      <article class="relative w-[97%] my-[3rem]">
         <h3 class="mb-5 text-xl font-bold">오직 티빙에만 있어요</h3>
-        <div id="onlyTaing" class="w-[110%] m:w-[160%] s:w-[320%] flex flex-row flex-nowrap"> <!-- figure 감싸고 캡션 a11y주기-->
+        <button type="button" id="moveLeft5" class="btn-nav btn-left">ᐊ</button>
+        <div id="onlyTaing" class="slider5 w-[110%] m:w-[160%] s:w-[320%]"> <!-- figure 감싸고 캡션 a11y주기-->
         </div>
+        <button type="button" id="moveRight5" class="btn-nav btn-right">ᐅ</button>
       </article>
       
       <article class="w-[95%] my-[3rem]">
         <img src="./image/main/desktop/img_frame-28.png" alt="스포츠 배너" />
       </article>
       
-      <article class="w-full">
+      <article class="relative w-[97%]">
         <h3 class="mb-5 text-xl font-bold">이벤트</h3>
-        <div id="event" class="mb-[50px] w-[170%] s:w-[280%] flex flex-row flex-nowrap">
+        <button type="button" id="moveLeft6" class="btn-nav btn-left">ᐊ</button>
+        <div id="event" class="slider6 mb-[50px] w-[170%] s:w-[280%]">
         </div>
+        <button type="button" id="moveRight6" class="btn-nav btn-right">ᐅ</button>
       </article>
     </section>
   </main>
