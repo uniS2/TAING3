@@ -18,9 +18,12 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
   try {
     const users = (await tiger.get(url)).data;
 
-    //! header 처리
+    //# header 처리
     // include 땡겨오면 none 해줄게!!
+    getNode("header").style.position = "relative";
     getNode("nav").style.display = "none";
+    getNode("form").style.display = "none";
+    getNode(".userInfo").style.display = "none";
 
     if (!users.length) return;
     if (!isString(url))
@@ -28,7 +31,7 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
 
     users.forEach(({ id, profile, ...restOptions } = {}) => {
       //^ 로그인한 회원 id 통한 index 가져오기
-      if (id === "likelion01") {
+      if (id === "likelion02") {
         const nickSrc = Object.entries(profile);
 
         nickSrc.forEach(([nickname, src]) => {
