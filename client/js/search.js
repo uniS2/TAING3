@@ -194,7 +194,9 @@ searchRecent.addEventListener("click", handleErase);
 
 if (localStorage.getItem("이듬")) {
   clearContents(history);
-  const data = JSON.parse(localStorage.getItem("이듬"));
+  const data = JSON.parse(localStorage.getItem("진"));
+  let count = 0;
+
   for (let value of data) {
     const templateHistoryLog = /*html*/ `
     <p class="search__earse">
