@@ -28,7 +28,7 @@ async function renderProfile(url = "http://localhost:3000/users") {
 
     users.forEach(({ id, profile, ...restOptions } = {}) => {
       //^ 로그인한 회원 id 통한 index 가져오기
-      if (id === "likelion01") {
+      if (id === "likelion02") {
         const nickSrc = Object.entries(profile);
 
         nickSrc.forEach(([nickname, src]) => {
