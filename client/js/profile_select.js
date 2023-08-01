@@ -44,7 +44,7 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
               class="profile__link text-gray3"
             >
               <div
-                class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%] s:w-[100%]"
+                class="profile__img__div relative duration-300 ease-linear hover:-translate-y-[10%] s:w-[100%]"
               >
                 <img
                   src="image/profile/mobile/${src}"
