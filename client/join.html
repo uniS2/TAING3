@@ -18,13 +18,16 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+
     <script src="./js/include.js" defer></script>
     <script src="./js/header.js" type="module"></script>
+    <script src="./js/join.js" type="module"></script>
+
   </head>
 
   <body class="profile__body bg-black text-white">
-    <div w3-include-html="./header.html"></div>
-    <main class="join_page">
+    <header w3-include-html="./header.html"></header>
+    <main class="join_page pt-[5%]">
       <section
         class="join mx-[auto] mb-0 mt-[30px] w-2/5 max-w-[400px] s:w-[95%] m:w-[70%]"
       >
@@ -39,6 +42,7 @@
           </div>
         </div>
         <div class="info_wrap">
+          <!-- 아이디 -->
           <div class="make_id">
             <label for="userId" class="data_input_id layout_flex sr-only"
               >아이디
@@ -46,7 +50,7 @@
             <input
               type="text"
               id="userId"
-              class="new_id mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none"
+              class="new_id mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="아이디"
             />
@@ -54,6 +58,7 @@
               영문 또는 영문, 숫자 조합 6~12자리
             </p>
           </div>
+          <!-- 비밀번호 -->
           <div class="make_pw relative">
             <label for="userPw" class="data_input_pw layout_flex sr-only"
               >비밀번호</label
@@ -61,7 +66,7 @@
             <input
               type="password"
               id="userPw"
-              class="new_pw mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none"
+              class="new_pw mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="비밀번호"
             />
@@ -69,10 +74,11 @@
               id="closePwCheck"
               class="absolute bottom-[39px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px]"
             ></button>
-            <p class="input_info mt-[5px] text-[10px] font-medium text-gray6">
+            <p class="input_pw mt-[5px] text-[10px] font-medium text-gray6">
               영문,숫자,특수문자(~!@#$%^&*) 조합 8~15자리
             </p>
           </div>
+          <!-- 비밀번호 확인 -->
           <div class="make_pw relative">
             <label
               for="passwordCheck"
@@ -82,7 +88,7 @@
             <input
               type="password"
               id="passwordCheck"
-              class="new_pw_check mb-2.5 mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none"
+              class="new_pw_check mb-2.5 mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="비밀번호 확인"
             />
@@ -91,6 +97,7 @@
               class="absolute bottom-[29px] right-6 h-[25px] w-[25px] bg-[url('/image/login/DesktopPw.png')] bg-contain bg-[25px]"
             ></button>
           </div>
+          <!-- email -->
           <div class="make_email">
             <label for="email" class="data_input_email layout_flex sr-only"
               >이메일</label
@@ -98,7 +105,7 @@
             <input
               type="text"
               id="email"
-              class="new_email mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none"
+              class="new_email mt-2.5 w-full rounded border-0 bg-darkbg2 px-[15px] py-5 text-gray6 outline-none focus:border-[1px] focus:border-gray3"
               required
               placeholder="이메일"
             />
@@ -198,11 +205,12 @@
             </label>
           </li>
         </ul>
+        <!-- 로그인 버튼 -->
         <div class="btn_wrap">
+          <!-- disalbel 삭제 -->
           <button
             id="btnRegist"
             class="regist_btn mx-0 mb-10 mt-2.5 inline-block w-full rounded bg-gray7 px-0 py-[15px] text-gray3"
-            disabled
           >
             가입하기
           </button>

@@ -23,7 +23,7 @@ async function renderProgram() {
 
     recommendData.forEach((item) => {
       const template = /* html */ `
-      <figure id="movie0" class="movie pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure id="movie0" class="movie recommendEach pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="pt-2.5 text-gray2">${item.name}</figcaption>
       </figure>
@@ -45,7 +45,7 @@ async function renderProgram() {
 
     realtimeData.forEach((item) => {
       const template = /* html */ `
-      <figure class="relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="realtimeEach mb-[50px] relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="-mt-6">
         <span class="absolute top-[95%] italic text-7xl m:text-6xl font-bold">${item.rank}</span>

@@ -20,6 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/include.js" defer></script>
     <script src="./js/slider.js" defer></script>
+    <!-- <script src="./js/header.js" type="module"></script> -->
     <script src="./lib/main.js" type="module"></script>
     <style>
       /*
@@ -47,8 +48,9 @@
 * THE SLIDER CONTAINER
 *
 *********************************/
-      .slider {
+      .slider, .slider2 {
         width: 100%;
+        height: 110%;
         overflow-x: hidden;
         overflow-y: visible;
         white-space: nowrap;
@@ -67,15 +69,15 @@
 * MOVIE ELEMENTS!
 *
 *********************************/
-      .movie {
-        width: var(--movie-width);
-        height: var(--movie-height);
+      .recommendEach, .realtimeEach {
+        /* width: var(--movie-width);
+        height: var(--movie-height); */
         display: inline-block;
         position: relative;
-        color: white;
-        padding: 0 2px;
-        font-size: 0.8rem;
-        transition: all 0.8s ease-in-out;
+        /* color: white; */
+        /* padding: 0 2px; */
+        /* font-size: 0.8rem; */
+        /* transition: all 0.8s ease-in-out; */
       }
 
       .movie:nth-of-type(1) {
@@ -124,11 +126,11 @@
         /* visibility: hidden; */
       }
 
-      #moveLeft {
+      #moveLeft, #moveLeft2 {
         left: 0;
       }
 
-      #moveRight {
+      #moveRight, #moveRight2 {
         right: 0;
       }
 
@@ -148,7 +150,7 @@
   </head>
 
 <body class="bg-black text-white w-full overflow-x-hidden s:overflow-x-hidden m:overflow-x-hidden">
-  <!-- <div w3-include-html="./header.html"></div> -->
+  <div w3-include-html="./header.html"></div>
   <!-- 모달 -->
   <!-- <div id="mainModal" class="modal">
     <div class="modal__box">
@@ -246,10 +248,12 @@
         </div>
       </article>
       
-      <article class="w-full mt-[3rem] mb-[4rem]">
+      <article class="relative w-full mt-[3rem] mb-[4rem]">
         <h3 class="mb-5 text-xl font-bold">실시간 인기 프로그램</h3>
-        <div id="realtime" class="w-[110%] m:w-[145%] s:w-[250%] flex flex-row flex-nowrap">
+        <button type="button" id="moveLeft2" class="btn-nav">ᐊ</button>
+        <div id="realtime" class="slider2 w-[110%] m:w-[145%] s:w-[250%] mb-[50px]">
         </div>
+        <button type="button" id="moveRight2" class="btn-nav">ᐅ</button>
       </article>
       
       <article class="w-full my-[3rem]">

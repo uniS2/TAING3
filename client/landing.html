@@ -26,14 +26,14 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
 
-   
-    <script src="./js/landing.js" defer></script>
-    <!-- <script src="./js/include.js" defer></script> -->
+    <script src="./js/landing.js" type="module"></script>
+    <script src="./js/include.js" defer></script>
+    <script src="./js/header.js" type="module"></script>
   </head>
 
   <body class="landing__body bg-black text-white">
     <!-- header 따로 추가 -->
-    <header
+    <!-- <header
     id="scrollHeader"
     class="header fixed left-0 top-0 z-[1] flex items-center w-[100vw]  justify-between s:gap-[16px] m:gap-[24px] l:gap-[40px] bg-gradient-to-b from-black2 to-transparent s:px-[16px] s:py-[11.5 px] m:px-[40px] m:py-[16px] l:px-[70px] l:py-[29px] text-white"
   >
@@ -45,8 +45,8 @@
         aria-label="TAING"
       ></a>
     </h1>
-    </header>
-    <!-- <header w3-include-html="./header.html"></header> -->
+    </header> -->
+    <header w3-include-html="./header.html"></header>
     <main>
       <section class="section1 s:h-[379px] m:h-[550px] l:h-[1100px] w-[100%]  bg-cover bg-bottom bg-no-repeat  min-h-full flex flex-col justify-center items-center bg-[url('/image/landing/backgorund-1.png')]" 
       >
