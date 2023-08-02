@@ -16,7 +16,7 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfileSelect(url = "http://localhost:3000/users") {
+async function renderProfileInit(url = "http://localhost:3000/users") {
   try {
     const users = (await tiger.get(url)).data;
 
@@ -76,32 +76,19 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
       }
     });
 
-    //# 프로필 선택 처리
-    //$ 로그인 회원 정보 및 선택 통한 프로필 정보 받아오기
-    //$ currentProfile === 로그인.id + profile
-    // setStorage("currentProfile", "진");
-    const profileImg = getNodes(".profile__img");
-
-    // profileImg.forEach((node) => {
-    //   if (
-    //     node.alt ===
-    //     `${JSON.parse(localStorage.getItem("currentProfile"))} 프로필`
-    //   ) {
-    //     // const profile = node.closest(".profile__img__div");
-    //   }
-    // });
-
+    //# 프로필 선택하기
     const handleProfileSelect = (e) => {
       e.preventDefault();
       const target = e.target.closest(".profile__img__div");
-      if (isNull(target)) return;
+      const currentImg = target.firstChild.nextSibling;
+      if (isNull(target) || isNull(currentImg)) return;
 
-      const profile = [...getNodes(".profile__img__div")];
+      const currentImgInfo = currentImg.alt.slice(0, 1);
+      console.log(currentImgInfo);
 
       if (target) {
+        setStorage("currentProfile", currentImgInfo);
         window.location.href = "./index.html";
-        //$ 현재 프로필 정보 바꾸기
-        // setStorage("currentProfile", target)
       }
     };
 
@@ -111,7 +98,7 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
   }
 }
 
-renderProfileSelect();
+renderProfileInit();
 
 //# 버튼 이동
 
