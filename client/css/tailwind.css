@@ -11,7 +11,27 @@
     border-radius: 0.25rem; */
   }
 
-  .is--invalid {
-    @apply mt-4 block text-[1.2rem] text-red;
+  .sliderBasic {
+    @apply relative w-full overflow-hidden whitespace-nowrap;
+  }
+
+  .btn-nav {
+    @apply absolute top-12 z-10 w-[50px] border-none bg-black/30 outline-0;
+  }
+
+  .btn-left {
+    @apply left-0;
+  }
+
+  .btn-right {
+    @apply right-0;
+  }
+
+  .modal {
+    @apply fixed bottom-0 left-0 right-0 top-0 z-20 hidden w-full bg-black/80;
+  }
+
+  .modal__box {
+    @apply absolute left-[35%] top-[40%] flex h-[200px] w-[400px] flex-col items-center justify-center;
   }
 }
