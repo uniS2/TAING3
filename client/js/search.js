@@ -15,12 +15,13 @@ const popularLists = getNode(".search__lists");
 
 // 실시간 인기 검색어 rendering
 //^ [효윤님] header의 검색 버튼 부분을 클릭시 작동하기
-async function renderPopularList(url = "http://localhost:3000/program") {
+async function renderPopularList(url = "http://localhost:3000/popular") {
   try {
-    const realtime = (await tiger.get(url)).data.realtime;
+    const realtime = (await tiger.get(url)).data;
 
     //# 헤더 처리
     getNode("header").style.position = "relative";
+    getNode("nav").style.display = "none";
 
     if (!realtime.length) return;
     if (!isString(url))
