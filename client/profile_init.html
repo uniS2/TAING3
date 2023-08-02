@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAING - 프로필 선택</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="icon" href="./image/main/tiving.ico" type="image/x-icon" />
+    <script src="./js/profile_init.js" type="module"></script>
+    <script src="./js/include.js" defer></script>
+  </head>
+  <body class="profile__body h-auto w-full max-w-full bg-black">
+    <div w3-include-html="./header.html"></div>
+    <section
+      class="profile mx-auto mb-[6.25rem] mt-[3.125rem] w-[70%] s:w-[45%] s:min-w-[18.75rem] m:w-[90%]"
+    >
+      <h1
+        class="profile__title mb-[1.875rem] text-center text-[2.4375rem] font-bold leading-[140%] text-white s:text-[1.75rem]"
+      >
+        프로필 선택
+      </h1>
+      <p
+        class="profile__word mb-5 text-center text-[1.625rem] font-semibold leading-[150%] text-gray2 s:mb-10 s:text-[1.3125rem]"
+      >
+        시청할 프로필을 선택해주세요.
+      </p>
+      <ul
+        class="profile__lists flex items-center justify-center gap-x-[2.8125rem] pt-11 s:flex-wrap s:gap-6 s:pt-0"
+      ></ul>
+      <button
+        type="button"
+        class="profile__button m-auto mt-[2.1875rem] block w-[15rem] cursor-pointer rounded border border-solid border-gray6 py-5 text-[1.365rem] font-semibold leading-[150%] text-gray2 hover:border-white hover:text-white"
+      >
+        프로필 편집
+      </button>
+    </section>
+    <div w3-include-html="./footer.html"></div>
+  </body>
+</html>
