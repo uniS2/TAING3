@@ -37,45 +37,36 @@ async function ready() {
 ready();
 
 //로그인 버튼 클릭 시 함수 실행
-getNode("#doLogIn").addEventListener("click", function (event) {
-  const email = document.querySelector("#id_input");
-  const pw = document.querySelector("#password_input");
-  const emailInput = email.value;
-  const passwordInput = pw.value;
-  const emailError = document.querySelector("#userEmailError");
-  const pwError = document.querySelector("#userPasswordError");
-  const eyes = document.querySelector("#closePW");
-  // console.log(emailInput);
-  // let errorMessage = '';
-  // console.log(eyes)
-  //아이디 유효성 검사 함수
-  function idCheck() {
+    getNode("#doLogIn")
+ .addEventListener("click", function (event) {
+    const email = document.querySelector("#id_input");
+    const pw = document.querySelector("#password_input");
+    const emailInput = email.value;
+    const passwordInput = pw.value;
+    const emailError = document.querySelector('#userEmailError');
+    const pwError = document.querySelector('#userPasswordError');
+    const eyes = document.querySelector('#closePW')
+
+//아이디 유효성 검사 함수
+function idCheck() {
     if (emailInput.length > 0 && !idReg(emailInput)) {
       emailError.style.display = "block";
       event.preventDefault();
-      //  prevenDefault함수: a 태그나 submit 태그는 누르게 되면 href 를 통해 이동하거나 , 창이 새로고침하여 실행
-      // email.classList.add("is--invalid");
-      // 명시된 클래스를 추가하는 메서드입니다.
       return;
     } else {
-      emailError.style.display = "none";
-      // email.classList.remove("is--invalid");
+      emailError.style.display = 'none';
       return emailInput;
     }
   }
-
-  //비밀번호 유효성 검사 함수
-  function pwCheck() {
+   //비밀번호 유효성 검사 함수
+   function pwCheck() {
     if (passwordInput.length > 0 && !pwReg(passwordInput)) {
       pwError.style.display = "block";
       event.preventDefault();
-      // pw.classList.add("is--invalid");
       return;
     } else {
-      pwError.style.display = "none";
-      eyes.style.display = "none";
-
-      // pw.classList.remove("is--invalid");
+      pwError.style.display = 'none';
+      eyes.style.display = 'none';
       return passwordInput;
     }
   }
