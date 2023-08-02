@@ -39,9 +39,9 @@ window.addEventListener("scroll", function () {
 });
 
 // 프로필 선택
-async function renderProfile(url = "http://localhost:3000/users") {
+async function renderProfile(url = "./server/db/data.json") {
   try {
-    const users = (await tiger.get(url)).data;
+    const users = (await tiger.get(url)).data.users;
     if (!users.length) return;
 
     const currentProfile = JSON.parse(localStorage.getItem("currentProfile"));
@@ -52,8 +52,8 @@ async function renderProfile(url = "http://localhost:3000/users") {
       typeError("함수 renderProfile의 매개변수는 문자이어야 합니다.");
     if (!currentProfile || !profilePhoto || !profilename) return;
 
-    userProfile.style.backgroundImage = `url('image/profile/mobile/profile_${currentProfile}.png')`;
-    profilePhoto.src = `image/profile/mobile/profile_${currentProfile}.png`;
+    userProfile.style.backgroundImage = `url('./image/profile/mobile/profile_${currentProfile}.png')`;
+    profilePhoto.src = `./image/profile/mobile/profile_${currentProfile}.png`;
     profilename.innerText = currentProfile;
   } catch (error) {
     console.log(error);
