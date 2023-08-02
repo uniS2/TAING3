@@ -1417,8 +1417,8 @@ video {
   background-image: url('./../image/profile/mobile/profile_진.png');
 }
 
-.bg-\[url\(\'\/image\/search\/Search\.png\'\)\] {
-  background-image: url('/image/search/Search.png');
+.bg-\[url\(\'\.\/\.\.\/image\/search\/Search\.png\'\)\] {
+  background-image: url('./../image/search/Search.png');
 }
 
 .bg-gradient-to-b {
@@ -1426,11 +1426,11 @@ video {
 }
 
 .bg-xFilledMark {
-  background-image: url('/image/search/Device=Desktop, Type=Filled.png');
+  background-image: url('./../image/search/Device=Desktop, Type=Filled.png');
 }
 
 .bg-xNofilledMark {
-  background-image: url('/image/search/Device=Desktop, Type=No_Filled.png');
+  background-image: url('./../image/search/Device=Desktop, Type=No_Filled.png');
 }
 
 .from-black2 {
@@ -1893,7 +1893,7 @@ video {
 .btn-nav {
   position: absolute;
   top: 3rem;
-  z-index: 10;
+  z-index: 1;
   width: 50px;
   border-style: none;
   background-color: rgb(0 0 0 / 0.3);
