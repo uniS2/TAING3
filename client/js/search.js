@@ -110,7 +110,6 @@ function handleSearch(e) {
   async function saveSearch(url = "http://localhost:3000/users") {
     try {
       const users = (await tiger.get(url)).data;
-      const url_history = "http://localhost:3000/history";
       const history = (await tiger.get("http://localhost:3000/history")).data;
 
       if (!users.length) return;
@@ -119,30 +118,37 @@ function handleSearch(e) {
 
       users.forEach(({ id, profile, ...restOptions } = {}) => {
         //$ if 현재 로그인 === key 값 -> 현재 선택한 프로필 === key 값
-        if (id === "likelion01") {
-          if (Object.keys(profile).includes("이듬")) {
-            //! server 정보
-            // let serverItems = history["likelion01"]["이듬"];
+        const currentID = JSON.parse(localStorage.getItem("currentID"));
+        if (id === currentID && Object.keys(profile).includes("진")) {
+          // 이전에 저장된 "items"가 없다면 빈 배열로 초기화
+          let items = JSON.parse(localStorage.getItem("진")) || [];
 
-            // 이전에 저장된 "items"가 없다면 빈 배열로 초기화
-            let items = JSON.parse(localStorage.getItem("이듬")) || [];
+          // 새로운 값을 배열에 추가
+          items.push(`${text}`);
 
-            // 새로운 값을 배열에 추가
-            items.push(`${text}`);
+          // 변경된 배열을 다시 "items" 키로 localStorage에 저장
+          setStorage("진", items);
 
-            // 변경된 배열을 다시 "items" 키로 localStorage에 저장
-            setStorage("이듬", items);
-            // tiger.put(
-            //   url_history,
-            //   `
-            //     "이듬": [
-            //       "${getStorage("이듬")}"
-            //     ]
-            //   `,
-            // );
-          }
+          //! server 정보
+          // url = `http://localhost:3000/history/${currentID}`;
+          // tiger.put(
+          //   url,
+          //   `
+          //     "profile": {
+          //       "정": [
+
+          //       ],
+          //       "진": "${items}",
+          //       "이": [
+
+          //       ],
+          //       "효": [
+
+          //       ]
+          //     }
+          //   `,
+          // );
         }
-        count += 1;
       });
     } catch (error) {
       console.log(error);
@@ -172,7 +178,7 @@ function isClassName(node, className) {
   return node.className.split(" ").includes(className);
 }
 
-function handleErase(e) {
+async function handleErase(e) {
   e.preventDefault();
   const eraseBtn = e.target.closest("button");
   const historyOne = e.target.closest(".search__earse");
@@ -181,23 +187,38 @@ function handleErase(e) {
 
   if (isClassName(eraseBtn, "search__eraseAll")) {
     clearContents(history);
-    deleteStorage("이듬");
+    deleteStorage("진");
   }
 
   if (isClassName(eraseBtn, "search__eraseOne")) {
+    let historyLog = await JSON.parse(localStorage.getItem("진"));
+    console.log(historyLog);
+
+    const filtered = historyLog.filter((item) => {
+      return item !== historyOne.innerText.trim(); //! 공백
+    });
+    console.log(filtered);
     clearContents(historyOne);
-    // deleteStorage("이듬");
+    deleteStorage("진");
+    setStorage("진", filtered);
   }
 }
 
 searchRecent.addEventListener("click", handleErase);
 
-if (localStorage.getItem("이듬")) {
+// 검색 기록 - localstorage 처리
+// if (localStorage.getItem("진").trim() === []) {
+//   deleteStorage("진");
+//   insertLast(history, "검색 내역이 없습니다.");
+// } else
+if (localStorage.getItem("진")) {
   clearContents(history);
-  const data = JSON.parse(localStorage.getItem("이듬"));
+  const data = JSON.parse(localStorage.getItem("진"));
+  let count = 0;
+
   for (let value of data) {
     const templateHistoryLog = /*html*/ `
-    <p class="search__earse">
+    <p class="search__earse history_${count}">
     ${value}
     <button class="search__eraseOne h-[0.9375rem] ml-3 inline-block w-[0.9375rem] bg-xNofilledMark bg-no-repeat" id="history"></button>
     </p>
