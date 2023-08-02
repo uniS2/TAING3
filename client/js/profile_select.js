@@ -16,9 +16,9 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfileSelect(url = "http://localhost:3000/users") {
+async function renderProfileSelect(url = "./server/db/data.json") {
   try {
-    const users = (await tiger.get(url)).data;
+    const users = (await tiger.get(url)).data.users;
 
     // header 처리
     getNode("header").style.position = "relative";

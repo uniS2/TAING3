@@ -1,6 +1,33 @@
 {
   "banner": [
     {
+      "name": "자기님들의 인생으로 떠나는 사람 여행",
+      "img": {
+        "src": "https://image.tving.com/upload/fe/highlight/2022/1005/20221005184000banner_image_url_u.jpg/dims/resize/F_webp,1920",
+        "alt": "유퀴즈 온더 블럭"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "알쓸별잡 1일 후, 공개! 지금 공개 예정작에서 만나보세요",
+      "img": {
+        "src": "https://image.tving.com/upload/fe/highlight/2023/0802/20230802094120banner_image_url_u.jpg/dims/resize/F_webp,1920",
+        "alt": "알쓸별잡 1일 후, 공개"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "기적의 형제",
+      "img": {
+        "src": "https://image.tving.com/upload/fe/highlight/2023/0628/20230628223928banner_image_url_u.jpg/dims/resize/F_webp,1920",
+        "alt": "시간의 경계를 넘어 진실을 쫓는 이야기"
+      },
+      "index": 4,
+      "id": 4
+    },
+    {
       "name": "인생 2회차를 사는 판타지 드라마",
       "img": {
         "src": "./image/main/banner_img_desktop.png",
@@ -38,6 +65,51 @@
     }
   ],
   "recommend": [
+    {
+      "name": "놀라운 토요일",
+      "img": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP0900/P000515167.jpg/dims/resize/F_webp,240",
+        "alt": "놀라운 토요일"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "브로마블",
+      "img": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP0900/P001729192.jpg/dims/resize/F_webp,240",
+        "alt": "브로마블"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "기적의 형제",
+      "img": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP0900/P001729207.jpg/dims/resize/F_webp,240",
+        "alt": "기적의 형제"
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "오랫동안 당신을 기다렸습니다",
+      "img": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP0900/P001737945.jpg/dims/resize/F_webp,240",
+        "alt": ""
+      },
+      "index": 1,
+      "id": 1
+    },
+    {
+      "name": "이번 생도 잘 부탁해",
+      "img": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP0900/P001725512.jpg/dims/resize/F_webp,240",
+        "alt": "이번 생도 잘 부탁해"
+      },
+      "index": 1,
+      "id": 1
+    },
     {
       "name": "보물찾기",
       "img": {
@@ -425,6 +497,42 @@
   ],
   "onlyTaing": [
     {
+      "name": "아일랜드",
+      "posterImg": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP2510/P001665114.jpg/dims/resize/F_webp,282",
+        "alt": "아일랜드"
+      },
+      "index": 1,
+      "id": 0
+    },
+    {
+      "name": "방과 후 전쟁활동",
+      "posterImg": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP2510/P001693843.jpg/dims/resize/F_webp,282",
+        "alt": "방과 후 전쟁활동"
+      },
+      "index": 1,
+      "id": 0
+    },
+    {
+      "name": "여고추리반",
+      "posterImg": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP2520/P001537909.jpg/dims/resize/F_webp,282",
+        "alt": "여고추리반"
+      },
+      "index": 1,
+      "id": 0
+    },
+    {
+      "name": "신비아파트",
+      "posterImg": {
+        "src": "https://image.tving.com/upload/cms/caip/CAIP2510/P001728181.jpg/dims/resize/F_webp,282",
+        "alt": "신비아파트"
+      },
+      "index": 1,
+      "id": 0
+    },
+    {
       "name": "전체관람가",
       "posterImg": {
         "src": "./image/main/desktop/poster5.png",
@@ -489,6 +597,42 @@
     }
   ],
   "event": [
+    {
+      "name": "기적의 형제 이벤트",
+      "img": {
+        "src": "https://image.tving.com/upload/fe/event/2023/0731/20230731185119list_image_upload.jpg/dims/resize/F_webp,346",
+        "alt": "기적의 형제 이벤트"
+      },
+      "index": 1,
+      "id": 0
+    },
+    {
+      "name": "퀸덤퍼즐 이벤트",
+      "img": {
+        "src": "https://image.tving.com/upload/fe/event/2023/0721/20230721121944list_image_upload.jpg/dims/resize/F_webp,346",
+        "alt": "퀸덤퍼즐 이벤트"
+      },
+      "index": 1,
+      "id": 0
+    },
+    {
+      "name": "지구오락실2 이벤트",
+      "img": {
+        "src": "https://image.tving.com/upload/fe/event/2023/0719/20230719171240list_image_upload.jpg/dims/resize/F_webp,346",
+        "alt": "지구오락실2 이벤트"
+      },
+      "index": 1,
+      "id": 0
+    },
+    {
+      "name": "브로마블 이벤트",
+      "img": {
+        "src": "https://image.tving.com/upload/fe/event/2023/0721/20230721102909list_image_upload.jpg/dims/resize/F_webp,346",
+        "alt": "브로마블 이벤트"
+      },
+      "index": 1,
+      "id": 0
+    },
     {
       "name": "신비아파트 개봉 이벤트",
       "img": {

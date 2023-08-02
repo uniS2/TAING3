@@ -16,9 +16,9 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfileInit(url = "http://localhost:3000/users") {
+async function renderProfileInit(url = "./server/db/data.json") {
   try {
-    const users = (await tiger.get(url)).data;
+    const users = (await tiger.get(url)).data.users;
 
     //# header 처리
     // include 땡겨오면 none 해줄게!!

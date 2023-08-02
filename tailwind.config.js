@@ -59,9 +59,9 @@ module.exports = {
         silver: "#999",
       },
       backgroundImage: {
-        xFilledMark: "url('/image/search/Device=Desktop, Type=Filled.png')",
+        xFilledMark: "url('./../image/search/Device=Desktop, Type=Filled.png')",
         xNofilledMark:
-          "url('/image/search/Device=Desktop, Type=No_Filled.png')",
+          "url('./../image/search/Device=Desktop, Type=No_Filled.png')",
       },
     },
   },
