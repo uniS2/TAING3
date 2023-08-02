@@ -17,69 +17,112 @@ const slider6 = document.querySelector(".slider6");
 const btnLeft6 = document.getElementById("moveLeft6");
 const btnRight6 = document.getElementById("moveRight6");
 
+const defaultOptions = {
+  d: 7,
+  t: 4,
+  m: 2,
+};
+
 function left(slideMain, slideEach) {
-  let activeIndex = 0; // the current page on the slider
-  //console.log(document.querySelector(".movie"));
+  let { d, t, m } = defaultOptions;
 
   let movieWidth = document
     .querySelector(slideEach)
     .getBoundingClientRect().width;
-  let scrollDistance = movieWidth * 7;
-  // Scroll the length of 6 movies. TODO: make work for mobile because (4 movies/page instead of 6)
+  let scrollDistance;
+
+  if (window.innerWidth >= 1280) scrollDistance = movieWidth * d;
+  else if (window.innerWidth >= 768 && window.innerWidth < 1280)
+    scrollDistance = movieWidth * t;
+  else if (window.innerWidth >= 320 && window.innerWidth < 768)
+    scrollDistance = movieWidth * m;
 
   slideMain.scrollBy({
     top: 0,
     left: -scrollDistance,
     behavior: "smooth",
   });
-  activeIndex = (activeIndex - 1) % 3;
-  console.log(activeIndex);
 }
 
-function right(slideMain, slideEach) {
-  let activeIndex = 0; // the current page on the slider
-  // Scroll Right button
+function right(slideMain, slideEach, defaultOptions) {
+  let { d, t, m } = defaultOptions;
+
   let movieWidth = document
     .querySelector(slideEach)
     .getBoundingClientRect().width;
-  let scrollDistance = movieWidth * 7;
-  // Scroll the length of 6 movies. TODO: make work for mobile because (4 movies/page instead of 6)
+  let scrollDistance;
 
-  console.log(`movieWidth = ${movieWidth}`);
-  console.log(`scrolling right ${scrollDistance}`);
+  if (window.innerWidth >= 1280) scrollDistance = movieWidth * d;
+  else if (window.innerWidth >= 768 && window.innerWidth < 1280)
+    scrollDistance = movieWidth * t;
+  else if (window.innerWidth >= 320 && window.innerWidth < 768)
+    scrollDistance = movieWidth * m;
 
-  // if we're on the last page
-  if (activeIndex == 2) {
-    // duplicate all the items in the slider (this is how we make 'looping' slider)
-    slideMain.scrollBy({
-      top: 0,
-      left: +scrollDistance,
-      behavior: "smooth",
-    });
-    activeIndex = 0;
-  } else {
-    slideMain.scrollBy({
-      top: 0,
-      left: +scrollDistance,
-      behavior: "smooth",
-    });
-    activeIndex = (activeIndex + 1) % 3;
-    console.log(activeIndex);
-  }
-  // btnRight2.addEventListener("click", (e) => {
-  // });
+  slideMain.scrollBy({
+    top: 0,
+    left: +scrollDistance,
+    behavior: "smooth",
+  });
 }
 
 // Scroll button
-btnLeft.addEventListener("click", () => left(slider, ".recommendEach"));
-btnRight.addEventListener("click", () => right(slider, ".recommendEach"));
-btnLeft2.addEventListener("click", () => left(slider2, ".realtimeEach"));
-btnRight2.addEventListener("click", () => right(slider2, ".realtimeEach"));
-btnLeft3.addEventListener("click", () => left(slider3, ".quickEach"));
-btnRight3.addEventListener("click", () => right(slider3, ".quickEach"));
-btnLeft4.addEventListener("click", () => left(slider4, ".liveEach"));
-btnRight4.addEventListener("click", () => right(slider4, ".liveEach"));
-btnLeft5.addEventListener("click", () => left(slider5, ".onlyEach"));
-btnRight5.addEventListener("click", () => right(slider5, ".onlyEach"));
-btnLeft6.addEventListener("click", () => left(slider6, ".eventEach"));
-btnRight6.addEventListener("click", () => right(slider6, ".eventEach"));
+btnLeft.addEventListener("click", () =>
+  left(slider, ".recommendEach", defaultOptions),
+);
+btnRight.addEventListener("click", () =>
+  right(slider, ".recommendEach", defaultOptions),
+);
+btnLeft2.addEventListener("click", () =>
+  left(slider2, ".realtimeEach", defaultOptions),
+);
+btnRight2.addEventListener("click", () =>
+  right(slider2, ".realtimeEach", defaultOptions),
+);
+btnLeft3.addEventListener("click", () =>
+  left(slider3, ".quickEach", {
+    d: 6,
+    t: 3,
+    m: 1.5,
+  }),
+);
+btnRight3.addEventListener("click", () =>
+  right(slider3, ".quickEach", {
+    d: 6,
+    t: 3,
+    m: 1.5,
+  }),
+);
+btnLeft4.addEventListener("click", () =>
+  left(slider4, ".liveEach", {
+    d: 6,
+    t: 3,
+    m: 1.5,
+  }),
+);
+btnRight4.addEventListener("click", () =>
+  right(slider4, ".liveEach", {
+    d: 6,
+    t: 3,
+    m: 1.5,
+  }),
+);
+btnLeft5.addEventListener("click", () =>
+  left(slider5, ".onlyEach", {
+    d: 6,
+    t: 3,
+    m: 2,
+  }),
+);
+btnRight5.addEventListener("click", () =>
+  right(slider5, ".onlyEach", {
+    d: 6,
+    t: 3,
+    m: 2,
+  }),
+);
+btnLeft6.addEventListener("click", () =>
+  left(slider6, ".eventEach", defaultOptions),
+);
+btnRight6.addEventListener("click", () =>
+  right(slider6, ".eventEach", defaultOptions),
+);
