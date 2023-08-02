@@ -18,6 +18,18 @@
 페이지별 JS 기능에 중점을 두어 작업.  
 
 ## 참여 인원
+
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_이.png"width="100px;" alt=""/><br /><sub><b>조장: 이동호 </b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_정.png" width="100px;" alt=""/><br /><sub><b> 팀원: 정소이 </b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_진.png" width="100px;" alt=""/><br /><sub><b>팀원: 김남진 </b></sub></a><br /></td>
+      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_효.png" width="100px;" alt=""/><br /><sub><b>팀원: 장효윤 </b></sub></a><br /></td>
+     <tr/>
+  </tbody>
+</table>
 *[테킷 멋쟁이 사자처럼]* 프론트엔드 스쿨 6기 3조 `정진이효`   
 김남진, 이동호(스크럼 마스터), 장효윤, 정소이(깃 마스터) (가나다 순)
 
