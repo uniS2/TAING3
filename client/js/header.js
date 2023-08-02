@@ -5,8 +5,9 @@ import {
   toggleClass,
   typeError,
 } from "../lib/index.js";
+
 const userBarBox = getNode(".userInfo__content");
-const userProfile = getNode(".userInfo__button");
+const userProfile = await getNode(".userInfo__button");
 
 //헤더 오른쪽상단 프로필 사진 누르면 프로필 설정창 토글 기능
 async function handleUserBar() {
@@ -24,8 +25,8 @@ function handleRemoveUserbar(e) {
   }
 }
 
-await userProfile.addEventListener("click", handleUserBar);
-window.addEventListener("mouseup", handleRemoveUserbar);
+userProfile?.addEventListener("click", handleUserBar);
+window.addEventListener("click", handleRemoveUserbar);
 
 //스크롤을 내리면 해더의 배경이 검정으로 바뀐다.----------------------------------
 window.addEventListener("scroll", function () {
@@ -39,9 +40,9 @@ window.addEventListener("scroll", function () {
 });
 
 // 프로필 선택
-async function renderProfile(url = "http://localhost:3000/users") {
+async function renderProfile(url = "./server/db/data.json") {
   try {
-    const users = (await tiger.get(url)).data;
+    const users = (await tiger.get(url)).data.users;
     if (!users.length) return;
 
     const currentProfile = JSON.parse(localStorage.getItem("currentProfile"));
@@ -52,8 +53,8 @@ async function renderProfile(url = "http://localhost:3000/users") {
       typeError("함수 renderProfile의 매개변수는 문자이어야 합니다.");
     if (!currentProfile || !profilePhoto || !profilename) return;
 
-    userProfile.style.backgroundImage = `url('image/profile/mobile/profile_${currentProfile}.png')`;
-    profilePhoto.src = `image/profile/mobile/profile_${currentProfile}.png`;
+    userProfile.style.backgroundImage = `url('./image/profile/mobile/profile_${currentProfile}.png')`;
+    profilePhoto.src = `./image/profile/mobile/profile_${currentProfile}.png`;
     profilename.innerText = currentProfile;
   } catch (error) {
     console.log(error);

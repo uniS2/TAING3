@@ -7,11 +7,6 @@ import {
   tiger,
 } from "../lib/index.js";
 
-// const user = {
-//   id: "asd@naver.com",
-//   pw: "spdlqj123!@",
-// };
-
 //* <header>에 메뉴, 프로필 지우기----------------------------------------------------------
 async function ready() {
   // const header = await $(".header");
@@ -142,7 +137,7 @@ async function handleJoin(e) {
       },
     );
     alert(`회원가입을 환영합니다. ${userId.value}님`);
-    window.location.href = "http://localhost:5500/login.html";
+    window.location.href = "./login.html";
   }
 }
 
@@ -164,11 +159,11 @@ closePw.addEventListener("click", function (event) {
   if (pwInput.type === "password") {
     attr(pwInput, "type", "text");
     attr(pwInput, "autocomplete", "off");
-    closePw.style.backgroundImage = `url('/image/login/eye.png')`;
+    closePw.style.backgroundImage = `url('./image/login/eye.png')`;
   } else {
     attr(pwInput, "type", "password");
     attr(pwInput, "autocomplete", "current-password");
-    closePw.style.backgroundImage = `url('/image/login/DesktopPw.png')`;
+    closePw.style.backgroundImage = `url('./image/login/DesktopPw.png')`;
   }
 });
 
@@ -178,11 +173,11 @@ closePwCheck.addEventListener("click", function (event) {
   if (pwInput.type === "password") {
     attr(pwInput, "type", "text");
     attr(pwInput, "autocomplete", "off");
-    closePwCheck.style.backgroundImage = `url('/image/login/eye.png')`;
+    closePwCheck.style.backgroundImage = `url('./image/login/eye.png')`;
   } else {
     attr(pwInput, "type", "password");
     attr(pwInput, "autocomplete", "current-password");
-    closePwCheck.style.backgroundImage = `url('/image/login/DesktopPw.png')`;
+    closePwCheck.style.backgroundImage = `url('./image/login/DesktopPw.png')`;
   }
 });
 
@@ -212,7 +207,6 @@ function toggleCheckbox(e) {
   agreements[id] = checked;
   this.parentNode.classList.toggle("active");
   checkAllStatus();
-  // toggleSubmitButton();
 }
 
 function checkAllStatus() {
@@ -242,13 +236,6 @@ function checkAllStatus() {
   }
 }
 
-// function toggleSubmitButton() {
-//   const { service, privacy, channel } = agreements;
-//   if (service && privacy && channel) {
-//     alert("a");
-//   }
-// }
-
 //모든 동의 체크박스(모든 동의에 체크하면 모든 체크박스가 눌린다 )
 checkAll.addEventListener("click", (e) => {
   const { checked } = e.target;
@@ -271,7 +258,6 @@ checkAll.addEventListener("click", (e) => {
       item.parentNode.classList.remove("active");
     });
   }
-  // toggleSubmitButton();
 });
 
 agree7.addEventListener("click", (e) => {
@@ -296,8 +282,6 @@ $("#agree_5").addEventListener("click", (e) => {
     $("#agree_7").checked = true;
     agreements.allowSns = true;
   }
-
-  // toggleSubmitButton();
 });
 
 $("#agree_2").addEventListener("click", () => {
