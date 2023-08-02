@@ -1,12 +1,9 @@
 import {
-  addClass,
-  clearContents,
   getNode,
   getNodes,
   insertLast,
   isNull,
   isString,
-  refError,
   removeClass,
   setStorage,
   tiger,
@@ -75,15 +72,17 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
       }
     });
 
-    // 현재 프로필 처리
+    // 현재 선택된 프로필 작업
     const currentProfile = JSON.parse(localStorage.getItem("currentProfile"));
     const profileImg = getNodes(".profile__img");
+    const bg = getNode(".profile__dimmed");
 
     profileImg.forEach((node) => {
       if (node.alt === `${currentProfile} 프로필`) {
         const profile = node.closest(".profile__img__div");
         profile.style.border = "0.1875rem solid #FFFFFF";
         profile.style.borderRadius = "0.25rem";
+        bg.style.background = "none";
       }
     });
 
@@ -105,9 +104,11 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
       if (target) {
         target.style.border = "0.1875rem solid #FFFFFF";
         target.style.borderRadius = "0.25rem";
+        console.log(target);
+        bg.style.background = "none";
         // 프로필 선택
         setStorage("currentProfile", selectProfileInfo);
-        window.location.href = "./index.html";
+        // window.location.href = "./index.html";
       }
     };
 
