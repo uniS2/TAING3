@@ -1,4 +1,10 @@
-import { getNode, toggleClass } from "../lib/index.js";
+import {
+  getNode,
+  isString,
+  tiger,
+  toggleClass,
+  typeError,
+} from "../lib/index.js";
 const userBarBox = getNode(".userInfo__content");
 const userProfile = getNode(".userInfo__button");
 
@@ -31,3 +37,27 @@ window.addEventListener("scroll", function () {
     getNode("#scrollHeader").style.backgroundColor = "transparent";
   }
 });
+
+// 프로필 선택
+async function renderProfile(url = "http://localhost:3000/users") {
+  try {
+    const users = (await tiger.get(url)).data;
+    if (!users.length) return;
+
+    const currentProfile = JSON.parse(localStorage.getItem("currentProfile"));
+    const profilePhoto = getNode(".userInfo__profile__img > img");
+    const profilename = getNode(".profile__name");
+
+    if (!isString(url))
+      typeError("함수 renderProfile의 매개변수는 문자이어야 합니다.");
+    if (!currentProfile || !profilePhoto || !profilename) return;
+
+    userProfile.style.backgroundImage = `url('image/profile/mobile/profile_${currentProfile}.png')`;
+    profilePhoto.src = `image/profile/mobile/profile_${currentProfile}.png`;
+    profilename.innerText = currentProfile;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+renderProfile();
