@@ -10,17 +10,17 @@ const banner = $(".swiper-wrapper");
 
 async function renderProgram() {
   try {
-    const bannerGet = (await tiger.get("http://localhost:3000/banner")).data;
-    const recommendGet = (await tiger.get("http://localhost:3000/recommend"))
-      .data;
-    const quickVODGet = (await tiger.get("http://localhost:3000/quickVOD"))
-      .data;
-    const realtimeGet = (await tiger.get("http://localhost:3000/realtime"))
-      .data;
-    const liveGet = (await tiger.get("http://localhost:3000/live")).data;
-    const onlyTaingGet = (await tiger.get("http://localhost:3000/onlyTaing"))
-      .data;
-    const eventGet = (await tiger.get("http://localhost:3000/event")).data;
+    const bannerGet = (await tiger.get("./server/db/data.json")).data.banner;
+    const recommendGet = (await tiger.get("./server/db/data.json")).data
+      .recommend;
+    const quickVODGet = (await tiger.get("./server/db/data.json")).data
+      .quickVOD;
+    const realtimeGet = (await tiger.get("./server/db/data.json")).data
+      .realtime;
+    const liveGet = (await tiger.get("./server/db/data.json")).data.live;
+    const onlyTaingGet = (await tiger.get("./server/db/data.json")).data
+      .onlyTaing;
+    const eventGet = (await tiger.get("./server/db/data.json")).data.event;
 
     await bannerGet.forEach((item) => {
       const template = /* html */ `
@@ -121,14 +121,11 @@ function swiper() {
     },
     loop: true,
     effect: "fade",
-    // parallax: true,
     speed: 2000,
     pagination: {
       el: ".pagination",
       type: "bullets",
       clickable: true,
-      // bulletClass: "bullet",
-      // bulletActiveClass: "is-active",
       renderBullet: function (index, className) {
         return /* html */ `
         <span class="swiper-pagination-bullet bg-white mr-0"
@@ -137,9 +134,8 @@ function swiper() {
       },
     },
     navigation: {
-      // 네비게이션 설정
-      nextEl: ".swiper-button-next", // 다음 버튼 클래스명
-      prevEl: ".swiper-button-prev", // 이번 버튼 클래스명
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     a11y: {
       prevSlideMessage: "이전 슬라이드",
