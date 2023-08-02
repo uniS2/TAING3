@@ -35,7 +35,7 @@ async function renderProgram() {
 
     recommendGet.forEach((item) => {
       const template = /* html */ `
-      <figure id="movie0" class="movie recommendEach inline-block pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure id="movie0" class="movie recommendEach">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="pt-2.5 text-gray2">${item.name}</figcaption>
       </figure>
@@ -45,7 +45,7 @@ async function renderProgram() {
 
     quickVODGet.forEach((item) => {
       const template = /* html */ `
-      <figure class="quickEach pr-3 inline-block transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="quickEach">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="mt-2.5">
         <h4>${item.name}</h4><span class="text-gray3">${item.episode}</span>
@@ -57,7 +57,7 @@ async function renderProgram() {
 
     realtimeGet.forEach((item) => {
       const template = /* html */ `
-      <figure class="realtimeEach inline-block mb-[50px] relative pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="realtimeEach">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="-mt-6">
       <span class="absolute top-[95%] italic text-7xl m:text-6xl font-bold">${item.rank}</span>
@@ -70,7 +70,7 @@ async function renderProgram() {
 
     liveGet.forEach((item) => {
       const template = /* html */ `
-      <div class="liveEach inline-block mb-[50px] pr-3 relative transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <div class="liveEach">
       <img src=${item.img.src} alt=${item.img.alt} />
       <div class="absolute flex">
         <h4 class="italic text-7xl font-bold">${item.index}</h4>
@@ -87,7 +87,7 @@ async function renderProgram() {
 
     onlyTaingGet.forEach((item) => {
       const template = /* html */ `
-      <figure class="onlyEach inline-block pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="onlyEach">
       <img src=${item.posterImg.src} alt=${item.posterImg.alt} />
       <figcaption class="sr-only">${item.name}</figcaption>
     </figure>
@@ -97,7 +97,7 @@ async function renderProgram() {
 
     eventGet.forEach((item) => {
       const template = /* html */ `
-      <figure class="eventEach inline-block pr-3 transition-transform ease-in-out duration-500 hover:-translate-y-4">
+      <figure class="eventEach">
       <img src=${item.img.src} alt=${item.img.alt} />
       <figcaption class="sr-only">${item.name}</figcaption>
     </figure>
