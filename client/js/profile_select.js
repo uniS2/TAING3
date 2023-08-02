@@ -75,17 +75,12 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
       }
     });
 
-    //# 현재 프로필 처리
-    //$ 로그인 회원 정보 및 선택 통한 프로필 정보 받아오기
-    //$ currentProfile === 로그인.id + profile
-    setStorage("currentProfile", "진");
+    // 현재 프로필 처리
+    const currentProfile = JSON.parse(localStorage.getItem("currentProfile"));
     const profileImg = getNodes(".profile__img");
 
     profileImg.forEach((node) => {
-      if (
-        node.alt ===
-        `${JSON.parse(localStorage.getItem("currentProfile"))} 프로필`
-      ) {
+      if (node.alt === `${currentProfile} 프로필`) {
         const profile = node.closest(".profile__img__div");
         profile.style.border = "0.1875rem solid #FFFFFF";
         profile.style.borderRadius = "0.25rem";
@@ -95,8 +90,11 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
     const handleProfileSelect = (e) => {
       e.preventDefault();
       const target = e.target.closest(".profile__img__div");
-      console.log(target);
       if (isNull(target)) return;
+
+      const selectProfile = target.firstChild.nextSibling;
+      const selectProfileInfo = selectProfile.alt.slice(0, 1);
+      if (!selectProfile) return;
 
       const profile = [...getNodes(".profile__img__div")];
       profile.forEach((node) => {
@@ -107,8 +105,9 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
       if (target) {
         target.style.border = "0.1875rem solid #FFFFFF";
         target.style.borderRadius = "0.25rem";
+        // 프로필 선택
+        setStorage("currentProfile", selectProfileInfo);
         window.location.href = "./index.html";
-        //$ 현재 프로필 정보 바꾸기
       }
     };
 
