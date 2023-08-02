@@ -5,8 +5,9 @@ import {
   toggleClass,
   typeError,
 } from "../lib/index.js";
+
 const userBarBox = getNode(".userInfo__content");
-const userProfile = getNode(".userInfo__button");
+const userProfile = await getNode(".userInfo__button");
 
 //헤더 오른쪽상단 프로필 사진 누르면 프로필 설정창 토글 기능
 async function handleUserBar() {
@@ -24,8 +25,8 @@ function handleRemoveUserbar(e) {
   }
 }
 
-await userProfile.addEventListener("click", handleUserBar);
-window.addEventListener("mouseup", handleRemoveUserbar);
+userProfile?.addEventListener("click", handleUserBar);
+window.addEventListener("click", handleRemoveUserbar);
 
 //스크롤을 내리면 해더의 배경이 검정으로 바뀐다.----------------------------------
 window.addEventListener("scroll", function () {
