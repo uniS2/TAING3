@@ -82,7 +82,9 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
         const profile = node.closest(".profile__img__div");
         profile.style.border = "0.1875rem solid #FFFFFF";
         profile.style.borderRadius = "0.25rem";
-        bg.style.background = "none";
+        // if (currentProfile === selectProfileInfo) {
+        //   bg.style.background = "none";
+        // }
       }
     });
 
@@ -104,11 +106,12 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
       if (target) {
         target.style.border = "0.1875rem solid #FFFFFF";
         target.style.borderRadius = "0.25rem";
-        console.log(target);
-        bg.style.background = "none";
+        // if (currentProfile === selectProfileInfo) {
+        //   bg.style.background = "none";
+        // }
         // 프로필 선택
         setStorage("currentProfile", selectProfileInfo);
-        // window.location.href = "./index.html";
+        window.location.href = "./index.html";
       }
     };
 
