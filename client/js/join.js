@@ -7,11 +7,6 @@ import {
   tiger,
 } from "../lib/index.js";
 
-// const user = {
-//   id: "asd@naver.com",
-//   pw: "spdlqj123!@",
-// };
-
 //* <header>에 메뉴, 프로필 지우기----------------------------------------------------------
 async function ready() {
   // const header = await $(".header");
@@ -212,7 +207,6 @@ function toggleCheckbox(e) {
   agreements[id] = checked;
   this.parentNode.classList.toggle("active");
   checkAllStatus();
-  // toggleSubmitButton();
 }
 
 function checkAllStatus() {
@@ -242,13 +236,6 @@ function checkAllStatus() {
   }
 }
 
-// function toggleSubmitButton() {
-//   const { service, privacy, channel } = agreements;
-//   if (service && privacy && channel) {
-//     alert("a");
-//   }
-// }
-
 //모든 동의 체크박스(모든 동의에 체크하면 모든 체크박스가 눌린다 )
 checkAll.addEventListener("click", (e) => {
   const { checked } = e.target;
@@ -271,7 +258,6 @@ checkAll.addEventListener("click", (e) => {
       item.parentNode.classList.remove("active");
     });
   }
-  // toggleSubmitButton();
 });
 
 agree7.addEventListener("click", (e) => {
@@ -296,8 +282,6 @@ $("#agree_5").addEventListener("click", (e) => {
     $("#agree_7").checked = true;
     agreements.allowSns = true;
   }
-
-  // toggleSubmitButton();
 });
 
 $("#agree_2").addEventListener("click", () => {
