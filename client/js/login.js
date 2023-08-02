@@ -50,38 +50,27 @@ ready();
     const emailError = document.querySelector('#userEmailError');
     const pwError = document.querySelector('#userPasswordError');
     const eyes = document.querySelector('#closePW')
-    // console.log(emailInput);
-    // let errorMessage = '';
-  // console.log(eyes)
+
 //아이디 유효성 검사 함수
 function idCheck() {
-
     if (emailInput.length > 0 && !idReg(emailInput)) {
       emailError.style.display = 'block';
       event.preventDefault();
-    //  prevenDefault함수: a 태그나 submit 태그는 누르게 되면 href 를 통해 이동하거나 , 창이 새로고침하여 실행
-      // email.classList.add("is--invalid");
-    // 명시된 클래스를 추가하는 메서드입니다.
       return;
     } else {
       emailError.style.display = 'none';
-      // email.classList.remove("is--invalid");
       return emailInput;
     }
   }
-
    //비밀번호 유효성 검사 함수
    function pwCheck() {
     if (passwordInput.length > 0 && !pwReg(passwordInput)) {
       pwError.style.display = 'block';
       event.preventDefault();
-      // pw.classList.add("is--invalid");
       return;
     } else {
       pwError.style.display = 'none';
       eyes.style.display = 'none';
-
-      // pw.classList.remove("is--invalid");
       return passwordInput;
     }
   }
@@ -90,40 +79,28 @@ function idCheck() {
   async function isLogin(emailCheck, pwCheck) {
 
     const response = (await tiger.get("http://localhost:3000/users")).data;
-    // const user = {
-    //   id: "asd@naver.com",
-    //   pw: "spdlqj123!@",
-    // };
-
-
-
-
-  //if 유니크아이디 서버와의 통신을 통해서 유니크아이디를 가져오고 로컬스토리지에 있는 유니크아이디 값과 비교를해서 그 값이
-   // 일치하면 통과! !로컬스토리지= 회원가입할때 유니크아이디값을 넣어야함.
-    if (emailCheck && pwCheck) {
-response.some(element => {
-  if (emailInput === element.id && (passwordInput === element.password)) 
-  { setStorage("currentID", element.uniqueID);
-  window.location.href = "./index.html";
-  } else if (emailCheck || pwCheck) {
-    event.preventDefault();
-    alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-    return true;
-  }
-
-});
+    if (emailCheck && pwCheck){
+    let loginSuccessful = false;
+    response.some(element => {
+      if (emailInput === element.id && passwordInput === element.password) {
+        setStorage("currentUniqueID", element.uniqueID);
+        setStorage("currentID", element.ID);
+        window.location.href = "./index.html";
+        loginSuccessful = true;
+        return true;
+      }
+    });
+    
+    if (!loginSuccessful) {
+      event.preventDefault();
+      alert("아이디 또는 비밀번호가 일치하지 않습니다.");
     }
-}
-  //   if (emailCheck && pwCheck) {
-  //     if (emailCheck === user.id && pwCheck === user.pw) {
-  //       event.preventDefault();
-  //       window.location.href = "./index.html";
-  //     } else if (emailCheck || pwCheck) {
-  //       event.preventDefault();
-  //       alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-  //       return;
-  //     }
-  //   }
+  }
+  }
+  
+ //if 유니크아이디 서버와의 통신을 통해서 유니크아이디를 가져오고 로컬스토리지에 있는 유니크아이디 값과 비교를해서 그 값이
+  // 일치하면 통과! !로컬스토리지= 회원가입할때 유니크아이디값을 넣어야함.
+ 
  
 
   //isLogin 함수 실행
