@@ -1922,7 +1922,7 @@ video {
 
 .modal__box {
   position: absolute;
-  left: 35%;
+  left: 38%;
   top: 40%;
   display: flex;
   height: 200px;
@@ -1930,6 +1930,88 @@ video {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.recommendEach {
+  display: inline-block;
+  padding-right: 0.75rem;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recommendEach:hover {
+  --tw-translate-y: -1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.quickEach {
+  display: inline-block;
+  padding-right: 0.75rem;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quickEach:hover {
+  --tw-translate-y: -1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.realtimeEach {
+  position: relative;
+  margin-bottom: 50px;
+  display: inline-block;
+  padding-right: 0.75rem;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.realtimeEach:hover {
+  --tw-translate-y: -1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.liveEach {
+  position: relative;
+  margin-bottom: 50px;
+  display: inline-block;
+  padding-right: 0.75rem;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.liveEach:hover {
+  --tw-translate-y: -1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.onlyEach {
+  display: inline-block;
+  padding-right: 0.75rem;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.onlyEach:hover {
+  --tw-translate-y: -1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.eventEach {
+  display: inline-block;
+  padding-right: 0.75rem;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.eventEach:hover {
+  --tw-translate-y: -1rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .placeholder\:font-normal::-moz-placeholder {
