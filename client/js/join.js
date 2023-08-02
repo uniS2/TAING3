@@ -142,7 +142,7 @@ async function handleJoin(e) {
       },
     );
     alert(`회원가입을 환영합니다. ${userId.value}님`);
-    window.location.href = "http://localhost:5500/login.html";
+    window.location.href = "./login.html";
   }
 }
 
@@ -164,11 +164,11 @@ closePw.addEventListener("click", function (event) {
   if (pwInput.type === "password") {
     attr(pwInput, "type", "text");
     attr(pwInput, "autocomplete", "off");
-    closePw.style.backgroundImage = `url('/image/login/eye.png')`;
+    closePw.style.backgroundImage = `url('./image/login/eye.png')`;
   } else {
     attr(pwInput, "type", "password");
     attr(pwInput, "autocomplete", "current-password");
-    closePw.style.backgroundImage = `url('/image/login/DesktopPw.png')`;
+    closePw.style.backgroundImage = `url('./image/login/DesktopPw.png')`;
   }
 });
 
@@ -178,11 +178,11 @@ closePwCheck.addEventListener("click", function (event) {
   if (pwInput.type === "password") {
     attr(pwInput, "type", "text");
     attr(pwInput, "autocomplete", "off");
-    closePwCheck.style.backgroundImage = `url('/image/login/eye.png')`;
+    closePwCheck.style.backgroundImage = `url('./image/login/eye.png')`;
   } else {
     attr(pwInput, "type", "password");
     attr(pwInput, "autocomplete", "current-password");
-    closePwCheck.style.backgroundImage = `url('/image/login/DesktopPw.png')`;
+    closePwCheck.style.backgroundImage = `url('./image/login/DesktopPw.png')`;
   }
 });
 
