@@ -58,7 +58,7 @@ const btnWrap = $(".btn_wrap");
 
 let idPass = false;
 //! 아이디 인풋 이벤트
-function handlerIdInput() {
+function handleIdInput() {
   if (!idReg(userId.value)) {
     addClass(".input_info", "text-red");
     idPass = false;
@@ -70,7 +70,7 @@ function handlerIdInput() {
 
 let pwPass = false;
 //! 비밀번호 인풋 이벤트
-function handlerPasswordInput() {
+function handlePasswordInput() {
   if (!pwReg(userPw.value)) {
     addClass(".input_pw", "text-red");
     pwPass = false;
@@ -82,7 +82,7 @@ function handlerPasswordInput() {
 
 let pwPassCheck = false;
 //! 비밀번호 일치 체크 인풋 이벤트
-function handlerPasswordCheckInput() {
+function handlePasswordCheckInput() {
   if (userPwCheck.value !== userPw.value) {
     pwPassCheck = false;
     removeClass(".input_checkpw_N", "hidden");
@@ -96,7 +96,7 @@ function handlerPasswordCheckInput() {
 
 let emailPass = false;
 //! 이메일 인풋 이벤트
-function handlerEmailInput() {
+function handleEmailInput() {
   if (!emailReg(userEmail.value)) {
     emailPass = false;
     removeClass(".input_email_N", "hidden");
@@ -108,25 +108,8 @@ function handlerEmailInput() {
   }
 }
 
-// console.log(
-//   idPass &&
-//     pwPass &&
-//     pwPassCheck &&
-//     emailPass &&
-//     agreements.privacy &&
-//     agreements.service &&
-//     agreements.channel,
-// );
 //! 클릭 이벤트 함수
-function handlerClick1(e) {
-  console.log(idPass);
-  console.log(pwPass);
-  console.log(pwPassCheck);
-  console.log(emailPass);
-  console.log(agreements.privacy);
-  console.log(agreements.service);
-  console.log(agreements.channel);
-
+async function handleJoin(e) {
   e.preventDefault();
   if (!idPass || !pwPass || !pwPassCheck || !emailPass) {
     alert("아이디, 비밀번호, 이메일의 형식이 올바른지 확인해주세요.");
@@ -136,72 +119,42 @@ function handlerClick1(e) {
     !agreements.channel
   ) {
     alert("[필수] 동의를 체크해주세요.");
-  }
-  //   else if (
-  //   !idPass ||
-  //   !pwPass ||
-  //   !pwPassCheck ||
-  //   !emailPass ||
-  //   !agreements.privacy ||
-  //   !agreements.service ||
-  //   !agreements.channel
-  // ) {
-  //   //! 아이디 비밀번호가 일치하면 welcome 페이지로 이동
-  //   // if (userId.value === user.id && userPw.value === user.pw) {
+  } else {
+    //****서버로 자료보내기
+    await tiger.post(
+      "http://localhost:3000/users",
 
-  //   // window.location.href = "http://localhost:5500/";
-  //   //   } else if (!(userId.value === user.id) && !(userPw.value === user.pw)) {
-  //   //     alert("아이디와 비밀번호가 올바르지 않습니다.");
-  //   //   } else if (!(userId.value === user.id)) {
-  //   //     alert("아이디가 올바르지 않습니다.");
-  //   //   } else if (!(userPw.value === user.pwuser)) {
-  //   //     alert("비밀번호가 올바르지 않습니다.");
-  //   //   }
-  //   // } else {
-  //   alert("아이디와 비밀번호가 올바른지 확인해주세요.");
-  //   // }
-  else {
-    window.location.href = "http://localhost:5500/";
-  }
-}
-//****서버로 자료보내기---------------------------------------------------------
-async function isregister(emailCheck, pwCheck) {
-  const response = (await tiger.post("http://localhost:3000/users"), users, ``)
-    .data;
-  // const user = {
-  //   id: "asd@naver.com",
-  //   pw: "spdlqj123!@",
-  // };
-  if (emailCheck && pwCheck) {
-    response.some((element) => {
-      if (emailInput === element.id && passwordInput === element.password) {
-        window.location.href = "./index.html";
-      } else if (emailCheck || pwCheck) {
-        event.preventDefault();
-        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
-        return true;
-      }
-    });
+      {
+        id: userId.value,
+        password: userPw.value,
+        uniqueID: Math.random() * 10 ** 16,
+        email: userEmail.value,
+        agree: {
+          toOthers: agreements.privacy,
+          marketing: {
+            sms: agreements.service,
+            email: agreements.channel,
+          },
+        },
+        profile: {
+          "": "",
+        },
+      },
+    );
+    alert(`회원가입을 환영합니다. ${userId.value}님`);
+    window.location.href = "http://localhost:5500/login.html";
   }
 }
 
-//------------------------------
+//* 이벤트리스너------------------------------
 
 //! addEventListener input, click
-userId.addEventListener("input", handlerIdInput);
-userPw.addEventListener("input", handlerPasswordInput);
-userPwCheck.addEventListener("input", handlerPasswordCheckInput);
-userEmail.addEventListener("input", handlerEmailInput);
+userId.addEventListener("input", handleIdInput);
+userPw.addEventListener("input", handlePasswordInput);
+userPwCheck.addEventListener("input", handlePasswordCheckInput);
+userEmail.addEventListener("input", handleEmailInput);
 
-/*
-
-1. email 정규표현식을 사용한 validation
-2. pw 정규표현식을 사용한 validation
-3. 상태 변수 관리
-4. 로그인 버튼을 클릭시 조건처리
-
-*/
-//비밀번호 문자 보이게하기 -----------------------------------------------------------
+//*비밀번호 문자 보이게하기 -----------------------------------------------------------
 const closePw = $("#closePw");
 const closePwCheck = $("#closePwCheck");
 
@@ -233,7 +186,7 @@ closePwCheck.addEventListener("click", function (event) {
   }
 });
 
-//체크박스-------------------------------------------
+//*체크박스-------------------------------------------
 const form = $(".check_wrap"); // 데이터를 전송하는 Form
 const checkAll = $("#agreeAll"); // 모두 동의 체크박스
 const checkBoxes = getNodes(".check_box input"); // 모두 동의를 제외한 3개의 체크박스
@@ -296,6 +249,7 @@ function checkAllStatus() {
 //   }
 // }
 
+//모든 동의 체크박스(모든 동의에 체크하면 모든 체크박스가 눌린다 )
 checkAll.addEventListener("click", (e) => {
   const { checked } = e.target;
   if (checked) {
@@ -358,4 +312,4 @@ $("#agree_4").addEventListener("click", () => {
   agreements.channel = true;
 });
 
-btnRegist.addEventListener("click", handlerClick1);
+btnRegist.addEventListener("click", handleJoin);

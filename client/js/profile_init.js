@@ -16,11 +16,12 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfileSelect(url = "http://localhost:3000/users") {
+async function renderProfileInit(url = "http://localhost:3000/users") {
   try {
     const users = (await tiger.get(url)).data;
 
-    // header 처리
+    //# header 처리
+    // include 땡겨오면 none 해줄게!!
     getNode("header").style.position = "relative";
     getNode("nav").style.display = "none";
     getNode("form").style.display = "none";
@@ -75,40 +76,19 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
       }
     });
 
-    //# 현재 프로필 처리
-    //$ 로그인 회원 정보 및 선택 통한 프로필 정보 받아오기
-    //$ currentProfile === 로그인.id + profile
-    setStorage("currentProfile", "진");
-    const profileImg = getNodes(".profile__img");
-
-    profileImg.forEach((node) => {
-      if (
-        node.alt ===
-        `${JSON.parse(localStorage.getItem("currentProfile"))} 프로필`
-      ) {
-        const profile = node.closest(".profile__img__div");
-        profile.style.border = "0.1875rem solid #FFFFFF";
-        profile.style.borderRadius = "0.25rem";
-      }
-    });
-
+    //# 프로필 선택하기
     const handleProfileSelect = (e) => {
       e.preventDefault();
       const target = e.target.closest(".profile__img__div");
-      console.log(target);
-      if (isNull(target)) return;
+      const currentImg = target.firstChild.nextSibling;
+      if (isNull(target) || isNull(currentImg)) return;
 
-      const profile = [...getNodes(".profile__img__div")];
-      profile.forEach((node) => {
-        removeClass(node, ".current__profile");
-        node.style.border = "none";
-      });
+      const currentImgInfo = currentImg.alt.slice(0, 1);
+      console.log(currentImgInfo);
 
       if (target) {
-        target.style.border = "0.1875rem solid #FFFFFF";
-        target.style.borderRadius = "0.25rem";
+        setStorage("currentProfile", currentImgInfo);
         window.location.href = "./index.html";
-        //$ 현재 프로필 정보 바꾸기
       }
     };
 
@@ -118,7 +98,7 @@ async function renderProfileSelect(url = "http://localhost:3000/users") {
   }
 }
 
-renderProfileSelect();
+renderProfileInit();
 
 //# 버튼 이동
 
