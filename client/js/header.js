@@ -22,22 +22,26 @@ async function handleUserBar() {
 function handleRemoveUserbar(e) {
   if (!userProfile.contains(e.target)) {
     userBarBox.style.display = "none";
-  }
+  } else return;
 }
 
 userProfile?.addEventListener("click", handleUserBar);
 window.addEventListener("click", handleRemoveUserbar);
 
-//스크롤을 내리면 해더의 배경이 검정으로 바뀐다.----------------------------------
-window.addEventListener("scroll", function () {
-  const banner = getNode(".mainBanner");
-  const bannerHeight = banner.getBoundingClientRect().height;
-  if (window.scrollY > bannerHeight) {
-    getNode("#scrollHeader").style.backgroundColor = "black";
-  } else {
-    getNode("#scrollHeader").style.backgroundColor = "transparent";
-  }
-});
+if (document.location.href.split("/").at(-1) === "") {
+  headerMenuReady();
+
+  //스크롤을 내리면 해더의 배경이 검정으로 바뀐다.----------------------------------
+  window.addEventListener("scroll", function () {
+    const banner = getNode(".mainBanner");
+    const bannerHeight = banner.getBoundingClientRect().height;
+    if (window.scrollY > bannerHeight) {
+      getNode("#scrollHeader").style.backgroundColor = "black";
+    } else {
+      getNode("#scrollHeader").style.backgroundColor = "transparent";
+    }
+  });
+}
 
 // 프로필 선택
 async function renderProfile(url = "./server/db/data.json") {
@@ -46,7 +50,7 @@ async function renderProfile(url = "./server/db/data.json") {
     if (!users.length) return;
 
     const currentProfile = JSON.parse(localStorage.getItem("currentProfile"));
-    const profilePhoto = getNode(".userInfo__profile__img > img");
+    const profilePhoto = await getNode(".userInfo__profile__img > img");
     const profilename = getNode(".profile__name");
 
     if (!isString(url))
@@ -62,3 +66,8 @@ async function renderProfile(url = "./server/db/data.json") {
 }
 
 renderProfile();
+
+async function headerMenuReady() {
+  const headerMenu = await getNode(".menu__list");
+  headerMenu.style.display = "flex";
+}

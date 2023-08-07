@@ -1,5 +1,4 @@
-const btnR = document.querySelectorAll(".btn-right");
-const btnL = document.querySelectorAll(".btn-left");
+const btn = document.querySelectorAll(".btn-nav");
 
 const defaultOptions = {
   d: 6,
@@ -7,16 +6,16 @@ const defaultOptions = {
   m: 2,
 };
 
-btnL.forEach((ele) => {
-  ele.addEventListener("click", (e) => {
-    moveSlide(e, defaultOptions, "left");
-  });
-});
-
-btnR.forEach((ele) => {
-  ele.addEventListener("click", (e) => {
-    moveSlide(e, defaultOptions, "right");
-  });
+btn.forEach((ele) => {
+  if (ele.classList[1].split("-").at(-1) === "right") {
+    ele.addEventListener("click", (e) => {
+      moveSlide(e, defaultOptions, "right");
+    });
+  } else if (ele.classList[1].split("-").at(-1) === "left") {
+    ele.addEventListener("click", (e) => {
+      moveSlide(e, defaultOptions, "left");
+    });
+  }
 });
 
 function moveSlide(e, defaultOptions, direction) {

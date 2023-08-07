@@ -1,5 +1,3 @@
-import { getNode } from "../lib/index.js";
-
 //모달 창 닫기
 function exitModal() {
   document.getElementById("mainModal").style.display = "none";
@@ -47,10 +45,3 @@ closeButton.addEventListener("click", function () {
 });
 
 showOrHideModal();
-
-async function ready() {
-  const headerMenu = await getNode(".menu__list");
-  headerMenu.style.display = "flex";
-}
-
-ready();
