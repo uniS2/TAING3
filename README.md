@@ -20,7 +20,7 @@ _[테킷 멋쟁이 사자처럼]_ 프론트엔드 스쿨 6기에서 진행한 Ja
 
 ## 참여 인원
 
-<table>
+<table style="display: contents;">
   <tbody>
     <tr>
       <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_이.png"width="100px;" alt=""/><br /><sub><b>조장: 이동호 </b></sub></a><br /></td>
@@ -30,7 +30,8 @@ _[테킷 멋쟁이 사자처럼]_ 프론트엔드 스쿨 6기에서 진행한 Ja
      <tr/>
   </tbody>
 </table>
-*[테킷 멋쟁이 사자처럼]* 프론트엔드 스쿨 6기 3조 `정진이효`   
+
+*[테킷 멋쟁이 사자처럼]* 프론트엔드 스쿨 6기 3조 `정진이효` :   
 김남진, 이동호(스크럼 마스터), 장효윤, 정소이(깃 마스터) (가나다 순)
 
 ### 담당 페이지
