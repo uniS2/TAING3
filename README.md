@@ -20,7 +20,7 @@ _[테킷 멋쟁이 사자처럼]_ 프론트엔드 스쿨 6기에서 진행한 Ja
 
 ## 참여 인원
 
-<table style="display: contents;">
+<table>
   <tbody>
     <tr>
       <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_이.png"width="100px;" alt=""/><br /><sub><b>조장: 이동호 </b></sub></a><br /></td>
@@ -78,3 +78,7 @@ _[테킷 멋쟁이 사자처럼]_ 프론트엔드 스쿨 6기에서 진행한 Ja
 [프로필 선택]: https://javascript-project-3.github.io/project-JS-3/client/profile_select.html
 [프로필 편집]: https://javascript-project-3.github.io/project-JS-3/client/profile.html
 [검색 페이지]: https://javascript-project-3.github.io/project-JS-3/client/search.html
+
+<style type='text/css'>
+  table {display: contents;}
+</style>
