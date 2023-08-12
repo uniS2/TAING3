@@ -20,13 +20,13 @@ _[테킷 멋쟁이 사자처럼]_ 프론트엔드 스쿨 6기에서 진행한 Ja
 
 ## 참여 인원
 
-<table>
+<table display="contents">
   <tbody>
     <tr>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_이.png"width="100px;" alt=""/><br /><sub><b>조장: 이동호 </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_정.png" width="100px;" alt=""/><br /><sub><b> 팀원: 정소이 </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_진.png" width="100px;" alt=""/><br /><sub><b>팀원: 김남진 </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_효.png" width="100px;" alt=""/><br /><sub><b>팀원: 장효윤 </b></sub></a><br /></td>
+      <td align="center"><a href="#"><img src="./client/image/profile/mobile/profile_이.png"width="100px;" alt=""/><br /><b>조장 : 이동호</b></a><br /></td>
+      <td align="center"><a href="#"><img src="./client/image/profile/mobile/profile_정.png" width="100px;" alt=""/><br /><b>조원 : 정소이</b></a><br /></td>
+      <td align="center"><a href="#"><img src="./client/image/profile/mobile/profile_진.png" width="100px;" alt=""/><br /><b>조원 : 김남진</b></a><br /></td>
+      <td align="center"><a href="#"><img src="./client/image/profile/mobile/profile_효.png" width="100px;" alt=""/><br /><b>조원 : 장효윤</b></a><br /></td>
      <tr/>
   </tbody>
 </table>
@@ -78,7 +78,3 @@ _[테킷 멋쟁이 사자처럼]_ 프론트엔드 스쿨 6기에서 진행한 Ja
 [프로필 선택]: https://javascript-project-3.github.io/project-JS-3/client/profile_select.html
 [프로필 편집]: https://javascript-project-3.github.io/project-JS-3/client/profile.html
 [검색 페이지]: https://javascript-project-3.github.io/project-JS-3/client/search.html
-
-<style type='text/css'>
-  table {display: contents;}
-</style>
