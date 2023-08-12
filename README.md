@@ -23,10 +23,10 @@ _[테킷 멋쟁이 사자처럼]_ 프론트엔드 스쿨 6기에서 진행한 Ja
 <table height="150px">
   <tbody>
     <tr>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_이.png" width="100px;" alt=""/><br /><sub><b>조장: 이동호 </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_정.png" width="100px;" alt=""/><br /><sub><b> 팀원: 정소이 </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_진.png" width="100px;" alt=""/><br /><sub><b>팀원: 김남진 </b></sub></a><br /></td>
-      <td align="center"><a href=""><img src="./client/image/profile/mobile/profile_효.png" width="100px;" alt=""/><br /><sub><b>팀원: 장효윤 </b></sub></a><br /></td>
+      <td align="center"><img src="./client/image/profile/mobile/profile_이.png" width="100px;" height="100px" alt=""/><br /><sub><b>조장 : 이동호</b></sub><br /></td>
+      <td align="center"><img src="./client/image/profile/mobile/profile_정.png" width="100px;" height="100px" alt=""/><br /><sub><b>조원 : 정소이</b></sub><br /></td>
+      <td align="center"><img src="./client/image/profile/mobile/profile_진.png" width="100px;" height="100px" alt=""/><br /><sub><b>조원 : 김남진</b></sub><br /></td>
+      <td align="center"><img src="./client/image/profile/mobile/profile_효.png" width="100px;" height="100px" alt=""/><br /><sub><b>조원 : 장효윤</b></sub><br /></td>
      <tr/>
   </tbody>
 </table>
