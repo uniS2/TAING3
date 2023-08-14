@@ -53,13 +53,21 @@ const btnWrap = $(".btn_wrap");
 
 let idPass = false;
 //! 아이디 인풋 이벤트
-function handleIdInput() {
+async function handleIdInput() {
   if (!idReg(userId.value)) {
     addClass(".input_info", "text-red");
     idPass = false;
-  } else {
+  } else if (idReg(userId.value)) {
     removeClass(".input_info", "text-red");
     idPass = true;
+
+    const response = (await tiger.get("./server/db/data.json")).data.users;
+
+    response.some((element) => {
+      if (userId.value === element.id) {
+        alert("이 아이디는 사용할 수 없습니다.");
+      }
+    });
   }
 }
 
