@@ -1052,8 +1052,8 @@ video {
   width: 3.75rem;
 }
 
-.w-\[35\%\] {
-  width: 35%;
+.w-\[49\%\] {
+  width: 49%;
 }
 
 .w-\[506px\] {
@@ -1519,6 +1519,10 @@ video {
   padding-bottom: 3.25rem;
 }
 
+.pl-16 {
+  padding-left: 4rem;
+}
+
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -1533,6 +1537,10 @@ video {
 
 .pr-0 {
   padding-right: 0px;
+}
+
+.pr-16 {
+  padding-right: 4rem;
 }
 
 .pt-11 {
