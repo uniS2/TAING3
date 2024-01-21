@@ -1,7 +1,9 @@
 import {
   getNode,
+  getStorage,
   insertLast,
   isString,
+  setStorage,
   tiger,
   typeError,
 } from "../lib/index.js";
@@ -11,9 +13,9 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfile(url = "http://localhost:3000/users") {
+async function renderProfile(url = "./server/db/data.json") {
   try {
-    const users = (await tiger.get(url)).data;
+    const users = (await tiger.get(url)).data.users;
 
     //# header 처리
     // include 땡겨오면 none 해줄게!!
@@ -28,7 +30,7 @@ async function renderProfile(url = "http://localhost:3000/users") {
 
     users.forEach(({ id, profile, ...restOptions } = {}) => {
       //^ 로그인한 회원 id 통한 index 가져오기
-      if (id === "likelion02") {
+      if (id === JSON.parse(localStorage.getItem("currentID"))) {
         const nickSrc = Object.entries(profile);
 
         nickSrc.forEach(([nickname, src]) => {
@@ -41,7 +43,7 @@ async function renderProfile(url = "http://localhost:3000/users") {
             class="profile__link text-gray3"
           >
             <div
-              class="profile__img__div relative duration-150 ease-linear hover:-translate-y-[10%] s:w-[100%]"
+              class="profile__img__div relative duration-300 ease-linear hover:-translate-y-[10%] s:w-[100%]"
             >
               <img
                 src="image/profile/mobile/${src}"
@@ -78,4 +80,4 @@ async function renderProfile(url = "http://localhost:3000/users") {
 
 renderProfile();
 
-//$ 파일 선택 기능 만들기
+// 파일 선택 기능 만들기

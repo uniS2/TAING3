@@ -16,11 +16,12 @@ import {
 // rendering
 const profileList = getNode(".profile__lists");
 
-async function renderProfileSelect(url = "./server/db/data.json") {
+async function renderProfileInit(url = "./server/db/data.json") {
   try {
     const users = (await tiger.get(url)).data.users;
 
-    // header 처리
+    //# header 처리
+    // include 땡겨오면 none 해줄게!!
     getNode("header").style.position = "relative";
     getNode("nav").style.display = "none";
     getNode("form").style.display = "none";
@@ -75,38 +76,18 @@ async function renderProfileSelect(url = "./server/db/data.json") {
       }
     });
 
-    // 현재 프로필 처리
-    const currentProfile = JSON.parse(localStorage.getItem("currentProfile"));
-    const profileImg = getNodes(".profile__img");
-
-    profileImg.forEach((node) => {
-      if (node.alt === `${currentProfile} 프로필`) {
-        const profile = node.closest(".profile__img__div");
-        profile.style.border = "0.1875rem solid #FFFFFF";
-        profile.style.borderRadius = "0.25rem";
-      }
-    });
-
+    //# 프로필 선택하기
     const handleProfileSelect = (e) => {
       e.preventDefault();
       const target = e.target.closest(".profile__img__div");
-      if (isNull(target)) return;
+      const currentImg = target.firstChild.nextSibling;
+      if (isNull(target) || isNull(currentImg)) return;
 
-      const selectProfile = target.firstChild.nextSibling;
-      const selectProfileInfo = selectProfile.alt.slice(0, 1);
-      if (!selectProfile) return;
-
-      const profile = [...getNodes(".profile__img__div")];
-      profile.forEach((node) => {
-        removeClass(node, ".current__profile");
-        node.style.border = "none";
-      });
+      const currentImgInfo = currentImg.alt.slice(0, 1);
+      console.log(currentImgInfo);
 
       if (target) {
-        target.style.border = "0.1875rem solid #FFFFFF";
-        target.style.borderRadius = "0.25rem";
-        // 프로필 선택
-        setStorage("currentProfile", selectProfileInfo);
+        setStorage("currentProfile", currentImgInfo);
         window.location.href = "./index.html";
       }
     };
@@ -117,7 +98,7 @@ async function renderProfileSelect(url = "./server/db/data.json") {
   }
 }
 
-renderProfileSelect();
+renderProfileInit();
 
 //# 버튼 이동
 
